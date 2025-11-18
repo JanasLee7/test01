@@ -1,0 +1,215 @@
+         
+/* CSS Document */
+@import url(https://fonts.googleapis.com/css?family=Open+Sans);
+@import url(https://fonts.googleapis.com/css?family=Bree+Serif);  
+    
+body {
+  display: grid; 
+  /* grid-template-columns: auto auto; */ 
+  grid-template-columns: auto 0px;
+  word-wrap:break-word !important;
+  font-family: Arial, Helvetica, sans-serif;
+}  
+    
+    
+* {
+  box-sizing: border-box;
+}
+
+main{
+  /* Style the main */
+  padding: 3px;      
+}
+    
+/* Style the header */
+#hdr {
+  background-color: #667711;
+  padding: 20px;
+  text-align: center;      
+  font-size: 35px;
+  color: white;
+}
+
+
+.tbl01 {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 50%;
+  table-layout: fixed;
+}
+
+.tbl01 td, .tbl01 th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+
+    .tbl01 tr:nth-child(even) {
+      background-color: #dddddd;
+    }
+    
+    .tbl01, .tbl01 th, .tbl01 td{
+      border:1px solid #002;
+    }
+    
+    /* multilayer navigation menu bar*/
+    nav {
+	    margin:0;
+      background-color: #667711;	    
+    }
+    nav ul {
+      margin: 0;
+      padding: 0;
+      list-style-type: none;           
+      position: relative;
+    }
+
+    nav ul li {
+      display:inline-block;      
+      background-color: #667711;
+    }
+    nav a {
+	    display:block;
+	    padding:0 10px;	
+	    color:#FF0;
+	    font-size:16px;
+	    line-height: 60px;
+	    text-decoration:none;
+    }   
+
+    nav a:hover { 
+	    background-color: #550055; 
+    }
+
+    /* Hide Dropdowns by Default */
+    nav ul ul {
+	    display: none;
+	    position: absolute; 
+	    top: 60px; /* the height of the main nav */
+    }
+	
+    /* Display Dropdowns on Hover */
+    nav ul li:hover > ul {
+	    display:inherit;
+    }
+	
+    /* Fisrt Tier Dropdown */
+    nav ul ul li {
+	    width:180px;
+	    float:none;
+	    display:list-item;
+	    position: relative;
+    }
+
+    /* Second, Third and more Tiers	*/
+    nav ul ul ul li {
+  	  position: relative;
+	    top:-60px; 
+	    left:180px;
+    }
+	
+    /* Change this in order to change the Dropdown symbol */
+    li > a:after { content:  ' +'; }
+    li > a:only-child:after { content: ''; }
+    
+    .fs32 {font-size:32px; color:#EE9999;}
+    .fs31 {font-size:31px; } 
+    .fs30 {font-size:30px; color:#BB9966;}
+    .fs29 {font-size:29px; }    
+    .fs28 {font-size:28px; color:#DD6633;}
+    .fs27 {font-size:27px; }    
+    .fs26 {font-size:26px; color:#ce6622;}
+    .fs25 {font-size:25px; }    
+    .fs24 {font-size:24px; color:#EE3b16;}
+    .fs23 {font-size:23px; }
+    .fs22 {font-size:22px; color:#449966;}
+    .fs21 {font-size:21px; }
+    .fs20 {font-size:20px; color:#229966;}
+    .fs19 {font-size:19px; }
+    .fs18 {font-size:18px; color:#66cc00;}
+    .fs17 {font-size:17px; }
+    .fs16 {font-size:16px; color:#55aaee;}
+    .fs15 {font-size:15px; }
+    
+	  /* janas_here */
+	  #janas_here{
+	    box-shadow: 4px 4px 8px 1px rgba(0, 0, 0, 0.4), 0 6px 20px 1px rgba(1, 2, 3, 0.19); 
+      width: 50%;
+	  }	  
+	  #janas_here #rtxt{	    
+	    padding:3px 6px;
+	    background-color:#660044;
+	    color:#FFFFFF;
+	  }
+	  #janas_here #here{
+      padding:3px 6px;	  
+	    background-color:#66ffdd;	
+	  }
+	
+	  /* janas_here2 */		  
+	  #janas_here2 {
+      width: 350px;
+      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);  
+    }
+    #janas_here2 .header {
+      background-color: #4CAF50;
+      color: white;
+      padding: 10px;
+      font-size: 30px;
+    }
+    #janas_here2 .container {
+      padding: 10px;
+      text-align: center;
+    }	      
+    
+    .to-top {
+      --offset: 100px;
+      --fade: 80px;
+  
+      display: flex;
+      align-items: flex-end;
+      width: 80px;
+      justify-self: end;
+      justify-content: flex-end;
+      -webkit-mask:linear-gradient(#0000 calc(100vh + var(--offset)),#000 calc(100vh + var(--offset) + var(--fade)));
+
+    }
+
+    .go_top {
+      /*https://www.freecodecamp.org/news/css-only-back-to-top-button/*/
+      position: sticky;
+      bottom: 20px;      
+      margin-right:10px; 
+  
+      /* visual styling */
+      width:50%;
+      aspect-ratio:1;
+      background:#ff8b24;
+      border-radius:10px;
+    }
+    .go_top:before {
+      content:"";
+      position:absolute;
+      inset:30%;
+      transform:translateY(20%) rotate(-45deg);
+      border-top:5px solid #fff;
+      border-right:5px solid #fff;
+    }
+
+    .go_janas {      
+      position: sticky;
+      bottom: 20px;      
+      margin-right:10px; 
+      width:50%;
+      aspect-ratio:1;
+      background:#ff8b24;
+      border-radius:10px;
+    }
+    .go_janas:before {
+      content:"";
+      position:absolute;
+      inset:25%;
+      transform:translateY(0%) rotate(0deg);
+      border:5px solid #fff;
+      
+    }

@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <title>Learn new skills from W3Schools.com</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">  
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>  
+  <link href="w3school2.css" rel="stylesheet">  
+  <style>
+    /* CSS Document */
+    @import url(https://fonts.googleapis.com/css?family=Open+Sans);
+    @import url(https://fonts.googleapis.com/css?family=Bree+Serif);  
+    body {
+      display: grid; 
+      /* grid-template-columns: auto auto; */ 
+      grid-template-columns: auto 0px;
+      word-wrap:break-word !important;
+      font-family: Arial, Helvetica, sans-serif;
+    }  
+    
+    * {
+      box-sizing: border-box;
+    }
+
+    /* Style the header */
+    #hdr {
+      background-color: #680;
+      padding: 20px;
+      text-align: center;      
+      font-size: 18px;
+      color: white;
+    }
+    
+    main{
+      padding: 3px;
+    }
+
+    table {
+      font-family: arial, sans-serif;
+      border-collapse: collapse;
+      width: 100%;
+    }
+
+    td, th {
+      border: 1px solid #dddddd;
+      text-align: left;
+      padding: 8px;
+    }
+
+    tr:nth-child(even) {
+      background-color: #dddddd;
+    }
+    
+    .tb1, .tb1 th, .tb1 td  {
+      border:1px solid black;  
+    }
+    
+    nav {
+	    margin:0;
+	    background-color: #66e;
+    }
+    
+    nav ul {
+      margin: 0;
+      padding: 0;
+      list-style-type: none;           
+      position: relative;
+    }
+    nav ul li {
+      display:inline-block;
+      background-color: #66e;
+    }
+
+    nav a {
+	    display:block;
+	    padding:0 10px;	
+	    color:#FF0;
+	    font-size:16px;
+	    line-height: 60px;
+	    text-decoration:none;
+    }
+
+    nav a:hover { 
+	    background-color: #550055; 
+    }
+
+    /* Hide Dropdowns by Default */
+    nav ul ul {
+	    display: none;
+	    position: absolute; 
+	    top: 60px; /* the height of the main nav */
+    }
+	
+    /* Display Dropdowns on Hover */
+    nav ul li:hover > ul {
+	    display:inherit;
+    }
+	
+    /* Fisrt Tier Dropdown */
+    nav ul ul li {
+	    width:180px;
+	    float:none;
+	    display:list-item;
+	    position: relative;
+    }
+
+    /* Second, Third and more Tiers	*/
+    nav ul ul ul li {
+	    position: relative;
+	    top:-60px; 
+	    left:180px;
+    }
+	
+    /* Change this in order to change the Dropdown symbol */
+    li > a:after { content:  ' +'; }
+    li > a:only-child:after { content: ''; }
+    .fs34 {font-size:34px; color:#1199dd;}
+    .fs31 {font-size:31px; } 
+    .fs32 {font-size:32px; color:#EE9999;}
+    .fs31 {font-size:31px; } 
+    .fs30 {font-size:30px; color:#BB9966;}
+    .fs29 {font-size:29px; }    
+    .fs28 {font-size:28px; color:#DD6633;}
+    .fs27 {font-size:27px; }    
+    .fs26 {font-size:26px; color:#ce6622;}
+    .fs25 {font-size:25px; }    
+    .fs24 {font-size:24px; color:#EE3b16;}
+    .fs23 {font-size:23px; }
+    .fs22 {font-size:22px; color:#449966;}
+    .fs21 {font-size:21px; }
+    .fs20 {font-size:20px; color:#229966;}
+    .fs19 {font-size:19px; }
+    .fs18 {font-size:18px; color:#66cc00;}
+    .fs17 {font-size:17px; }
+    .fs16 {font-size:16px; color:#55aaee;}
+    .fs15 {font-size:15px; }
+    
+	  /* janas_here */
+	  #janas_here{
+	    box-shadow: 2px 4px 8px 0 rgba(0, 0, 0, 0.3), 1px 6px 20px 0 rgba(0, 0, 0, 0.19); 
+      width: 50%;
+      margin:10px 2px;      
+	  }	  
+	  #janas_here #rtxt{	    
+	    padding:3px 6px;
+	    background-color:#660044;
+	    color:#FFFFFF;
+	  }
+	  #janas_here #here{
+      padding:3px 6px;	  
+	    background-color:#66ffdd;	
+	  }
+	
+	  /* janas_here2 */		  
+	  #janas_here2 {
+      width: 350px;
+      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);  
+    }
+    #janas_here2 .header {
+      background-color: #4CAF50;
+      color: white;
+      padding: 10px;
+      font-size: 30px;
+    }
+    #janas_here2 .container {
+      padding: 10px;
+      text-align: center;
+    }	      
+    
+    .to-top {
+      --offset: 100px;
+      --fade: 80px;  
+      display: flex;
+      align-items: flex-end;
+      width: 80px;
+      justify-self: end;
+      justify-content: flex-end;
+      -webkit-mask:linear-gradient(#0000 calc(100vh + var(--offset)),#000 calc(100vh + var(--offset) + var(--fade)));
+
+    }
+
+    .go_top {
+      /*  https://www.freecodecamp.org/news/css-only-back-to-top-button/  */
+      position: sticky;
+      bottom: 20px;      
+      margin-right:10px;   
+      /* visual styling */
+      width:50%;
+      aspect-ratio:1;
+      background:#ff8b24;
+      border-radius:10px;
+    }
+    .go_top:before {
+      content:"";
+      position:absolute;
+      inset:30%;
+      transform:translateY(20%) rotate(-45deg);
+      border-top:5px solid #fff;
+      border-right:5px solid #fff;
+    }
+
+    .go_janas {      
+      position: sticky;
+      bottom: 20px;      
+      margin-right:10px; 
+      width:50%;
+      aspect-ratio:1;
+      background:#ff8b24;
+      border-radius:10px;
+    }
+    .go_janas:before {
+      content:"";
+      position:absolute;
+      inset:25%;
+      transform:translateY(0%) rotate(0deg);
+      border:5px solid #fff;
+      
+    }
+  </style>
+  <script>
+    function show_tu() {
+	  
+	  let x = document.getElementById("tutorial");
+      if (x.style.display === "none") {
+        x.style.display = "block";
+      } else {
+        x.style.display = "none";
+      }
+      //window.location=("html_tutorial.html");
+	  
+      /*
+      let x = document.getElementById("nav_tu");
+      if (x.style.display === "none") {
+        x.style.display = "block";
+      } else {
+        x.style.display = "none";
+      }
+      */
+    }
+    function conv(){
+      let ss = document.getElementById("f1").value;
+      var am = /&/gi;
+      ss= ss.replace(am, '&amp;');
+      var le = /</gi;
+      ss= ss.replace(le, '&lt;');
+      var re = />/gi;
+      ss= ss.replace(re, '&gt;');
+      
+      //alert(ss);
+      document.getElementById("f1").value = ss;
+    }
+  </script>
+</head>
+<body>
+<div>  
+  <header id="hdr">
+    <b class="fs25">Learn new skills from <a href="https://www.w3schools.com/" target="_empty">W3Schools.com</a></b><br>    
+    <button onclick="show_tu()">Tutorials</button>
+    <button onclick="">Exercises</button>
+    <button onclick="">Certificates</button>
+    <button onclick="">Acronym</button>
+  </header>  
+    
+  <nav id="nav_tu" style="display:none">
+    <ul>
+      <li><a href="#tu_01">HTML and CSS</a>        
+        <ul>
+          <li><a href="#tu_01_01">Learn HTML</a>            
+            <ul>
+              <li><a href="#tu_01_01_01">Tutorial</a>                
+                <ul>
+                  <li><a href="#tu_01_01_01_01">HOME</a></li>
+                  <li><a href="#tu_01_01_01_02">Introduction</a></li>
+                  <li><a href="#"></a></li>
+                </ul>
+              </li>
+              <li><a href="#tu_01_01_02_01">Forms</a>
+                <ul >
+                  <li><a href="#tu_01_01_02_01">Forms</a></li>
+                  <li><a href="#tu_01_01_02_02">Form Attributes</a></li>
+                  <li><a href="#tu_01_01_02_03">Form Elements</a></li>
+                  <li><a href="#tu_01_01_02_04">Input Types</a></li>
+                  <li><a href="#tu_01_01_02_05">Input Attributes</a></li>
+                  <li><a href="#tu_01_01_02_06">Input form Attributes</a></li>
+                  <li><a href="#"></a></li>
+                </ul>  
+              </li>
+              <li><a href="#tu_01_01_03">Graphics</a>
+                <ul>
+                  <li><a href="#tu_01_01_03_01">Canvas</a></li>
+                  <li><a href="#tu_01_01_03_02">SVG</a></li>                  
+                </ul>
+              </li>
+              <li><a href="#tu_01_01_04">HTML Media</a>
+                <ul>
+                  <li><a href="#tu_01_01_04_01">Media</a></li>
+                  <li><a href="#tu_01_01_04_02">Video</a></li>
+                  <li><a href="#tu_01_01_04_03">Audio</a></li>
+                  <li><a href="#tu_01_01_04_04">Plug-ins</a></li>
+                  <li><a href="#tu_01_01_04_05">YouTdube</a></li>
+                </ul>                
+              </li>  
+              <li><a href="#tu_01_01_05">HTML APIs</a>
+                <ul>
+                  <li><a href="#tu_01_01_05_01">Geolocation</a></li>
+                  <li><a href="#tu_01_01_05_02">Drag/Drop</a></li>
+                  <li><a href="#tu_01_01_05_03">Web Storage</a></li>
+                  <li><a href="#tu_01_01_05_04">Web Workers</a></li>
+                  <li><a href="#tu_01_01_05_05">SSE</a></li>
+                </ul>  
+              </li> 
+              <li><a href="#tu_01_01_06">HTML Examples</a>
+                <ul>
+                  <li><a href="#tu_01_01_06_01">Examples</a></li>
+                  <li><a href="#tu_01_01_06_02">Editor</a></li>
+                  <li><a href="#tu_01_01_06_03">Quiz</a></li>
+                  <li><a href="#tu_01_01_06_04">Exercise</a></li>
+                  <li><a href="#tu_01_01_06_05">Website</a></li>
+                  <li><a href="#tu_01_01_06_06">Bootcamp</a></li>
+                  <li><a href="#tu_01_01_06_07">Certificate</a></li>
+                  <li><a href="#tu_01_01_06_08">Summary</a></li>
+                  <li><a href="#tu_01_01_06_09">Accessibility</a></li>
+                </ul>  
+              </li>              
+            </ul>
+          </li>
+          <li><a href="#">Learn CSS</a></li>
+          <li><a href="#"></a></li>
+        </ul>        
+      </li>      
+      <li><a href="#tu_02">Data Analytics</a>
+        <ul>
+          <li><a href="#tu_02_01">Learn AI</a></li>
+          <li><a href="#tu_02_02"></a></li>
+          <li><a href="#tu_02_03"></a></li>
+          <li><a href="#tu_02_04"></a></li>
+          <li><a href="#tu_02_05"></a></li>
+          <li><a href="#tu_02_06"></a></li>
+          <li><a href="#tu_02_07"></a></li>
+          <li><a href="#tu_02_08"></a></li>
+          <li><a href="#tu_02_09"></a></li>
+          <li><a href="#tu_02_10"></a></li>
+          <li><a href="#tu_02_11"></a></li>
+          <li><a href="#tu_02_12"></a></li>
+          <li><a href="#tu_02_13"></a></li>
+          <li><a href="#tu_02_14"></a></li>
+          <li><a href="#tu_02_15"></a></li>
+        </ul>      
+      </li>
+      <li><a href="#"></a>
+        <!-- First Tier Drop Down -->
+        <ul>
+          <li><a href="#"></a></li>
+          <li><a href="#"></a></li>
+          <li><a href="#"></a>
+          	<!-- Second Tier Drop Down -->
+            <ul>
+              <li><a href="#"></a></li>
+              <li><a href="#"></a></li>
+              <li><a href="#"></a>
+                <!-- Third Tier Drop Down -->
+                <ul>
+                  <li><a href="#"></a></li>
+                  <li><a href="#"></a></li>
+                  <li><a href="#"></a>
+				    			  <!-- Fourth Tier Drop Down -->
+						    	  <ul>
+                      <li><a href="#"></a></li>
+                      <li><a href="#"></a></li>
+                      <li><a href="#"></a>
+							          <!-- Fifth Tier Drop Down -->
+                        <ul>
+                          <li><a href="#"></a></li>
+                          <li><a href="#"></a></li>
+                          <li><a href="#"></a></li>
+                        </ul>
+							        </li>
+                    </ul>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+      <li><a href="#"></a></li>
+      <li><a href="#"></a></li>
+      <li><a href="#"></a></li>
+      <li><a href="#janas_here">Janas</a></li>	    
+    </ul>
+  </nav>
+  <nav id="nav_e" style="display:none">
+    <ul>
+      <li><a href="#we_01">Exercises</a></li>
+      <li><a href="#"></a></li>
+      <li><a href="#"></a></li>
+      <li><a href="#"></a></li>
+      <li style="float:right"><a href="#janas_here">janas_here</a></li>
+    </ul>
+  </nav>
+  <nav id="nav_c" style="display:none">
+    <ul>
+      <li><a href="#wc_01">Certificates</a></li>
+      <li><a href="#"></a></li>
+      <li><a href="#"></a></li>
+      <li><a href="#"></a></li>
+      <li style="float:right"><a href="#janas_here">janas_here</a></li>
+    </ul>
+  </nav>
+  <nav id="nav_a" style="display:none">
+    <ul>
+      <li><a href="#wa_01">Acronym</a></li>
+      <li><a href="#"></a></li>
+      <li><a href="#"></a></li>
+      <li><a href="#"></a></li>
+      <li style="float:right"><a href="#janas_here">janas_here</a></li>
+    </ul>
+  </nav>
+
+  <main>
+   <div id="tutorial" style="display:none">
+     <a href="html_tutorial.html">HTML</a><br>
+     <a href="css_tutorial.html">CSS</a><br>
+   </div
+  </main>
+</div>  
+<div class="to-top">
+  <a href="#janas_here" class="go_janas"></a><a href="#" class="go_top"></a>
+</div>
+</body>
+</html>
