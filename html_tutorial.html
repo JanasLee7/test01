@@ -1,0 +1,3300 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <title>Learn new skills from W3Schools.com</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">  
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  
+  <link href="w3school2.css" rel="stylesheet">
+  
+  <style>
+    
+
+    body {
+      display: grid; 
+      /* grid-template-columns: auto auto; */ 
+      grid-template-columns: auto 0px;
+      word-wrap:break-word !important;
+      font-family: Arial, Helvetica, sans-serif;
+    }  
+    
+    * {
+      box-sizing: border-box;
+    }
+
+    /* Style the header */
+    #hdr {
+      background-color: #680;
+      padding: 20px;
+      text-align: center;      
+      font-size: 18px;
+      color: white;
+    }
+    
+    main{
+      padding: 3px;
+    }
+
+    table {
+      font-family: arial, sans-serif;
+      border-collapse: collapse;
+      width: 100%;
+    }
+
+    td, th {
+      border: 1px solid #dddddd;
+      text-align: left;
+      padding: 8px;
+    }
+
+    tr:nth-child(even) {
+      background-color: #dddddd;
+    }
+    
+    .tb1, .tb1 th, .tb1 td  {
+      border:1px solid black;  
+    }
+    
+    nav {
+	    margin:0;
+	    background-color: #66e;
+    }
+    
+    nav ul {
+      margin: 0;
+      padding: 0;
+      list-style-type: none;           
+      position: relative;
+    }
+    nav ul li {
+      display:inline-block;
+      background-color: #66e;
+    }
+
+    nav a {
+	    display:block;
+	    padding:0 10px;	
+	    color:#FF0;
+	    font-size:16px;
+	    line-height: 60px;
+	    text-decoration:none;
+    }
+
+    nav a:hover { 
+	    background-color: #550055; 
+    }
+
+    /* Hide Dropdowns by Default */
+    nav ul ul {
+	    display: none;
+	    position: absolute; 
+	    top: 60px; /* the height of the main nav */
+    }
+	
+    /* Display Dropdowns on Hover */
+    nav ul li:hover > ul {
+	    display:inherit;
+    }
+	
+    /* Fisrt Tier Dropdown */
+    nav ul ul li {
+	    width:180px;
+	    float:none;
+	    display:list-item;
+	    position: relative;
+    }
+
+    /* Second, Third and more Tiers	*/
+    nav ul ul ul li {
+	    position: relative;
+	    top:-60px; 
+	    left:180px;
+    }
+	
+    /* Change this in order to change the Dropdown symbol */
+    li > a:after { content:  ' +'; }
+    li > a:only-child:after { content: ''; }
+
+    .fs34 {font-size:34px; color:#1199dd;}
+    .fs31 {font-size:31px; } 
+    .fs32 {font-size:32px; color:#EE9999;}
+    .fs31 {font-size:31px; } 
+    .fs30 {font-size:30px; color:#BB9966;}
+    .fs29 {font-size:29px; }    
+    .fs28 {font-size:28px; color:#DD6633;}
+    .fs27 {font-size:27px; }    
+    .fs26 {font-size:26px; color:#ce6622;}
+    .fs25 {font-size:25px; }    
+    .fs24 {font-size:24px; color:#EE3b16;}
+    .fs23 {font-size:23px; }
+    .fs22 {font-size:22px; color:#449966;}
+    .fs21 {font-size:21px; }
+    .fs20 {font-size:20px; color:#229966;}
+    .fs19 {font-size:19px; }
+    .fs18 {font-size:18px; color:#66cc00;}
+    .fs17 {font-size:17px; }
+    .fs16 {font-size:16px; color:#55aaee;}
+    .fs15 {font-size:15px; }
+    .c_red{color:red;}
+
+
+	  /* janas_here */
+	  #janas_here{
+	    box-shadow: 2px 4px 8px 0 rgba(0, 0, 0, 0.3), 1px 6px 20px 0 rgba(0, 0, 0, 0.19); 
+      width: 50%;
+      margin:10px 2px;      
+	  }	  
+	  #janas_here #rtxt{	    
+	    padding:2px 5px;
+	    background-color:#6600aa;
+	    color:#FFFFFF;
+	  }
+	  #janas_here #here{
+      padding:3px 6px;	  
+	    background-color:#66ffdd;	
+	  }
+	
+	  /* janas_here2 */		  
+	  #janas_here2 {
+      width: 350px;
+      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);  
+    }
+    #janas_here2 .header {
+      background-color: #4CAF50;
+      color: white;
+      padding: 10px;
+      font-size: 30px;
+    }
+    #janas_here2 .container {
+      padding: 10px;
+      text-align: center;
+    }	
+
+    .to-top {
+      --offset: 100px;
+      --fade: 80px;  
+      display: flex;
+      align-items: flex-end;
+      width: 80px;
+      justify-self: end;
+      justify-content: flex-end;
+      -webkit-mask:linear-gradient(#0000 calc(100vh + var(--offset)),#000 calc(100vh + var(--offset) + var(--fade)));
+
+    }
+
+    .go_top {
+      /*https://www.freecodecamp.org/news/css-only-back-to-top-button/*/
+      position: sticky;
+      bottom: 20px;      
+      margin-right:10px;   
+      /* visual styling */
+      width:50%;
+      aspect-ratio:1;
+      background:#ff8b24;
+      border-radius:10px;
+    }
+    .go_top:before {
+      content:"";
+      position:absolute;
+      inset:30%;
+      transform:translateY(20%) rotate(-45deg);
+      border-top:5px solid #fff;
+      border-right:5px solid #fff;
+    }
+
+    .go_janas {      
+      position: sticky;
+      bottom: 20px;      
+      margin-right:10px; 
+      width:50%;
+      aspect-ratio:1;
+      background:#ff8b24;
+      border-radius:10px;
+    }
+    .go_janas:before {
+      content:"";
+      position:absolute;
+      inset:25%;
+      transform:translateY(0%) rotate(0deg);
+      border:5px solid #fff;
+      
+    }
+  </style>
+  <script>
+    function show_tu() {
+      let x = document.getElementById("nav_tu");
+      if (x.style.display === "none") {
+        x.style.display = "block";
+      } else {
+        x.style.display = "none";
+      }
+    }
+    function conv(){
+      let ss = document.getElementById("f1").value;
+      var am = /&/gi;
+      ss= ss.replace(am, '&amp;');
+      var le = /</gi;
+      ss= ss.replace(le, '&lt;');
+      var re = />/gi;
+      ss= ss.replace(re, '&gt;');
+      
+      //alert(ss);
+      document.getElementById("f1").value = ss;
+    }
+  </script>
+</head>
+<body>
+<div>  
+  <header id="hdr">
+    <b class="fs25">Learn new skills from <a href="https://www.w3schools.com/" target="_empty">W3Schools.com</a></b><br>    
+    <button onclick="show_tu()">Tutorials</button>
+    <button onclick="show_wa_01()">Exercises</button>
+    <button onclick="show_wa_01()">Certificates</button>
+    <button onclick="show_wa_01()">Acronym</button>
+  </header>  
+    
+  <nav id="nav_tu" >
+    <ul>
+      <li><a href="#tu_01">HTML and CSS</a>        
+        <ul>
+          <li><a href="#tu_01_01">Learn HTML</a>            
+            <ul>
+              <li><a href="#tu_01_01_01">Tutorial</a>                
+                <ul>
+                  <li><a href="#tu_01_01_01_01">HOME</a></li>
+                  <li><a href="#tu_01_01_01_02">Introduction</a></li>
+                  <li><a href="#"></a></li>
+                </ul>
+              </li>
+              <li><a href="#tu_01_01_02">Forms</a>
+                <ul >
+                  <li><a href="#tu_01_01_02_01">Forms</a></li>
+                  <li><a href="#tu_01_01_02_02">Form Attributes</a></li>
+                  <li><a href="#tu_01_01_02_03">Form Elements</a></li>
+                  <li><a href="#tu_01_01_02_04">Input Types</a></li>
+                  <li><a href="#tu_01_01_02_05">Input Attributes</a></li>
+                  <li><a href="#tu_01_01_02_06">Input form Attributes</a></li>
+                  <li><a href="#"></a></li>
+                </ul>  
+              </li>
+              <li><a href="#tu_01_01_03">Graphics</a>
+                <ul>
+                  <li><a href="#tu_01_01_03_01">Canvas</a></li>
+                  <li><a href="#tu_01_01_03_02">SVG</a></li>                  
+                </ul>
+              </li>
+              <li><a href="#tu_01_01_04">HTML Media</a>
+                <ul>
+                  <li><a href="#tu_01_01_04_01">Media</a></li>
+                  <li><a href="#tu_01_01_04_02">Video</a></li>
+                  <li><a href="#tu_01_01_04_03">Audio</a></li>
+                  <li><a href="#tu_01_01_04_04">Plug-ins</a></li>
+                  <li><a href="#tu_01_01_04_05">YouTdube</a></li>
+                </ul>                
+              </li>  
+              <li><a href="#tu_01_01_05">HTML APIs</a>
+                <ul>
+                  <li><a href="#tu_01_01_05_01">Geolocation</a></li>
+                  <li><a href="#tu_01_01_05_02">Drag/Drop</a></li>
+                  <li><a href="#tu_01_01_05_03">Web Storage</a></li>
+                  <li><a href="#tu_01_01_05_04">Web Workers</a></li>
+                  <li><a href="#tu_01_01_05_05">SSE</a></li>
+                </ul>  
+              </li> 
+              <li><a href="#tu_01_01_06">HTML Examples</a>
+                <ul>
+                  <li><a href="#tu_01_01_06_01">Examples</a></li>
+                  <li><a href="#tu_01_01_06_02">Editor</a></li>
+                  <li><a href="#tu_01_01_06_03">Quiz</a></li>
+                  <li><a href="#tu_01_01_06_04">Exercise</a></li>
+                  <li><a href="#tu_01_01_06_05">Website</a></li>
+                  <li><a href="#tu_01_01_06_06">Bootcamp</a></li>
+                  <li><a href="#tu_01_01_06_07">Certificate</a></li>
+                  <li><a href="#tu_01_01_06_08">Summary</a></li>
+                  <li><a href="#tu_01_01_06_09">Accessibility</a></li>
+                </ul>  
+              </li>
+              <li><a href="#tu_01_01_07">HTML Reference</a>
+                <ul>
+                  <li><a href="#tu_01_01_07_01">by Alphabet</a></li>
+                  <li><a href="#tu_01_01_07_02">by Category</a></li>
+                  <li><a href="#tu_01_01_07_03">Browser Support</a></li>
+                  <li><a href="#tu_01_01_07_04">Attributes</a></li>
+                  <li><a href="#tu_01_01_07_05">Global Attribute</a></li>
+                  <li><a href="#tu_01_01_07_06">Events</a></li>
+                  <li><a href="#tu_01_01_07_07">Colors</a></li>
+                  <li><a href="#tu_01_01_07_08">Canvas</a></li>
+                  <li><a href="#tu_01_01_07_09">Audio/Video</a></li>
+                  <li><a href="#tu_01_01_07_10">Character Sets</a></li>
+                  <li><a href="#tu_01_01_07_11">Doctypes</a></li>
+                  <li><a href="#tu_01_01_07_12">URL Encode</a></li>
+                  <li><a href="#tu_01_01_07_13">Language Codes</a></li>
+                  <li><a href="#tu_01_01_07_14">Country Codes</a></li>
+                  <li><a href="#tu_01_01_07_15">Messages</a></li>
+                  <li><a href="#tu_01_01_07_16">Methods</a></li>
+                  <li><a href="#tu_01_01_07_17">PX to EM Converter</a></li>
+                  <li><a href="#tu_01_01_07_18">Keyboard Shortcuts</a></li>
+                </ul>  
+              </li> 
+              <li><a href="#tu_01_01_08">HTML Tags</a>
+                <ul>
+                    <li><a href="#tu_01_01_08_01">&lt;!--&gt;</a></li>
+                    <li><a href="#tu_01_01_08_02">&lt;!DOCTYPE&gt;</a></li>
+                    <li><a href="#tu_01_01_08_03">&lt;a&gt;</a></li>
+                    <li><a href="#tu_01_01_08_04">&lt;abbr&gt;</a></li>
+                    <li><a href="#tu_01_01_08_05">&lt;acronym&gt;</a></li>
+                    <li><a href="#tu_01_01_08_06">&lt;address&gt;</a></li>
+                    <li><a href="#tu_01_01_08_07">&lt;applet&gt;</a></li>
+                    <li><a href="#tu_01_01_08_08">&lt;area&gt;</a></li>
+                    <li><a href="#tu_01_01_08_09">&lt;article&gt;</a></li>
+                    <li><a href="#tu_01_01_08_10">&lt;aside&gt;</a></li>
+                    <li><a href="#tu_01_01_08_11">&lt;audio&gt;</a></li>
+                    <li><a href="#tu_01_01_08_12">&lt;b&gt;</a></li>
+                    <li><a href="#tu_01_01_08_13">&lt;base&gt;</a></li>
+                    <li><a href="#tu_01_01_08_14">&lt;basefont&gt;</a></li>
+                    <li><a href="#tu_01_01_08_15">&lt;bdi&gt;</a></li>
+                    <li><a href="#tu_01_01_08_16">&lt;bdo&gt;</a></li>
+                    <li><a href="#tu_01_01_08_17">&lt;big&gt;</a></li>
+                    <li><a href="#tu_01_01_08_18">&lt;blockquote&gt;</a></li>
+                    <li><a href="#tu_01_01_08_19">&lt;body&gt;</a></li>
+                    <li><a href="#tu_01_01_08_20">&lt;br&gt;</a></li>
+                    <li><a href="#tu_01_01_08_21">&lt;button&gt;</a></li>
+                    <li><a href="#tu_01_01_08_22">&lt;canvas&gt;</a></li>
+                    <li><a href="#tu_01_01_08_23">&lt;caption&gt;</a></li>
+                    <li><a href="#tu_01_01_08_24">&lt;center&gt;</a></li>
+                    <li><a href="#tu_01_01_08_25">&lt;cite&gt;</a></li>
+                    <li><a href="#tu_01_01_08_26">&lt;code&gt;</a></li>
+                    <li><a href="#tu_01_01_08_27">&lt;col&gt;</a></li>
+                    <li><a href="#tu_01_01_08_28">&lt;colgroup&gt;</a></li>
+                    <li><a href="#tu_01_01_08_29">&lt;data&gt;</a></li>
+                    <li><a href="#tu_01_01_08_30">&lt;datalist&gt;</a></li>
+                    <li><a href="#tu_01_01_08_31">&lt;dfn&gt;</a></li>
+                    <li><a href="#tu_01_01_08_32">&lt;dialog&gt;</a></li>
+                    <li><a href="#tu_01_01_08_33">&lt;dir&gt;</a></li>
+                    <li><a href="#tu_01_01_08_34">&lt;div&gt;</a></li>
+                    <li><a href="#tu_01_01_08_35">&lt;dl&gt;</a></li>
+                    <li><a href="#tu_01_01_08_36">&lt;dt&gt;</a></li>
+                    <li><a href="#tu_01_01_08_37">&lt;em&gt;</a></li>
+                    <li><a href="#tu_01_01_08_38">&lt;embed&gt;</a></li>
+                    <li><a href="#tu_01_01_08_39">&lt;fieldset&gt;</a></li>
+                    <li><a href="#tu_01_01_08_40">&lt;figcaption&gt;</a></li>
+                    <li><a href="#tu_01_01_08_41">&lt;figure&gt;</a></li>
+                    <li><a href="#tu_01_01_08_42">&lt;font&gt;</a></li>
+                    <li><a href="#tu_01_01_08_43">&lt;footer&gt;</a></li>
+                    <li><a href="#tu_01_01_08_44">&lt;form&gt;</a></li>
+                    <li><a href="#tu_01_01_08_45">&lt;frame&gt;</a></li>
+                    <li><a href="#tu_01_01_08_46">&lt;frameset&gt;</a></li>
+                    <li><a href="#tu_01_01_08_47">&lt;h1&gt;-&lt;h6&gt;</a></li> 
+                    <li><a href="#tu_01_01_08_48">&lt;head&gt;</a></li>
+                    <li><a href="#tu_01_01_08_49">&lt;header&gt;</a></li>
+                    <li><a href="#tu_01_01_08_50">&lt;hgroup&gt;</a></li>
+                    <li><a href="#tu_01_01_08_51">&lt;hr&gt;</a></li> 
+                    <li><a href="#tu_01_01_08_52">&lt;html&gt;</a></li>
+                    <li><a href="#tu_01_01_08_53">&lt;i&gt;</a></li>
+                    <li><a href="#tu_01_01_08_54">&lt;iframe&gt;</a></li>
+                    <li><a href="#tu_01_01_08_55">&lt;img&gt;</a></li>
+                    <li><a href="#tu_01_01_08_56">&lt;input&gt;</a></li>
+                    <li><a href="#tu_01_01_08_57">&lt;ins&gt;</a></li>
+                    <li><a href="#tu_01_01_08_58">&lt;kbd&gt;</a></li>
+                    <li><a href="#tu_01_01_08_59">&lt;label&gt;</a></li>
+                    <li><a href="#tu_01_01_08_60">&lt;legend&gt;</a></li>
+                    <li><a href="#tu_01_01_08_61">&lt;li&gt;</a></li>
+                    <li><a href="#tu_01_01_08_62">&lt;link&gt;</a></li>
+                    <li><a href="#tu_01_01_08_63">&lt;main&gt;</a></li>
+                    <li><a href="#tu_01_01_08_64">&lt;map&gt;</a></li>
+                    <li><a href="#tu_01_01_08_65">&lt;mark&gt;</a></li>
+                    <li><a href="#tu_01_01_08_66">&lt;menu&gt;</a></li>
+                    <li><a href="#tu_01_01_08_67">&lt;meta&gt;</a></li>
+                    <li><a href="#tu_01_01_08_68">&lt;meter&gt;</a></li>
+                    <li><a href="#tu_01_01_08_69">&lt;nav&gt;</a></li>
+                    <li><a href="#tu_01_01_08_71">&lt;noframes&gt;</a></li>     
+                    <li><a href="#tu_01_01_08_72">&lt;noscript&gt;</a></li>
+                    <li><a href="#tu_01_01_08_73">&lt;object&gt;</a></li>
+                    <li><a href="#tu_01_01_08_74">&lt;ol&gt;</a></li>
+                    <li><a href="#tu_01_01_08_75">&lt;optgroup&gt;</a></li>
+                    <li><a href="#tu_01_01_08_76">&lt;option&gt;</a></li>
+                    <li><a href="#tu_01_01_08_77">&lt;output&gt;</a></li>
+                    <li><a href="#tu_01_01_08_78">&lt;p&gt;</a></li>
+                    <li><a href="#tu_01_01_08_79">&lt;param&gt;</a></li>
+                    <li><a href="#tu_01_01_08_80">&lt;picture&gt;</a></li>
+                    <li><a href="#tu_01_01_08_81">&lt;pre&gt;</a></li>
+                    <li><a href="#tu_01_01_08_82">&lt;progress&gt;</a></li>
+                    <li><a href="#tu_01_01_08_83">&lt;q&gt;</a></li>
+                    <li><a href="#tu_01_01_08_84">&lt;rp&gt;</a></li>
+                    <li><a href="#tu_01_01_08_85">&lt;rt&gt;</a></li>
+                    <li><a href="#tu_01_01_08_86">&lt;ruby&gt;</a></li>
+                    <li><a href="#tu_01_01_08_87">&lt;s&gt;</a></li>
+                    <li><a href="#tu_01_01_08_88">&lt;samp&gt;</a></li>
+                    <li><a href="#tu_01_01_08_89">&lt;script&gt;</a></li>
+                    <li><a href="#tu_01_01_08_90">&lt;search&gt;</a></li>
+                    <li><a href="#tu_01_01_08_91">&lt;section&gt;</a></li>
+                    <li><a href="#tu_01_01_08_92">&lt;select&gt;</a></li>
+                    <li><a href="#tu_01_01_08_93">&lt;small&gt;</a></li>
+                    <li><a href="#tu_01_01_08_94">&lt;source&gt;</a></li>
+                    <li><a href="#tu_01_01_08_95">&lt;span&gt;</a></li>
+                    <li><a href="#tu_01_01_08_96">&lt;strike&gt;</a></li>
+                    <li><a href="#tu_01_01_08_97">&lt;strong&gt;</a></li>
+                    <li><a href="#tu_01_01_08_98">&lt;style&gt;</a></li>
+                    <li><a href="#tu_01_01_08_99">&lt;sub&gt;</a></li>
+                    <li><a href="#tu_01_01_08_100">&lt;summary&gt;</a></li>
+                    <li><a href="#tu_01_01_08_101">&lt;sup&gt;</a></li>
+                    <li><a href="#tu_01_01_08_102">&lt;svg&gt;</a></li>    
+                    <li><a href="#tu_01_01_08_103">&lt;table&gt;</a></li> 
+                    <li><a href="#tu_01_01_08_104">&lt;tbody&gt;</a></li> 
+                    <li><a href="#tu_01_01_08_105">&lt;td&gt;</a></li> 
+                    <li><a href="#tu_01_01_08_106">&lt;template&gt;</a></li> 
+                    <li><a href="#tu_01_01_08_107">&lt;textarea&gt;</a></li> 
+                    <li><a href="#tu_01_01_08_108">&lt;tfoot&gt;</a></li> 
+                    <li><a href="#tu_01_01_08_109">&lt;th&gt;</a></li> 
+                    <li><a href="#tu_01_01_08_110">&lt;thead&gt;</a></li> 
+                    <li><a href="#tu_01_01_08_111">&lt;time&gt;</a></li> 
+                    <li><a href="#tu_01_01_08_112">&lt;title&gt;</a></li> 
+                    <li><a href="#tu_01_01_08_113">&lt;tr&gt;</a></li> 
+                    <li><a href="#tu_01_01_08_114">&lt;track&gt;</a></li> 
+                    <li><a href="#tu_01_01_08_115">&lt;tt&gt;</a></li> 
+                    <li><a href="#tu_01_01_08_116">&lt;u&gt;</a></li> 
+                    <li><a href="#tu_01_01_08_117">&lt;ul&gt;</a></li> 
+                    <li><a href="#tu_01_01_08_118">&lt;var&gt;</a></li> 
+                    <li><a href="#tu_01_01_08_119">&lt;video&gt;</a></li> 
+                    <li><a href="#tu_01_01_08_120">&lt;wbr&gt;</a></li>                              
+                </ul>    
+              </li>  
+            </ul>
+          </li>
+          <li><a href="css_tutorial.html#tu_01_02">Learn CSS</a></li>
+          <li><a href="bootstrap_tutorial.html#tu_01_03">Learn Bootstrap</a>
+            <ul>
+              <li><a href="bootstrap_tutorial.html#tu_01_03_01">Bootstrap3</a></li>
+              <li><a href="bootstrap_tutorial.html#tu_01_03_02">Bootstrap4</a></li>
+              <li><a href="bootstrap_tutorial.html#tu_01_03_03">Bootstrap5</a></li>                
+            </ul>
+          </li>
+          <li><a href="#"></a></li>
+        </ul>        
+      </li>      
+      <li><a href="#tu_02">Data Analytics</a>
+        <ul>
+          <li><a href="#tu_02_01">Learn AI</a></li>
+          <li><a href="#tu_02_02"></a></li>
+          <li><a href="#tu_02_03"></a></li>
+          <li><a href="#tu_02_04"></a></li>
+          <li><a href="#tu_02_05"></a></li>
+          <li><a href="#tu_02_06"></a></li>
+          <li><a href="#tu_02_07"></a></li>
+          <li><a href="#tu_02_08"></a></li>
+          <li><a href="#tu_02_09"></a></li>
+          <li><a href="#tu_02_10"></a></li>
+          <li><a href="#tu_02_11"></a></li>
+          <li><a href="#tu_02_12"></a></li>
+          <li><a href="#tu_02_13"></a></li>
+          <li><a href="#tu_02_14"></a></li>
+          <li><a href="#tu_02_15"></a></li>
+        </ul>      
+      </li>
+      <li><a href="#tu_03">JavaScript</a>
+        <ul>
+          <li><a href="#tu_03_01">Learn Javascript</a></li>
+          <li><a href="#tu_03_02">Learn React</a></li>
+          <li><a href="#tu_03_03">Learn jQuery</a></li>
+          <li><a href="#tu_03_04">Learn Vue</a></li>
+          <li><a href="#tu_03_05">Learn AngularJS</a></li>
+          <li><a href="#tu_03_06">Learn JSON</a></li>
+          <li><a href="#tu_03_07">Learn AJAX</a></li>
+          <li><a href="#tu_03_08">Learn AppML</a></li>
+          <li><a href="#tu_03_09">Learn W#.JS</a></li>
+        </ul>      
+      </li>
+      <li><a href="#tu_04">Web Building</a>
+        <ul>
+          <li><a href="#"></a></li>
+          <li><a href="#"></a></li>
+          <li><a href="#"></a></li>
+        </ul>      
+      </li>
+      <li><a href="#tu_05">Backend</a>
+        <ul>
+          <li><a href="#"></a></li>
+          <li><a href="#"></a></li>
+          <li><a href="#"></a></li>
+        </ul>      
+      </li>
+      <li><a href="#"></a>
+        <!-- First Tier Drop Down -->
+        <ul>
+          <li><a href="#"></a></li>
+          <li><a href="#"></a></li>
+          <li><a href="#"></a>
+          	<!-- Second Tier Drop Down -->
+            <ul>
+              <li><a href="#"></a></li>
+              <li><a href="#"></a></li>
+              <li><a href="#"></a>
+                <!-- Third Tier Drop Down -->
+                <ul>
+                  <li><a href="#"></a></li>
+                  <li><a href="#"></a></li>
+                  <li><a href="#"></a>
+				    			  <!-- Fourth Tier Drop Down -->
+						    	  <ul>
+                      <li><a href="#"></a></li>
+                      <li><a href="#"></a></li>
+                      <li><a href="#"></a>
+							          <!-- Fifth Tier Drop Down -->
+                        <ul>
+                          <li><a href="#"></a></li>
+                          <li><a href="#"></a></li>
+                          <li><a href="#"></a></li>
+                        </ul>
+							        </li>
+                    </ul>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+      <li><a href="#"></a></li>
+      <li><a href="#"></a></li>
+      <li><a href="#"></a></li>
+      <li><a href="#janas_here">Janas</a></li>	    
+    </ul>
+  </nav>
+  <nav id="nav_e" style="display:none">
+    <ul>
+      <li><a href="#we_01">Exercises</a></li>
+      <li><a href="#"></a></li>
+      <li><a href="#"></a></li>
+      <li><a href="#"></a></li>
+      <li style="float:right"><a href="#janas_here">janas_here</a></li>
+    </ul>
+  </nav>
+  <nav id="nav_c" style="display:none">
+    <ul>
+      <li><a href="#wc_01">Certificates</a></li>
+      <li><a href="#"></a></li>
+      <li><a href="#"></a></li>
+      <li><a href="#"></a></li>
+      <li style="float:right"><a href="#janas_here">janas_here</a></li>
+    </ul>
+  </nav>
+  <nav id="nav_a" style="display:none">
+    <ul>
+      <li><a href="#wa_01">Acronym</a></li>
+      <li><a href="#"></a></li>
+      <li><a href="#"></a></li>
+      <li><a href="#"></a></li>
+      <!--
+      <li style="float:right"><a href="#janas_here">janas_here</a></li>
+      -->
+    </ul>
+  </nav>
+
+  <main>
+    <b class="fs32">Tutorials</b>
+    <div id="tu">
+      <h1>HTML and CSS</h2>
+      <div id="tu_01">
+        <h2>Learn HTML<a href="https://www.w3schools.com/html/default.asp" target="_empty">&#128506;</a></h2>
+        <div id="tu_01_01">        
+          <h3>HTML Tutorial<a href="https://www.w3schools.com/html/default.asp" target="_empty">&#128507;</a></h3>
+          <div id="tu_01_01_01">
+            <h4>HTML HOME<a href="https://www.w3schools.com/html/default.asp" target="_empty">&#128511;</a></h4>
+            <div id="tu_01_01_01_01">
+              <b class="fs20">HTML Tutorial</b><br>
+                <b class="fs18">Easy Learning with HTML "Try it Yourself"</b><br>
+                <b class="fs18">HTML Examples</b><br>
+                <b class="fs18">HTML Exercises</b><br>
+                <b class="fs18">HTML Quiz Test</b><br>
+                <b class="fs18">My Learning</b><br>
+                <b class="fs18">HTML References</b><br>
+            </div>    
+            <h4>HTML Introduction<a href="https://www.w3schools.com/html/html_intro.asp" target="_empty">&#128511;</a></h4>   
+            <div id="tu_01_01_01_02">
+              <b class="fs20">HTML Introduction</b><br> 
+                <b class="fs18">A Simple HTML Document</b><br>
+                  <b class="fs16">Example Explained</b><br>  
+                <b class="fs18">What is an HTML Element?</b><br>  
+                <b class="fs18">Web Browsers</b><br>
+                <b class="fs18">HTML Page Structure</b><br>
+                <b class="fs18">HTML History</b><br>
+          </div>
+          <h4>HTML Editors<a href="https://www.w3schools.com/html/html_editors.asp" target="_empty">&#128511;</a></h4>    
+          <div id="tu_01_01_01_03">
+            <b class="fs20">HTML Editors</b><br>
+              <b class="fs18">Learn HTML Using Notepad or TextEdit</b><br>
+              <b class="fs18">Step 1: Open Notepad (PC)</b><br>
+              <b class="fs18">Step 1: Open TextEdit (Mac)</b><br>
+              <b class="fs18">Step 2: Write Some HTML</b><br>
+              <b class="fs18">Step 3: Save the HTML Page</b><br>
+              <b class="fs18">Step 4: View the HTML Page in Your Browser</b><br>
+              <b class="fs18">W3Schools Online Editor - "Try it Yourself"</b><br>
+              <b class="fs18">W3Schools Spaces</b><br>
+              <a href="https://www.w3schools.com/spaces/index.php" target="_empty">W3Schools Space</a><br>
+          </div>
+          <h4>HTML Basic<a href="https://www.w3schools.com/html/html_basic.asp" target="_empty">&#128511;</a></h4>
+          <div id="tu_01_01_01_04">
+            <b class="fs20">HTML Basic Examples</b><br>       
+            <b class="fs18">HTML Documents</b><br>   
+            <b class="fs18">The &lt;!DOCTYPE&gt; Declaration</b><br>
+            <b class="fs18">HTML Headings</b><br>
+            <b class="fs18">HTML Paragraphs</b><br>
+            <b class="fs18">HTML Links</b><br>
+            <b class="fs18">HTML Images</b><br>
+            <b class="fs18">How to View HTML Source</b><br>
+              <b class="fs16">View HTML Source Code:</b><br>
+              <b class="fs16">Inspect an HTML Element:</b><br>
+            <b class="fs18">HTML Exercises</b><br>
+          </div>
+          <h4>HTML Elements<a href="https://www.w3schools.com/html/html_elements.asp" target="_empty">&#128511;</a></h4>
+          <div id="tu_01_01_01_05">
+            <b class="fs20">HTML Elements</b><br>       
+              <b class="fs18">HTML Elements</b><br>
+              <b class="fs18">Nested HTML Elements</b><br>     
+                <b class="fs16">Example Explained</b><br>
+              <b class="fs18">Never Skip the End Tag</b><br>
+              <b class="fs18">Empty HTML Elements</b><br>
+              <b class="fs18">HTML is Not Case Sensitive</b><br>
+              <b class="fs18">HTML Exercises</b><br>
+              <b class="fs18">HTML Tag Reference</b><br>
+          </div>
+          <h4>HTML Attributes<a href="https://www.w3schools.com/html/html_attributes.asp" target="_empty">&#128511;</a></h4>
+          <div id="tu_01_01_01_06">
+            <b class="fs20">HTML Attributes</b><br>       
+              <b class="fs18">HTML Attributes</b><br>
+              <b class="fs18">The href Attribute</b><br>
+              <b class="fs18">The src Attribute</b><br>  
+              <b class="fs18">The width and height Attributes</b><br>  
+              <b class="fs18">The alt Attribute</b><br>  
+              <b class="fs18">The style Attribute</b><br>  
+              <b class="fs18">The lang Attribute</b><br>
+              <b class="fs18">The title Attribute</b><br>  
+              <b class="fs18">We Suggest: Always Use Lowercase Attributes</b><br>  
+              <b class="fs18">We Suggest: Always Quote Attribute Values</b><br>  
+              <b class="fs18">Single or Double Quotes?</b><br>  
+              <b class="fs18">Chapter Summary</b><br>       
+              <b class="fs18">HTML Exercises</b><br> 
+              <b class="fs18">HTML Attribute Reference</b><br> 
+          </div>    
+          <h4>HTML Headings<a href="https://www.w3schools.com/html/html_headings.asp" target="_empty">&#128511;</a></h4>
+          <div id="tu_01_01_01_07">
+            <b class="fs20">HTML Headings</b><br>           
+              <b class="fs18">HTML Headings</b><br> 
+              <b class="fs18">Headings Are Important</b><br>
+              <b class="fs18">Bigger Headings</b><br> 
+              <b class="fs18">HTML Exercises</b><br> 
+              <b class="fs18">HTML Tag Reference</b><br> 
+          </div>
+          <h4>HTML Paragraphs<a href="https://www.w3schools.com/html/html_paragraphs.asp" target="_empty">&#128511;</a></h4>
+          <div id="tu_01_01_01_08">
+            <b class="fs20">HTML Paragraphs</b><br>       
+              <b class="fs18">HTML Paragraphs</b><br>    
+              <b class="fs18">HTML Display</b><br> 
+              <b class="fs18">HTML Horizontal Rules</b><br> 
+              <b class="fs18">HTML Line Breaks</b><br> 
+              <b class="fs18">The Poem Problem</b><br> 
+              <b class="fs18">Solution - The HTML &lt;pre&gt; Element</b><br> 
+              <b class="fs18">HTML Exercises</b><br> 
+              <b class="fs18">HTML Tag Reference</b><br> 
+          </div>
+          <h4>HTML Styles<a href="https://www.w3schools.com/html/html_styles.asp" target="_empty">&#128511;</a></h4>
+          <div id="tu_01_01_01_09">
+            <b class="fs20">HTML Styles</b><br>       
+              <b class="fs18">The HTML Style Attribute</b><br>     
+              <b class="fs18">Background Color</b><br>
+              <b class="fs18">Text Color</b><br>
+              <b class="fs18">Fonts</b><br>
+              <b class="fs18">Text Size</b><br>
+              <b class="fs18">Text Alignment</b><br>
+              <b class="fs18">Chapter Summary</b><br> 
+              <b class="fs18">HTML Exercises</b><br> 
+          </div>
+          <h4>HTML Text Formatting<a href="https://www.w3schools.com/html/html_formatting.asp" target="_empty">&#128511;</a></h4>
+          <div id="tu_01_01_01_10">
+            <b class="fs20">HTML Text Formatting</b><br>       
+              <b class="fs18">HTML Formatting Elements</b><br>     
+              <b class="fs18">HTML &lt;b&gt; and &lt;strong&gt; Elements</b><br> 
+              <b class="fs18">HTML &lt;i&gt; and &lt;em&gt; Elements</b><br> 
+              <b class="fs18">HTML &lt;small&gt; Element</b><br> 
+              <b class="fs18">HTML &lt;mark&gt; Element</b><br> 
+              <b class="fs18">HTML &lt;del&gt; Element</b><br> 
+              <b class="fs18">HTML &lt;ins&gt; Element</b><br> 
+              <b class="fs18">HTML &lt;sub&gt; Element</b><br>
+              <b class="fs18">HTML &lt;sup&gt; Element</b><br>  
+              <b class="fs18">HTML Exercises</b><br> 
+              <b class="fs18">HTML Text Formatting Elements</b><br> 
+          </div>
+          <h4>HTML Quotation and Citation Elements<a href="https://www.w3schools.com/html/html_quotation_elements.asp" target="_empty">&#128511;</a></h4>
+          <div id="tu_01_01_01_11">
+            <b class="fs20">HTML Quotation and Citation Elements</b><br>       
+              <b class="fs18">HTML &lt;blockquote&gt; for Quotations</b><br>
+              <b class="fs18">HTML &lt;q&gt; for Short Quotations</b><br>   
+              <b class="fs18">HTML &lt;abbr&gt; for Abbreviations</b><br> 
+              <b class="fs18">HTML &lt;address&gt; for Contact Information</b><br> 
+              <b class="fs18">HTML &lt;cite&gt; for Work Title</b><br> 
+              <b class="fs18">HTML &lt;bdo&gt; for Bi-Directional Override</b><br> 
+              <b class="fs18">HTML Exercises</b><br> 
+              <b class="fs18">HTML Quotation and Citation Elements</b><br> 
+          </div>
+          <h4>HTML Comments<a href="https://www.w3schools.com/html/html_comments.asp" target="_empty">&#128511;</a></h4>
+          <div id="tu_01_01_01_12">
+            <b class="fs20">HTML Comments</b><br>       
+              <b class="fs18">HTML Comment Tag</b><br>
+              <b class="fs18">Add Comments</b><br>
+              <b class="fs18">Hide Content</b><br> 
+              <b class="fs18">Hide Inline Content</b><br> 
+              <b class="fs18">HTML Exercises</b><br>
+          </div>
+          <h4>HTML Colors<a href="https://www.w3schools.com/html/html_colors.asp" target="_empty">&#128511;</a></h4>
+          <div id="tu_01_01_01_13">
+            <h5>Colors<a href="https://www.w3schools.com/html/html_colors.asp" target="_empty">&#128512;</a></h5>
+            <div id="tu_01_01_01_13_01">
+              <b class="fs20">HTML Colors</b><br>       
+                <b class="fs18">Color Names</b><br>
+                <b class="fs18">Background Color</b><br>     
+                <b class="fs18">Text Color</b><br> 
+                <b class="fs18">Border Color</b><br>  
+                <b class="fs18">Color Values</b><br> 
+                <b class="fs18">HTML Exercises</b><br> 
+            </div>
+            <h5>RGB<a href="https://www.w3schools.com/html/html_colors_rgb.asp" target="_empty">&#128512;</a></h5>
+            <div id="tu_01_01_01_13_02">
+              <b class="fs20">HTML RGB and RGBA Colors</b><br>       
+                <b class="fs18">RGB Color Values</b><br>
+                <b class="fs18">Shades of Gray</b><br>  
+                <b class="fs18">RGBA Color Values</b><br> 
+                <b class="fs18">HTML Exercises</b><br> 
+            </div>
+            <h5>HEX<a href="https://www.w3schools.com/html/html_colors_hex.asp" target="_empty">&#128512;</a></h5>
+            <div id="tu_01_01_01_13_03">
+              <b class="fs20">HTML HEX Colors</b><br>       
+                <b class="fs18">HEX Color Values</b><br>      
+                <b class="fs18">Shades of Gray</b><br> 
+                <b class="fs18">HTML Exercises</b><br> 
+            </div>
+            <h5>HSL<a href="https://www.w3schools.com/html/html_colors_hsl.asp" target="_empty">&#128512;</a></h5>
+            <div id="tu_01_01_01_13_04">
+              <b class="fs20">HTML HSL and HSLA Colors</b><br>       
+                <b class="fs18">HSL Color Values</b><br>      
+                  <b class="fs16">Saturation</b><br> 
+                  <b class="fs16">Lightness</b><br> 
+              <b class="fs18">Shades of Gray</b><br> 
+              <b class="fs18">HSLA Color Values</b><br> 
+              <b class="fs18">HTML Exercises</b><br>
+            </div>  
+          </div>
+          <h4>HTML CSS<a href="https://www.w3schools.com/html/html_css.asp" target="_empty">&#128511;</a></h4>
+          <div id="tu_01_01_01_14">
+            <b class="fs20">HTML Styles - CSS</b><br>       
+              <b class="fs18">What is CSS?</b><br>
+              <b class="fs18">Using CSS</b><br>
+              <b class="fs18">Inline CSS</b><br>
+              <b class="fs18">Internal CSS</b><br>
+              <b class="fs18">External CSS</b><br>
+              <b class="fs18">CSS Colors, Fonts and Sizes</b><br>
+              <b class="fs18">CSS Border</b><br>
+              <b class="fs18">CSS Padding</b><br>
+              <b class="fs18">CSS Margin</b><br>
+              <b class="fs18">Link to External CSS</b><br>
+              <b class="fs18">Chapter Summary</b><br>
+              <b class="fs18">HTML Exercises</b><br>
+              <b class="fs18">HTML Style Tags</b><br>
+          </div>
+          <h4>HTML Links<a href="https://www.w3schools.com/html/html_links.asp" target="_empty">&#128511;</a></h4>
+          <div id="tu_01_01_01_15">
+            <h5>Links<a href="https://www.w3schools.com/html/html_links.asp" target="_empty">&#128512;</a></h5>
+            <div id="tu_01_01_01_15_01">
+              <b class="fs20">HTML Links</b><br>            
+                <b class="fs18">HTML Links - Hyperlinks</b><br>
+                <b class="fs18">HTML Links - Syntax</b><br>
+                <b class="fs18">HTML Links - The target Attribute</b><br>
+                <b class="fs18">Absolute URLs vs. Relative URLs</b><br>
+                <b class="fs18">HTML Links - Use an Image as a Link</b><br>
+                <b class="fs18">Link to an Email Address</b><br>
+                <b class="fs18">Button as a Link</b><br>
+                <b class="fs18">Link Titles</b><br>
+                <b class="fs18">More on Absolute URLs and Relative URLs</b><br>
+                <b class="fs18">Chapter Summary</b><br>
+                <b class="fs18">HTML Link Tags</b><br>
+                <b class="fs18">More on Absolute URLs and Relative URLs</b><br>
+                <b class="fs18">Chapter Summary</b><br>
+                <b class="fs18">HTML Link Tags</b><br>
+                <b class="fs18">HTML Exercises</b><br>              
+            </div>   
+            <h5>Link Colors<a href="https://www.w3schools.com/html/html_links_colors.asp" target="_empty">&#128512;</a></h5>
+            <div id="tu_01_01_01_15_02">
+              <b class="fs20">HTML Links - Different Colors</b><br>            
+                <b class="fs18">HTML Link Colors</b><br>
+                <b class="fs18">Link Buttons</b><br>
+                <b class="fs18">HTML Link Tags</b><br>
+                <b class="fs18">HTML Exercises</b><br>              
+            </div>
+            <h5>Link Bookmarks<a href="https://www.w3schools.com/html/html_links_bookmarks.asp" target="_empty">&#128512;</a></h5>
+            <div id="tu_01_01_01_15_03">
+              <b class="fs20">HTML Links - Create Bookmarks</b><br>            
+                <b class="fs18">Create a Bookmark in HTML</b><br>
+                <b class="fs18">Example</b><br>
+                <b class="fs18">HTML Exercises</b><br>
+                <b class="fs18">HTML Link Tags</b><br>              
+            </div>
+          </div>
+          <h4>HTML Images<a href="https://www.w3schools.com/html/html_images.asp" target="_empty">&#128511;</a></h4>
+        <div id="tu_01_01_01_16">
+          <h5>Images<a href="https://www.w3schools.com/html/html_images.asp" target="_empty">&#128512;</a></h5>
+          <div id="tu_01_01_01_16_01">
+            <b class="fs20">HTML Images</b><br> 
+              <b class="fs18">HTML Images Syntax</b><br>
+              <b class="fs18">The src Attribute</b><br>
+              <b class="fs18">The alt Attribute</b><br>
+              <b class="fs18">Image Size - Width and Height</b><br>
+              <b class="fs18">Width and Height, or Style?</b><br>
+              <b class="fs18">Images in Another Folder</b><br>
+              <b class="fs18">Images on Another Server/Website</b><br>
+              <b class="fs18">Animated Images</b><br>
+              <b class="fs18">Image as a Link</b><br>
+              <b class="fs18">Image Floating</b><br>
+              <b class="fs18">Common Image Formats</b><br>
+              <b class="fs18">Chapter Summary</b><br>
+              <b class="fs18">HTML Exercises</b><br>
+              <b class="fs18">HTML Image Tags</b><br>              
+          </div>   
+          <h5>Image Map<a href="https://www.w3schools.com/html/html_images_imagemap.asp" target="_empty">&#128512;</a></h5>
+          <div id="tu_01_01_01_16_02">
+            <b class="fs20">HTML Image Maps</b><br> 
+              <b class="fs18">Image Maps</b><br>
+              <b class="fs18">The Image</b><br>
+              <b class="fs18">Create Image Map</b><br>
+              <b class="fs18">The Areas</b><br>
+                <b class="fs16">Shape</b><br>
+                <b class="fs16">Shape="rect"</b><br>
+                <b class="fs16">Shape="circle"</b><br>
+                <b class="fs16">Shape="poly"</b><br>
+             <b class="fs18">Image Map and JavaScript</b><br>   
+             <b class="fs18">Chapter Summary</b><br>
+             <b class="fs18">HTML Exercises</b><br>
+             <b class="fs18">HTML Image Tags</b><br>
+          </div>
+          <h5>Background Images<a href="https://www.w3schools.com/html/html_images_background.asp" target="_empty">&#128512;</a></h5>
+          <div id="tu_01_01_01_16_03">
+            <b class="fs20">HTML Background Images</b><br> 
+              <b class="fs18">Background Image on a HTML element</b><br>
+              <b class="fs18">Background Image on a Page</b><br>
+              <b class="fs18">Background Repeat</b><br>
+              <b class="fs18">Background Cover</b><br>                
+              <b class="fs18">Background Stretch</b><br>
+              <b class="fs18">HTML Exercises</b><br>
+              <b class="fs18">Learn More CSS</b><br>                
+          </div>
+          <h5>The picture Element<a href="https://www.w3schools.com/html/html_images_picture.asp" target="_empty">&#128512;</a></h5>
+          <div id="tu_01_01_01_16_04">
+            <b class="fs20">HTML &lt;picture&gt; Element</b><br> 
+              <b class="fs18">The HTML &lt;picture&gt; Element</b><br>
+              <b class="fs18">When to use the Picture Element</b><br>
+                <b class="fs16">1. Bandwidth</b><br>
+                <b class="fs16">2. Format Support</b><br>
+              <b class="fs18">HTML Image Tags</b><br>              
+          </div>
+        </div>
+          <h4>HTML Favicon<a href="https://www.w3schools.com/html/html_favicon.asp" target="_empty">&#128511;</a></h4>
+          <div id="tu_01_01_01_17">          
+            <b class="fs20">HTML Favicon</b><br>       
+              <b class="fs18">How To Add a Favicon in HTML</b><br>
+              <a href="https://www.favicon.cc/" target="_blank">favicon.cc</a><br>
+              <b class="fs18">Favicon File Format Support</b><br>
+              <b class="fs18">Chapter Summary</b><br>
+              <b class="fs18">HTML Exercises</b><br>
+              <b class="fs18">HTML Link Tag</b><br>
+          </div>
+          <h4>HTML Page Title<a href="https://www.w3schools.com/html/html_page_title.asp" target="_empty">&#128511;</a></h4>
+          <div id="tu_01_01_01_18">
+            <b class="fs20">HTML Page Title</b><br>                 
+              <b class="fs18">HTML Title Tag</b><br>
+          </div>
+          <h4>HTML Tables<a href="https://www.w3schools.com/html/html_tables.asp" target="_empty">&#128511;</a></h4>
+          <div id="tu_01_01_01_19">
+          <h5>HTML Tables<a href="https://www.w3schools.com/html/html_tables.asp" target="_empty">&#128512;</a></h5>
+          <div id="tu_01_01_01_19_01">
+            <b class="fs20">HTML Tables</b><br>       
+              <b class="fs18">Define an HTML Table</b><br>
+              <b class="fs18">Table Cells</b><br>
+              <b class="fs18">Table Rows</b><br>
+              <b class="fs18">Table Headers</b><br>
+              <b class="fs18">HTML Exercises</b><br>
+              <b class="fs18">HTML Table Tags</b><br>              
+          </div>
+          <h5>Table Borders<a href="https://www.w3schools.com/html/html_table_borders.asp" target="_empty">&#128512;</a></h5>
+          <div id="tu_01_01_01_19_02">
+            <b class="fs20">HTML Table Borders</b><br>       
+              <b class="fs18">How To Add a Border</b><br>
+              <b class="fs18">Collapsed Table Borders</b><br>
+              <b class="fs18">Style Table Borders</b><br>
+              <b class="fs18">Round Table Borders</b><br>
+              <b class="fs18">Dotted Table Borders</b><br>
+              <b class="fs18">Border Color</b><br>
+              <b class="fs18">HTML Exercises</b><br>              
+          </div>
+          <h5>Table Sizes<a href="https://www.w3schools.com/html/html_table_sizes.asp" target="_empty">&#128512;</a></h5>
+          <div id="tu_01_01_01_19_03">
+            <b class="fs20">HTML Table Sizes</b><br>       
+              <b class="fs18">HTML Table Width</b><br>
+              <b class="fs18">HTML Table Column Width</b><br>
+              <b class="fs18">HTML Table Row Height</b><br>
+              <b class="fs18">HTML Exercises</b><br>              
+          </div>
+          <h5>Table Headers<a href="https://www.w3schools.com/html/html_table_headers.asp" target="_empty">&#128512;</a></h5>
+          <div id="tu_01_01_01_19_04">
+            <b class="fs20">HTML Table Headers</b><br>       
+              <b class="fs18">HTML Table Headers</b><br>
+              <b class="fs18">Vertical Table Headers</b><br>
+              <b class="fs18">Align Table Headers</b><br>
+              <b class="fs18">Header for Multiple Columns</b><br>
+              <b class="fs18">Table Caption</b><br>
+              <b class="fs18">HTML Exercises</b><br>              
+          </div>
+          <h5>Padding & Spacing<a href="https://www.w3schools.com/html/html_table_padding_spacing.asp" target="_empty">&#128512;</a></h5>
+          <div id="tu_01_01_01_19_05">
+            <b class="fs20">HTML Table Padding & Spacing</b><br>    
+              <b class="fs18">HTML Table - Cell Padding</b><br>
+              <b class="fs18">HTML Table - Cell Spacing</b><br>
+              <b class="fs18">HTML Exercises</b><br>              
+          </div>
+          <h5>Colspan & Rowspan<a href="https://www.w3schools.com/html/html_table_colspan_rowspan.asp" target="_empty">&#128512;</a></h5>
+          <div id="tu_01_01_01_19_06">
+            <b class="fs20">HTML Table Colspan & Rowspan</b><br>         
+              <b class="fs18">HTML Table - Colspan</b><br>
+              <b class="fs18">HTML Table - Rowspan</b><br>
+              <b class="fs18">HTML Exercises</b><br>              
+          </div>
+          <h5>Table Styling<a href="https://www.w3schools.com/html/html_table_styling.asp" target="_empty">&#128512;</a></h5>
+          <div id="tu_01_01_01_19_07">
+            <b class="fs20">HTML Table Styling</b><br>       
+              <b class="fs18">HTML Table - Zebra Stripes</b><br>
+              <b class="fs18">HTML Table - Vertical Zebra Stripes</b><br>
+              <b class="fs18">Combine Vertical and Horizontal Zebra Stripes</b><br>
+              <b class="fs18">Horizontal Dividers</b><br>
+              <b class="fs18">Hoverable Table</b><br>
+          </div>
+          <h5>Table Colgroup<a href="https://www.w3schools.com/html/html_table_colgroup.asp" target="_empty">&#128512;</a></h5>
+          <div id="tu_01_01_01_19_08">
+            <b class="fs20">HTML Table Colgroup</b><br>       
+              <b class="fs18">HTML Table Colgroup</b><br>
+              <b class="fs18">Legal CSS Properties</b><br>
+              <b class="fs18">Multiple Col Elements</b><br>
+              <b class="fs18">Empty Colgroups</b><br>
+              <b class="fs18">Hide Columns</b><br>              
+          </div>  
+          </div>
+          <h4>HTML Lists<a href="https://www.w3schools.com/html/html_lists.asp" target="_empty">&#128511;</a></h4>
+          <div id="tu_01_01_01_20">
+          <h5>Lists<a href="https://www.w3schools.com/html/html_lists.asp" target="_empty">&#128512;</a></h5>
+          <div id="tu_01_01_01_20_01">
+            <b class="fs20">HTML Lists</b><br>       
+              <b class="fs18">Unordered HTML List</b><br>
+              <b class="fs18">Ordered HTML List</b><br>
+              <b class="fs18">HTML Description Lists</b><br>
+              <b class="fs18">HTML Exercises</b><br>
+              <b class="fs18">HTML List Tags</b><br>              
+          </div>
+          <h5>Unordered Lists<a href="https://www.w3schools.com/html/html_lists_unordered.asp" target="_empty">&#128512;</a></h5>
+          <div id="tu_01_01_01_20_02">
+            <b class="fs20">HTML Unordered Lists</b><br>       
+              <b class="fs18">Unordered HTML List</b><br>
+              <b class="fs18">Unordered HTML List - Choose List Item Marker</b><br>
+              <b class="fs18">Nested HTML Lists</b><br>
+              <b class="fs18">Horizontal List with CSS</b><br>
+              <b class="fs18">Chapter Summary</b><br>
+              <b class="fs18">HTML Exercises</b><br>
+              <b class="fs18">HTML List Tags</b><br>              
+          </div> 
+              <h5>Ordered Lists<a href="https://www.w3schools.com/html/html_lists_ordered.asp" target="_empty">&#128512;</a></h5>
+              <div id="tu_01_01_01_20_03">
+                <b class="fs20">HTML Ordered Lists</b><br>       
+                  <b class="fs18">Ordered HTML Lists</b><br>
+                  <b class="fs18">Ordered HTML List - The Type Attribute</b><br>
+                  <b class="fs18">Control List Counting</b><br>
+                  <b class="fs18">Nested HTML Lists</b><br>
+                  <b class="fs18">Chapter Summary</b><br>
+                  <b class="fs18">HTML Exercises</b><br>
+                  <b class="fs18">HTML List Tags</b><br>              
+              </div> 
+              <h5>Other Lists<a href="https://www.w3schools.com/html/html_lists_other.asp" target="_empty">&#128512;</a></h5>
+              <div id="tu_01_01_01_20_04">
+                <b class="fs20">HTML Other Lists</b><br>       
+                  <b class="fs18">HTML Description Lists</b><br>
+                  <b class="fs18">Chapter Summary</b><br>
+                  <b class="fs18">HTML Exercises</b><br>
+                  <b class="fs18">HTML List Tags</b><br>              
+              </div> 
+            </div>
+          <h4>HTML Block & Inline<a href="https://www.w3schools.com/html/html_blocks.asp" target="_empty">&#128511;</a></h4>
+          <div id="tu_01_01_01_21">
+              <b class="fs20">HTML Block and Inline Elements</b><br>       
+                <b class="fs18">Block-level Elements</b><br>  
+                <b class="fs18">Inline Elements</b><br>
+                <b class="fs18">The &lt;div&gt; Element</b><br>
+                <b class="fs18">The &lt;span&gt; Element</b><br>
+                <b class="fs18">Chapter Summary</b><br>
+                <b class="fs18">HTML Exercises</b><br>
+                <b class="fs18">HTML Tags</b><br>
+          </div>
+          <h4>HTML Div<a href="https://www.w3schools.com/html/html_div.asp" target="_empty">&#128511;</a></h4>
+          <div id="tu_01_01_01_22">
+            <b class="fs20">HTML Div Element</b><br>       
+              <b class="fs18">The &lt;div&gt; Element</b><br>    
+              <b class="fs18">&lt;div&gt; as a container</b><br>
+              <b class="fs18">Center align a &lt;div&gt; element</b><br>
+              <b class="fs18">Multiple &lt;div&gt; elements</b><br>
+              <b class="fs18">Aligning &lt;div&gt; elements side by side</b><br>
+              <b class="fs18">Float</b><br>
+              <b class="fs18">Inline-block</b><br>
+              <b class="fs18">Flex</b><br>
+              <b class="fs18">Grid</b><br>
+              <b class="fs18">HTML Tags</b><br>
+          </div>
+            <h4>HTML classes<a href="https://www.w3schools.com/html/html_classes.asp" target="_empty">&#128511;</a></h4>
+            <div id="tu_01_01_01_23">
+            <b class="fs20">HTML class Attribute</b><br>           
+              <b class="fs18">Using The class Attribute</b><br>
+              <b class="fs18">The Syntax For Class</b><br>
+              <b class="fs18">Multiple Classes</b><br>
+              <b class="fs18">Different Elements Can Share Same Class</b><br>
+              <b class="fs18">Use of The class Attribute in JavaScript</b><br>
+              <b class="fs18">Chapter Summary</b><br>
+              <b class="fs18">HTML Exercises</b><br>            
+            </div>
+            <h4>HTML Id<a href="https://www.w3schools.com/html/html_id.asp" target="_empty">&#128511;</a></h4>
+            <div id="tu_01_01_01_24">
+            <b class="fs20">HTML id Attribute</b><br>       
+              <b class="fs18">Using The id Attribute</b><br>
+              <b class="fs18">Difference Between Class and ID</b><br>
+              <b class="fs18">HTML Bookmarks with ID and Links</b><br>
+              <b class="fs18">Example</b><br>
+              <b class="fs18">Using The id Attribute in JavaScript</b><br>
+              <b class="fs18">Chapter Summary</b><br>
+              <b class="fs18">HTML Exercises</b><br>
+            </div>
+            <h4>HTML Iframes<a href="https://www.w3schools.com/html/html_iframe.asp" target="_empty">&#128511;</a></h4>
+            <div id="tu_01_01_01_25">
+            <b class="fs20">HTML Iframes</b><br>       
+              <b class="fs18">HTML Iframe Syntax</b><br>
+              <b class="fs18">Iframe - Set Height and Width</b><br>    
+              <b class="fs18">Iframe - Remove the Border</b><br>
+              <b class="fs18">Iframe - Target for a Link</b><br>
+              <b class="fs18">Chapter Summary</b><br>
+              <b class="fs18">HTML Exercises</b><br>
+              <b class="fs18">HTML iframe Tag</b><br>
+            </div>
+            <h4>HTML JavaScript<a href="https://www.w3schools.com/html/html_scripts.asp" target="_empty">&#128511;</a></h4>
+            <div id="tu_01_01_01_26">
+            <b class="fs20">HTML JavaScript</b><br>       
+              <b class="fs18">The HTML &lt;script&gt; Tag</b><br>
+              <b class="fs18">A Taste of JavaScript</b><br>
+              <b class="fs18">The HTML &lt;noscript&gt; Tag</b><br>
+              <b class="fs18">HTML Exercises</b><br>    
+              <b class="fs18">HTML Script Tags</b><br>
+            </div>
+            <h4>HTML File Paths<a href="https://www.w3schools.com/html/html_filepaths.asp" target="_empty">&#128511;</a></h4>
+            <div id="tu_01_01_01_27">
+            <b class="fs20">HTML File Paths</b><br>       
+              <b class="fs18">File Path Examples</b><br>
+              <b class="fs18">HTML File Paths</b><br>
+              <b class="fs18">Absolute File Paths</b><br>
+              <b class="fs18">Relative File Paths</b><br>
+              <b class="fs18">Best Practice</b><br>              
+            </div>
+            <h4>HTML Head<a href="https://www.w3schools.com/html/html_head.asp" target="_empty">&#128511;</a></h4>
+            <div id="tu_01_01_01_28">
+            <b class="fs20">HTML - The Head Element</b><br>       
+              <b class="fs18">The HTML &lt;head&gt; Element</b><br>
+              <b class="fs18">The HTML &lt;head&gt; Element</b><br>
+              <b class="fs18">The HTML &lt;title&gt; Element</b><br>
+              <b class="fs18">The HTML &lt;style&gt; Element</b><br>
+              <b class="fs18">The HTML &lt;link&gt; Element</b><br>
+              <b class="fs18">The HTML &lt;meta&gt; Element</b><br>
+              <b class="fs18">Examples</b><br>    
+              <b class="fs18">Setting The Viewport</b><br>
+              <b class="fs18">The HTML &lt;script&gt; Element</b><br>
+              <b class="fs18">The HTML &lt;base&gt; Element</b><br>
+              <b class="fs18">Chapter Summary</b><br>
+              <b class="fs18">HTML head Elements</b><br>                
+            </div>
+            <h4>HTML Layout<a href="https://www.w3schools.com/html/html_layout.asp" target="_empty">&#128511;</a></h4>
+            <div id="tu_01_01_01_29">
+            <b class="fs20">HTML Layout Elements and Techniques</b><br>       
+              <b class="fs18">HTML Layout Elements</b><br>
+              <b class="fs18">HTML Layout Techniques</b><br>
+              <b class="fs18">CSS Frameworks</b><br>
+              <b class="fs18">CSS Float Layout</b><br>
+              <b class="fs18">CSS Flexbox Layout</b><br> 
+              <b class="fs18">CSS Grid Layout</b><br>
+            </div>
+            <h4>HTML Responsive<a href="https://www.w3schools.com/html/html_responsive.asp" target="_empty">&#128511;</a></h4>
+            <div id="tu_01_01_01_30">
+            <b class="fs20">HTML Responsive Web Design</b><br>       
+              <b class="fs18">What is Responsive Web Design?</b><br>
+              <b class="fs18">Setting The Viewport</b><br>
+              <b class="fs18">Responsive Images</b><br>
+                <b class="fs16">Using the width Property</b><br>                
+                <b class="fs16">Using the max-width Property</b><br>
+                <b class="fs16">Show Different Images Depending on Browser Width</b><br> 
+              <b class="fs18">Responsive Text Size</b><br> 
+              <b class="fs18">Media Queries</b><br>
+              <b class="fs18">Responsive Web Page - Full Example</b><br>
+              <b class="fs18">Responsive Web Design - Frameworks</b><br> 
+              <b class="fs18">W3.CSS</b><br> 
+              <b class="fs18">Bootstrap</b><br>            
+            </div>
+            <h4>HTML Computercode<a href="https://www.w3schools.com/html/html_computercode_elements.asp" target="_empty">&#128511;</a></h4>
+            <div id="tu_01_01_01_31">
+            <b class="fs20">HTML Computer Code Elements</b><br>       
+              <b class="fs18">HTML &lt;kbd&gt; For Keyboard Input</b><br>
+              <b class="fs18">HTML &lt;samp&gt; For Program Output</b><br>
+              <b class="fs18">HTML &lt;code&gt; For Computer Code</b><br>
+              <b class="fs18">HTML &lt;var&gt; For Variables</b><br>
+              <b class="fs18">Chapter Summary</b><br>
+              <b class="fs18">HTML Exercises</b><br>
+              <b class="fs18">HTML Computer Code Elements</b><br>              
+            </div>
+            <h4>HTML Semantics<a href="https://www.w3schools.com/html/html5_semantic_elements.asp" target="_empty">&#128511;</a></h4>
+            <div id="tu_01_01_01_32">
+            <b class="fs20">HTML Semantic Elements</b><br>       
+              <b class="fs18">What are Semantic Elements?</b><br>
+              <b class="fs18">Semantic Elements in HTML</b><br>
+              <b class="fs18">HTML &lt;section&gt; Element</b><br>
+              <b class="fs18">HTML &lt;article&gt; Element</b><br>
+              <b class="fs18">Nesting &lt;article&gt; in &lt;section&gt; or Vice Versa?</b><br>
+              <b class="fs18">HTML &lt;header&gt; Element</b><br>
+              <b class="fs18">HTML &lt;footer&gt; Element</b><br>
+              <b class="fs18">HTML &lt;nav&gt; Element</b><br>
+              <b class="fs18">HTML &lt;aside&gt; Element</b><br>     
+              <b class="fs18">HTML &lt;figure&gt; and &lt;figcaption&gt; Elements</b><br> 
+              <b class="fs18">Why Semantic Elements?</b><br> 
+              <b class="fs18">Semantic Elements in HTML</b><br>               
+            </div>
+            <h4>HTML Style Guide<a href="https://www.w3schools.com/html/html5_syntax.asp" target="_empty">&#128511;</a></h4>
+            <div id="tu_01_01_01_33">
+            <b class="fs20">HTML Style Guide</b><br>       
+              <b class="fs18">Always Declare Document Type</b><br>
+              <b class="fs18">Use Lowercase Element Names</b><br>
+              <b class="fs18">Close All HTML Elements</b><br>
+              <b class="fs18">Use Lowercase Attribute Names</b><br>
+              <b class="fs18">Always Quote Attribute Values</b><br>
+              <b class="fs18">Always Specify alt, width, and height for Images</b><br>
+              <b class="fs18">Spaces and Equal Signs</b><br>
+              <b class="fs18">Avoid Long Code Lines</b><br>     
+              <b class="fs18">Blank Lines and Indentation</b><br> 
+              <b class="fs18">Never Skip the &lt;title&gt; Element</b><br> 
+              <b class="fs18">Omitting &lt;html&gt; and &lt;body&gt;?</b><br> 
+              <b class="fs18">Omitting &lt;head&gt;?</b><br> 
+              <b class="fs18">Close Empty HTML Elements?</b><br>
+              <b class="fs18">Add the lang Attribute</b><br>
+              <b class="fs18">Meta Data</b><br>
+              <b class="fs18">Setting The Viewport</b><br>
+              <b class="fs18">HTML Comments</b><br>     
+              <b class="fs18">Using Style Sheets</b><br>
+              <b class="fs18">Loading JavaScript in HTML</b><br>     
+              <b class="fs18">Accessing HTML Elements with JavaScript</b><br>
+              <b class="fs18">Use Lower Case File Names</b><br>     
+              <b class="fs18">File Extensions</b><br>
+              <b class="fs18">Differences Between .htm and .html?</b><br>     
+              <b class="fs18">Default Filenames</b><br>
+            </div>
+            <h4>HTML Entities<a href="https://www.w3schools.com/html/html_entities.asp" target="_empty">&#128511;</a></h4>
+            <div id="tu_01_01_01_34">
+            <b class="fs20">HTML Entities</b><br>       
+              <b class="fs18">HTML Character Entities</b><br>
+              <b class="fs18">Non-breaking Space</b><br>
+              <b class="fs18">Some Useful HTML Character Entities</b><br>
+              <b class="fs18">Note</b><br>
+              <b class="fs18">Combining Diacritical Marks</b><br>
+            </div>
+            <h4>HTML Symbols<a href="https://www.w3schools.com/html/html_symbols.asp" target="_empty">&#128511;</a></h4>
+            <div id="tu_01_01_01_35">
+            <b class="fs20">HTML Symbols</b><br>       
+              <b class="fs18">HTML Symbol Entities</b><br>
+              <b class="fs18">Some Mathematical Symbols Supported by HTML</b><br>
+            </div>
+            <h4>HTML Emojis<a href="https://www.w3schools.com/html/html_emojis.asp" target="_empty">&#128511;</a></h4>
+            <div id="tu_01_01_01_36">
+            <b class="fs20">Using Emojis in HTML</b><br>       
+              <b class="fs18">HTML Emojis Examples</b><br>
+              <b class="fs18">What are Emojis?</b><br>
+              <b class="fs18">The HTML charset Attribute</b><br>
+              <b class="fs18">UTF-8 Characters</b><br>
+                <b class="fs16">Example Explained</b><br>
+              <b class="fs18">Emoji Characters</b><br>
+            </div>
+            <h4>HTML Charsets<a href="https://www.w3schools.com/html/html_charset.asp" target="_empty">&#128511;</a></h4>
+            <div id="tu_01_01_01_37">
+              <b class="fs20">HTML Encoding (Character Sets)</b><br>       
+                <b class="fs18">The HTML charset Attribute</b><br>
+                <b class="fs18">The ASCII Character Set</b><br>
+                <b class="fs18">The ANSI Character Set</b><br>
+                <b class="fs18">The ISO-8859-1 Character Set</b><br>
+                <b class="fs18">The UTF-8 Character Set</b><br>
+                <b class="fs18">Differences Between Character Sets</b><br>
+              <table>
+                <thead><tr><th></th><th></th><th></th></tr></thead>
+                <tbody><tr><td></td><td></td><td></td></tr></tbody>
+                <tfoot><tr><td></td><td></td><td></td></tr></tfoot>
+              </table>
+            </div>
+            <h4>HTML URL Encode<a href="https://www.w3schools.com/html/html_urlencode.asp" target="_empty">&#128511;</a></h4>
+            <div id="tu_01_01_01_38">
+              <b class="fs20">HTML Uniform Resource Locators</b><br>       
+                <b class="fs18">URL - Uniform Resource Locator</b><br>
+                <b class="fs18">Common URL Schemes</b><br>
+                <b class="fs18">URL Encoding</b><br>
+                <b class="fs18">Try It Yourself</b><br>
+                <b class="fs18">ASCII Encoding Examples</b><br>
+                <table>
+                  <thead><tr><th>Character</th><th>From Windows-1252</th><th>From UTF-8</th></tr></thead>
+                  <tbody><tr><td></td><td></td><td></td></tr></tbody>
+                  <tfoot><tr><td></td><td></td><td></td></tr></tfoot>
+                </table>
+            </div>
+            <h4>HTML vs. XHTML<a href="https://www.w3schools.com/html/html_xhtml.asp" target="_empty">&#128511;</a></h4>
+            <div id="tu_01_01_01_39">
+              <b class="fs20">HTML Versus XHTML</b><br>       
+                <b class="fs18">What is XHTML?</b><br>
+                <b class="fs18">Why XHTML?</b><br>     
+                <b class="fs18">The Most Important Differences from HTML</b><br>
+                <b class="fs18">XHTML - &lt;!DOCTYPE ....&gt; Is Mandatory</b><br>
+                <b class="fs18">XHTML Elements Must be Properly Nested</b><br>
+                <b class="fs18">XHTML Elements Must Always be Closed</b><br>
+                <b class="fs18">XHTML Empty Elements Must Always be Closed</b><br>
+                <b class="fs18">XHTML Elements Must be in Lowercase</b><br>
+                <b class="fs18">XHTML Attribute Names Must be in Lowercase</b><br>
+                <b class="fs18">XHTML Attribute Values Must be Quoted</b><br>     
+                <b class="fs18">XHTML Attribute Minimization is Forbidden</b><br>
+                <b class="fs18">Validate HTML With The W3C Validator</b><br>            
+            </div>          
+          </div>
+          <hr>
+          <h3>HTML Forms<a href="https://www.w3schools.com/html/html_forms.asp" target="_empty">&#128507;</a></h3>
+          <div id="tu_01_01_02"> 
+            <h4>HTML Forms<a href="https://www.w3schools.com/html/html_forms.asp" target="_empty">&#128511;</a></h4>
+            <div id="tu_01_01_02_01">
+            <b class="fs20">HTML Forms</b><br>       
+              <b class="fs18">The &lt;form&gt; Element</b><br>
+              <b class="fs18">The &lt;input&gt; Element</b><br>
+              <b class="fs18">Text Fields</b><br>
+              <b class="fs18">The &lt;label&gt; Element</b><br>                
+              <b class="fs18">Radio Buttons</b><br>
+              <b class="fs18">Checkboxes</b><br>
+              <b class="fs18">The Submit Button</b><br>
+              <b class="fs18">The Name Attribute for &lt;input&gt;</b><br>
+              <b class="fs18">HTML Exercises</b><br>
+            </div>
+            <h4>HTML Form Attributes<a href="https://www.w3schools.com/html/html_forms_attributes.asp" target="_empty">&#128511;</a></h4>
+            <div id="tu_01_01_02_02">
+            <b class="fs20">HTML Form Attributes</b><br>
+              <b class="fs18">The Action Attribute</b><br>
+              <b class="fs18">The Target Attribute</b><br>
+              <b class="fs18">The Method Attribute</b><br>
+              <b class="fs18">The Autocomplete Attribute</b><br>
+              <b class="fs18">The Novalidate Attribute</b><br>     
+              <b class="fs18">HTML Exercises</b><br>
+              <b class="fs18">List of All &lt;form&gt; Attributes</b><br>
+              <table class="tb1">
+                <tr><th>Attribute</th><th>Description</th></tr>
+                <tr><td></td><td></td></tr>
+                <tr><td></td><td></td></tr>
+              </table>
+            </div>
+            <h4>HTML Form Elements<a href="https://www.w3schools.com/html/html_form_elements.asp" target="_empty">&#128511;</a></h4>
+            <div id="tu_01_01_02_03">
+            <b class="fs20">HTML Form Elements</b><br>       
+              <b class="fs18">The HTML &lt;form&gt; Elements</b><br>         
+              <b class="fs18">The &lt;input&gt; Element</b><br>
+              <b class="fs18">The &lt;label&gt; Element</b><br>     
+              <b class="fs18">The &lt;select&gt; Element</b><br> 
+                <b class="fs16">Visible Values:</b><br>
+                <b class="fs16">Allow Multiple Selections:</b><br>
+              <b class="fs18">The &lt;textarea&gt; Element</b><br> 
+              <b class="fs18">The &lt;button&gt; Element</b><br>  
+              <b class="fs18">The &lt;fieldset&gt; and &lt;legend&gt; Elements</b><br>
+              <b class="fs18">The &lt;output&gt; Element</b><br>              
+              <b class="fs18">HTML Exercises</b><br>
+              <b class="fs18">HTML Form Elements</b><br>
+              <table>
+                <thead><tr><th>Tag</th><th>Description</th></tr></thead>
+                <tbody><tr><td></td><td></td></tr></tbody>
+                <tfoot><tr><td></td><td></td></tr></tfoot>
+              </table>         
+            </div>
+            <h4>HTML Input Types<a href="https://www.w3schools.com/html/html_form_input_types.asp" target="_empty">&#128511;</a></h4>
+            <div id="tu_01_01_02_04">
+              <b class="fs20">HTML Input Types</b><br>       
+                <b class="fs18">HTML Input Types</b><br>                
+                  <b class="fs16">Input Type Text</b><br>
+                  <b class="fs16">Input Type Password</b><br>
+                  <b class="fs16">Input Type Submit</b><br>
+                  <b class="fs16">Input Type Reset</b><br>
+                  <b class="fs16">Input Type Radio</b><br>
+                  <b class="fs16">Input Type Checkbox</b><br>
+                  <b class="fs16">Input Type Button</b><br>
+                  <b class="fs16">Input Type Color</b><br>
+                  <b class="fs16">Input Type Date</b><br>
+                  <b class="fs16">Input Type Datetime-local</b><br>
+                  <b class="fs16">Input Type Email</b><br>
+                  <b class="fs16">Input Type Image</b><br>
+                  <b class="fs16">Input Type File</b><br>
+                  <b class="fs16">Input Type Hidden</b><br>
+                  <b class="fs16">Input Type Month</b><br>
+                  <b class="fs16">Input Type Number</b><br>
+                  <b class="fs16">Input Restrictions</b><br>
+                <table class="tb1">
+                  <tr><th>Attribute</th><th>Description</th></tr>
+                  <tr><td>checked</td><td>Specifies that an input field should be pre-selected when the page loads (for type="checkbox" or type="radio")</td></tr>
+                  <tr><td></td><td></td></tr>
+                </table>
+                  <b class="fs16">Input Type Range</b><br>
+                  <b class="fs16">Input Type Search</b><br>
+                  <b class="fs16">Input Type Tel</b><br>
+                  <b class="fs16">Input Type Time</b><br>
+                  <b class="fs16">Input Type Url</b><br>
+                  <b class="fs16">Input Type Week</b><br>
+                <b class="fs18">HTML Exercises</b><br>
+                <b class="fs18">HTML Input Type Attribute</b><br>
+              <table>
+                <thead><tr><th>Tag</th><th>Description</th></tr></thead>
+                <tbody>
+                  <tr><td>&lt;input type=""&gt;	</td><td>Specifies the input type to display</td></tr>
+                  <tr><td></td><td></td></tr>
+                </tbody>
+                <tfoot><tr><td></td><td></td></tr></tfoot>
+              </table>
+            </div>
+            <h4>HTML Input Attributes<a href="https://www.w3schools.com/html/html_form_attributes.asp" target="_empty">&#128511;</a></h4>
+            <div id="tu_01_01_02_05">
+            <b class="fs20">HTML Input Attributes</b><br>       
+              <b class="fs18">The value Attribute</b><br>
+              <b class="fs18">The readonly Attribute</b><br>    
+              <b class="fs18">The disabled Attribute</b><br>
+              <b class="fs18">The size Attribute</b><br>
+              <b class="fs18">The maxlength Attribute</b><br>
+              <b class="fs18">The min and max Attributes</b><br>
+              <b class="fs18">The multiple Attribute</b><br>
+              <b class="fs18">The pattern Attribute</b><br>  
+              <b class="fs18">The placeholder Attribute</b><br>
+              <b class="fs18">The required Attribute</b><br>
+              <b class="fs18">The step Attribute</b><br>     
+              <b class="fs18">The autofocus Attribute</b><br>     
+              <b class="fs18">The height and width Attributes</b><br> 
+              <b class="fs18">The list Attribute</b><br> 
+              <b class="fs18">The autocomplete Attribute</b><br> 
+              <b class="fs18">HTML Exercises</b><br> 
+              <b class="fs18">HTML Form and Input Elements</b><br> 
+              <table>
+                <thead><tr><th>Tag</th><th>Description</th><th></th></tr></thead>
+                <tbody><tr><td>&lt;form&gt;</td><td>Defines an HTML form for user input</td><td></td></tr></tbody>
+                <tfoot><tr><td></td><td></td><td></td></tr></tfoot>
+              </table> 
+            </div>
+            <h4>HTML Input form Attributes<a href="https://www.w3schools.com/html/html_form_attributes_form.asp" target="_empty">&#128511;</a></h4>
+            <div id="tu_01_01_02_06">
+              <b class="fs20">HTML Input form* Attributes</b><br>       
+                <b class="fs18">The form Attribute</b><br>
+                <b class="fs18">The formaction Attribute</b><br>
+                <b class="fs18">The formenctype Attribute</b><br>
+                <b class="fs18">The formmethod Attribute</b><br>
+                <b class="fs18">The formtarget Attribute</b><br>
+                <b class="fs18">The formnovalidate Attribute</b><br>
+                <b class="fs18">The novalidate Attribute</b><br>
+                <b class="fs18">HTML Form and Input Elements</b><br>
+                <table>
+                  <thead><tr><th>Tag</th><th>Description</th></tr></thead>
+                  <tbody>
+                    <tr><td>&lt;form&gt;</td><td>Defines an HTML form for user input</td></tr>
+                    <tr><td></td><td></td></tr>
+                  </tbody>
+                  <tfoot><tr><td></td><td></td></tr></tfoot>
+                </table> 
+            </div>
+          </div>
+          <hr>
+          <h3>HTML Graphics<a href="https://www.w3schools.com/html/html5_canvas.asp" target="_empty">&#128507;</a></h3>
+          <div id="tu_01_01_03"> 
+            <h4>HTML Canvas Graphics<a href="https://www.w3schools.com/html/html5_canvas.asp" target="_empty">&#128511;</a></h4>
+            <div id="tu_01_01_03_01">
+              <b class="fs20">HTML Canvas</b><br>   
+                <b class="fs18">What is HTML Canvas?</b><br>
+                <b class="fs18">Browser Support</b><br> 
+                <b class="fs18">Canvas Examples</b><br> 
+                <b class="fs18">Add a JavaScript</b><br> 
+                  <b class="fs16">Draw a Line</b><br>
+                  <b class="fs16">Example</b><br>
+                  <b class="fs16">Draw a Circle</b><br>
+                  <b class="fs16">Example</b><br>
+                  <b class="fs16">Draw a Text</b><br>
+                  <b class="fs16">Example</b><br>
+                  <b class="fs16">Stroke Text</b><br>
+                  <b class="fs16">Example</b><br>
+                  <b class="fs16">Draw Linear Gradient</b><br>
+                  <b class="fs16">Example</b><br>
+                  <b class="fs16">Draw Circular Gradient</b><br> 
+                  <b class="fs16">Example</b><br>
+                  <b class="fs16">Draw Image</b><br> 
+                  <b class="fs16">Example</b><br>
+                <b class="fs18">HTML Canvas Tutorial</b><br> 
+            </div>
+            <h4>HTML SVG Graphics<a href="https://www.w3schools.com/html/html5_svg.asp" target="_empty">&#128511;</a></h4>
+            <div id="tu_01_01_03_02">
+              <b class="fs20">HTML SVG Graphics</b><br> 
+                <b class="fs18">What is SVG?</b><br>
+                <b class="fs18">The HTML &lt;svg&gt; Element</b><br>
+                  <b class="fs16">Example</b><br>
+                <a href="#"><svg width="100" height="100">
+                              <circle cx="50" cy="50" r="40" stroke="green" stroke-width="4" fill="yellow" />
+                            </svg></a><br>
+                <b class="fs18">SVG Rectangle</b><br>
+                  <b class="fs16">Example</b><br>
+                <svg width="50" height="20">
+                  <rect width="50" height="20" 
+                    style="fill:rgb(0,100,255);stroke-width:2;stroke:rgb(10,10,10)" />                  
+                </svg><br>
+                <b class="fs18">SVG Rounded Rectangle</b><br>
+                <b class="fs16">Example</b><br>
+                <svg width="40" height="40">
+                  <rect x="5" y="5" rx="3" ry="3" width="30" height="30"
+                    style="fill:red;stroke:black;stroke-width:2;opacity:0.9" />                  
+                </svg><br>
+                <b class="fs18">SVG Star</b><br>
+                <b class="fs16">Example</b><br>  
+                <svg width="200" height="200">
+                  <polygon points="100,10 40,198 190,78 10,78 160,198"
+                    style="fill:lime;stroke:purple;stroke-width:5;fill-rule:evenodd;" />
+                </svg><br> 
+                <b class="fs18">SVG Logo</b><br> 
+                <b class="fs16">Example</b><br>
+                <svg height="130" width="500">
+                  <defs>
+                    <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="0%">
+                      <stop offset="0%"
+                      style="stop-color:rgb(255,255,0);stop-opacity:1" />
+                      <stop offset="100%"
+                      style="stop-color:rgb(255,0,0);stop-opacity:1" />
+                    </linearGradient>
+                  </defs>
+                  <ellipse cx="100" cy="70" rx="85" ry="55" fill="url(#grad1)" />
+                  <text fill="#ffffff" font-size="45" font-family="Verdana"
+                  x="50" y="86">SVG</text>                
+                </svg><br> 
+                <b class="fs18">Differences Between SVG and Canvas</b><br> 
+                <b class="fs18">Comparison of Canvas and SVG</b><br>
+                <b class="fs18">SVG Tutorial<a href="https://www.w3schools.com/graphics/svg_intro.asp">&#8679;</a></b><br> 
+            </div>
+          </div>  
+          <hr>
+          <h3>HTML Media<a href="https://www.w3schools.com/html/html_media.asp" target="_empty">&#128507;</a></h3>
+          <div id="tu_01_01_04">
+            <h4>HTML Media<a href="https://www.w3schools.com/html/html_media.asp" target="_empty">&#128511;</a></h4>
+            <div id="tu_01_01_04_01">
+              <b class="fs20">HTML Multimedia</b><br>
+              <b class="fs18">What is Multimedia?</b><br>
+              <b class="fs18">Browser Support</b><br>
+              <b class="fs18">Multimedia Formats</b><br>
+              <b class="fs18">Common Video Formats</b><br>
+              <b class="fs18">Common Audio Formats</b><br>
+            </div>
+            <h4>HTML Video<a href="https://www.w3schools.com/html/html5_video.asp" target="_empty">&#128511;</a></h4>
+            <div id="tu_01_01_04_02">
+              <b class="fs20">HTML Video</b><br>       
+              <b class="fs18">The HTML &lt;video&gt; Element</b><br>  
+              <b class="fs18">How it Works</b><br>
+              <b class="fs18">HTML &lt;video&gt; Autoplay</b><br>
+              <b class="fs18">Browser Support</b><br>
+              <b class="fs18">HTML Video Formats</b><br>
+              <b class="fs18">HTML Video - Media Types</b><br>
+              <b class="fs18">HTML Video - Methods, Properties, and Events</b><br>
+              <b class="fs18">HTML Video Tags</b><br>
+            </div>
+            <h4>HTML Audio<a href="https://www.w3schools.com/html/html5_audio.asp" target="_empty">&#128511;</a></h4>
+            <div id="tu_01_01_04_03">
+              <b class="fs20">HTML Audio</b><br>
+              <b class="fs18">The HTML &lt;audio&gt; Element</b><br>
+              <b class="fs18">HTML Audio - How It Works</b><br>
+              <b class="fs18">HTML &lt;audio&gt; Autoplay</b><br>
+              <b class="fs18">Browser Support</b><br>
+              <b class="fs18">HTML Audio Formats</b><br>
+              <b class="fs18">HTML Audio - Media Types</b><br>
+              <b class="fs18">HTML Audio - Methods, Properties, and Events</b><br>
+              <b class="fs18">HTML Audio Tags</b><br>
+            </div>
+            <h4>HTML Plug-ins<a href="https://www.w3schools.com/html/html_object.asp" target="_empty">&#128511;</a></h4>
+            <div id="tu_01_01_04_04">
+              <b class="fs20">HTML Plug-ins</b><br>       
+              <b class="fs18">Plug-ins</b><br>  
+              <b class="fs18">The &lt;object&gt; Element</b><br>
+              <b class="fs18">The &lt;embed&gt; Element</b><br>
+            </div>
+            <h4>HTML YouTube<a href="https://www.w3schools.com/html/html_youtube.asp" target="_empty">&#128511;</a></h4>
+            <div id="tu_01_01_04_05">
+              <b class="fs20">HTML YouTube Videos</b><br>       
+              <b class="fs18">Struggling with Video Formats?</b><br>
+              <b class="fs18">YouTube Video Id</b><br>
+              <b class="fs18">Playing a YouTube Video in HTML</b><br>
+              <b class="fs18">YouTube Autoplay + Mute</b><br>
+              <b class="fs18">YouTube Playlist</b><br>
+              <b class="fs18">YouTube Loop</b><br>
+              <b class="fs18">YouTube Controls</b><br>
+            </div>
+          </div>  
+          <hr>
+          <h3>HTML APIs<a href="https://www.w3schools.com/html/html5_geolocation.asp" target="_empty">&#128507;</a></h3>
+          <div id="tu_01_01_05"> 
+            <h4>HTML Geolocation<a href="https://www.w3schools.com/html/html5_geolocation.asp" target="_empty">&#128511;</a></h4>
+            <div id="tu_01_01_05_01">
+              <b class="fs20">HTML Geolocation API</b><br>   
+              <b class="fs18">Locate the User's Position</b><br>
+              <b class="fs18">Browser Support</b><br>
+              <b class="fs18">Using HTML Geolocation</b><br>
+              <b class="fs18">Handling Errors and Rejections</b><br>
+              <b class="fs18">Location-specific Information</b><br>
+              <b class="fs18">The getCurrentPosition() Method - Return Data</b><br>
+              <b class="fs18">Geolocation Object - Other interesting Methods</b><br>
+            </div>
+            <h4>HTML Drag/Drop<a href="https://www.w3schools.com/html/html5_draganddrop.asp" target="_empty">&#128511;</a></h4>
+            <div id="tu_01_01_05_02">
+              <b class="fs20">HTML Drag and Drop API</b><br>       
+                <b class="fs18">Example</b><br>
+                <b class="fs18">Drag and Drop</b><br>
+                <b class="fs18">Browser Support</b><br>
+                <b class="fs18">HTML Drag and Drop Example</b><br>
+                <b class="fs18">Make an Element Draggable</b><br>
+                <b class="fs18">What to Drag - ondragstart and setData()</b><br>
+                <b class="fs18">Where to Drop - ondragover</b><br>
+                <b class="fs18">Do the Drop - ondrop</b><br>
+                <b class="fs18">More Examples</b><br>
+            </div>
+            <h4>HTML Web Storage<a href="https://www.w3schools.com/html/html5_webstorage.asp" target="_empty">&#128511;</a></h4>
+            <div id="tu_01_01_05_03">
+              <b class="fs20">HTML Web Storage API</b><br>       
+                <b class="fs18">What is HTML Web Storage?</b><br>    
+                <b class="fs18">Browser Support</b><br>
+                <b class="fs18">HTML Web Storage Objects</b><br>
+                <b class="fs18">The localStorage Object</b><br>
+                <b class="fs18">The sessionStorage Object</b><br>
+            </div>
+            <h4>HTML Web Workers<a href="https://www.w3schools.com/html/html5_webworkers.asp" target="_empty">&#128511;</a></h4>
+            <div id="tu_01_01_05_04">
+              <b class="fs20">HTML Web Workers API</b><br>       
+                <b class="fs18">What is a Web Worker?</b><br>
+                <b class="fs18">Browser Support</b><br>
+                <b class="fs18">HTML Web Workers Example</b><br>
+                <b class="fs18">Check Web Worker Support</b><br>
+                <b class="fs18">Create a Web Worker File</b><br>
+                <b class="fs18">Create a Web Worker Object</b><br>
+                <b class="fs18">Terminate a Web Worker</b><br>
+                <b class="fs18">Reuse the Web Worker</b><br>
+                <b class="fs18">Full Web Worker Example Code</b><br>
+                <b class="fs18">Web Workers and the DOM</b><br>
+            </div>
+            <h4>HTML SSE<a href="https://www.w3schools.com/html/html5_serversentevents.asp" target="_empty">&#128511;</a></h4>
+            <div id="tu_01_01_05_05">
+              <b class="fs20">HTML SSE API</b><br>       
+                <b class="fs18">Server-Sent Events - One Way Messaging</b><br>
+                <b class="fs18">Browser Support</b><br>
+                <b class="fs18">Receive Server-Sent Event Notifications</b><br>
+                <b class="fs18">Check Server-Sent Events Support</b><br>
+                <b class="fs18">Server-Side Code Example</b><br>
+                <b class="fs18">The EventSource Object</b><br>
+            </div>  
+          </div>  
+          <hr>
+          <h3>HTML Examples<a href="https://www.w3schools.com/html/html_examples.asp" target="_empty">&#128507;</a></h3>
+          <div id="tu_01_01_06"> 
+            <h4>HTML Examples<a href="https://www.w3schools.com/html/html_examples.asp" target="_empty">&#128511;</a></h4>
+            <div id="tu_01_01_06_01">
+              <b class="fs20">HTML Examples</b><br>       
+                <b class="fs18">HTML Basic</b><br>
+                <b class="fs18">HTML Attributes</b><br>
+                <b class="fs18">HTML Headings</b><br>
+                <b class="fs18">HTML Paragraphs</b><br>
+                <b class="fs18">HTML Styles</b><br>
+                <b class="fs18">HTML Text Formatting</b><br>
+                <b class="fs18">HTML Quotations and Citations</b><br>
+                <b class="fs18">HTML Comments</b><br>
+                <b class="fs18">HTML CSS</b><br>
+                <b class="fs18">HTML Links</b><br>
+                <b class="fs18">HTML Images</b><br>
+                <b class="fs18">HTML Tables</b><br>
+                <b class="fs18">HTML Lists</b><br>
+                <b class="fs18">HTML Block and inline elements</b><br>
+                <b class="fs18">HTML Div Element</b><br>
+                <b class="fs18">HTML Classes</b><br>
+                <b class="fs18">HTML Id</b><br>
+                <b class="fs18">HTML Layout</b><br>
+                <b class="fs18">HTML IFrame</b><br>
+                <b class="fs18">HTML head Elements</b><br>
+                <b class="fs18">HTML Scripts</b><br>
+                <b class="fs18">HTML Computercode Elements</b><br>
+                <b class="fs18">HTML Forms</b><br>
+                <b class="fs18">HTML Form Elements</b><br>
+                <b class="fs18">HTML Input Types</b><br>
+                <b class="fs18">HTML Input Attributes</b><br>
+                <b class="fs18">HTML Canvas Graphics</b><br>
+                <b class="fs18">HTML SVG Graphics</b><br>
+                <b class="fs18">HTML Media</b><br>
+                <b class="fs18">HTML Geolocation</b><br>
+                <b class="fs18">HTML Local Storage</b><br>
+                <b class="fs18">HTML Media</b><br>
+                <b class="fs18">More HTML Examples</b><br>
+            </div>
+            <h4>HTML Editor<a href="https://www.w3schools.com/html/html_editor.asp" target="_empty">&#128511;</a></h4>
+            <div id="tu_01_01_06_02">
+              <b class="fs20">HTML Online Editor</b><br>       
+                <b class="fs18">HTML Editor</b><br>
+                <b class="fs18">Publish Your Code</b><br>
+                <b class="fs18">Learn Faster</b><br>
+                <b class="fs18">Build Powerful Websites</b><br>
+                <b class="fs18">Share It With The World</b><br>
+                <b class="fs18">How Does It Work?</b><br>
+            </div>
+            <h4>HTML Quiz<a href="https://www.w3schools.com/html/html_quiz.asp" target="_empty">&#128511;</a></h4>
+            <div id="tu_01_01_06_03">
+              <b class="fs20">HTML Quiz</b><br>       
+                <b class="fs18">The Test</b><br>      
+                <b class="fs18">Count Your Score</b><br>
+            </div>
+            <h4>HTML Exercises<a href="https://www.w3schools.com/html/html_exercises.asp" target="_empty">&#128511;</a></h4>
+            <div id="tu_01_01_06_04">
+              <b class="fs20">HTML Exercises</b><br>       
+                <b class="fs18">Exercises</b><br>                
+                <b class="fs18">Count Your Score</b><br>
+            </div>
+            <h4>HTML Website<a href="https://www.w3schools.com/html/html_website.asp" target="_empty">&#128511;</a></h4>
+            <div id="tu_01_01_06_05">
+              <b class="fs20">HTML Website Hosting</b><br>    
+            </div>
+            <h4>HTML Bootcamp<a href="https://www.w3schools.com/html/html_bootcamp.asp" target="_empty">&#128511;</a></h4>
+            <div id="tu_01_01_06_06">
+              <b class="fs20">W3Schools HTML Bootcamp</b><br>       
+                <b class="fs18">What You Will Learn</b><br>
+                <b class="fs18">Self-paced Courses</b><br>
+                <b class="fs18">What You Get</b><br>
+                <b class="fs18">Certificate of Completion</b><br>
+                <b class="fs18">How it Works</b><br>
+            </div>
+            <h4>HTML Certificate<a href="https://www.w3schools.com/html/html_exam.asp" target="_empty">&#128511;</a></h4>
+            <div id="tu_01_01_06_07">
+              <b class="fs20">W3Schools HTML Certificate</b><br>       
+                <b class="fs18">Who Should Consider Getting Certified?</b><br>
+                <b class="fs18">W3Schools is Trusted by Top Companies</b><br>
+                <b class="fs18">Save Time and Money</b><br>
+                <b class="fs18">Advance Faster in Your Career</b><br>
+                <b class="fs18">How Does It Work?</b><br>
+                <b class="fs18">Get Your Certificate and Share It With The World</b><br>
+                <b class="fs18">Looking to add multiple users?</b><br>
+            </div>
+            <h4>HTML Summary<a href="https://www.w3schools.com/html/html_summary.asp" target="_empty">&#128511;</a></h4>
+            <div id="tu_01_01_06_08">
+              <b class="fs20">You Have Learned HTML, Now What?</b><br>       
+                <b class="fs18">HTML Summary</b><br>
+                <b class="fs18">Now You Know HTML, What's Next?</b><br>
+                <b class="fs18">Learn CSS</b><br>
+                <b class="fs18">Learn JavaScript</b><br>
+                <b class="fs18">Using an Internet Service Provider</b><br>
+                  <b class="fs16">Advantages:</b><br>
+                  <b class="fs16">Things to Consider:</b><br>
+                <b class="fs18">Hosting Your Own Website</b><br>
+                  <b class="fs16">Things to Consider:</b><br>
+            </div>
+            <h4>HTML Accessibility<a href="https://www.w3schools.com/html/html_accessibility.asp" target="_empty">&#128511;</a></h4>
+            <div id="tu_01_01_06_09">
+                <b class="fs20">HTML Accessibility</b><br>       
+                <b class="fs18">HTML Accessibility</b><br>
+                <b class="fs18">Headings Are Important</b><br>
+                <b class="fs18">Alternative Text</b><br>
+                <b class="fs18">Declare the Language</b><br>
+                <b class="fs18">Use Clear Language</b><br>
+                <b class="fs18">Create Good Link Text</b><br>
+            </div>  
+          </div>  
+          <hr>
+          <h3>HTML Reference<a href="https://www.w3schools.com/tags/default.asp" target="_empty">&#128507;</a></h3>
+          <div id="tu_01_01_07"> 
+            <h4>HTML by Alphabet<a href="https://www.w3schools.com/tags/default.asp" target="_empty">&#128511;</a></h4>
+            <div id="tu_01_01_07_01">
+              <b class="fs20">HTML Element Reference</b><br>       
+                <b class="fs18">HTML Tags Ordered Alphabetically</b><br> 
+            </div>
+            <h4>HTML by Category<a href="https://www.w3schools.com/tags/ref_byfunc.asp" target="_empty">&#128511;</a></h4>
+            <div id="tu_01_01_07_02">
+              <b class="fs20">HTML Element Reference - By Category</b><br>       
+                <b class="fs18">Basic HTML</b><br>                   
+                <b class="fs18">Formatting</b><br>
+                <b class="fs18">Forms and Input</b><br>
+                <b class="fs18">Frames</b><br>
+                <b class="fs18">Images</b><br>
+                <b class="fs18">Audio / Video</b><br>
+                <b class="fs18">Links</b><br>
+                <b class="fs18">Lists</b><br>
+                <b class="fs18">Tables</b><br>
+                <b class="fs18">Styles and Semantics</b><br>
+                <b class="fs18">Meta Info</b><br>
+                <b class="fs18">Programming</b><br>
+            </div>
+            <h4>HTML Browser Support<a href="https://www.w3schools.com/tags/ref_html_browsersupport.asp" target="_empty">&#128511;</a></h4>
+            <div id="tu_01_01_07_03">
+              <b class="fs20">HTML Reference - Browser Support</b><br>       
+                <b class="fs18">HTML Reference With Browser Support</b><br>    
+            </div>
+            <h4>HTML Attribute<a href="https://www.w3schools.com/tags/ref_attributes.asp" target="_empty">&#128511;</a></h4>
+            <div id="tu_01_01_07_04">
+              <b class="fs20">HTML Attribute Reference</b><br>       
+                <b class="fs18">HTML Attribute Reference</b><br>
+            </div>
+            <h4>HTML Global Attributes<a href="https://www.w3schools.com/tags/ref_standardattributes.asp" target="_empty">&#128511;</a></h4>
+            <div id="tu_01_01_07_05">
+              <b class="fs20">HTML Global Attributes</b><br>       
+                <b class="fs18">HTML Global Attributes</b><br>
+            </div>
+            <h4>HTML Event<a href="https://www.w3schools.com/tags/ref_eventattributes.asp" target="_empty">&#128511;</a></h4>
+            <div id="tu_01_01_07_06">
+              <b class="fs20">HTML Event Attributes</b><br>       
+                <b class="fs18">Global Event Attributes</b><br>
+                <b class="fs18">Window Event Attributes</b><br>
+                <b class="fs18">Form Events</b><br>
+                <b class="fs18">Keyboard Events</b><br>    
+                <b class="fs18">Mouse Events</b><br>
+                <b class="fs18">Drag Events</b><br>
+                <b class="fs18">Clipboard Events</b><br>    
+                <b class="fs18">Media Events</b><br>
+                <b class="fs18">Misc Events</b><br>
+            </div>
+            <h4>HTML Color<a href="https://www.w3schools.com/tags/ref_colornames.asp" target="_empty">&#128511;</a></h4>
+            <div id="tu_01_01_07_07">
+              <b class="fs20">HTML Color Names</b><br>       
+                <b class="fs18">Color Names Supported by All Browsers</b><br>
+            </div>
+            <h4>HTML Canvas<a href="https://www.w3schools.com/tags/ref_canvas.asp" target="_empty">&#128511;</a></h4>
+            <div id="tu_01_01_07_08">
+              <b class="fs20">HTML Canvas Reference</b><br>                  
+                <b class="fs18">Note</b><br>
+                <b class="fs18">Drawing on the Canvas</b><br>
+                <b class="fs18">Using Colors</b><br>
+                <b class="fs18">Paths</b><br>
+                <b class="fs18">Complete Canvas API Reference</b><br>
+                <b class="fs18">Drawing Methods</b><br>
+                <b class="fs18">Path Methods</b><br>
+                <b class="fs18">Text</b><br>
+                <b class="fs18">Colors, Styles, and Shadows</b><br>
+                <b class="fs18">Transformations</b><br>
+                <b class="fs18">Image Drawing</b><br>
+                <b class="fs18">The ImageData Object / Pixel Manipulation</b><br>
+                <b class="fs18">Compositing</b><br>
+                <b class="fs18">Other Methods</b><br>
+                <b class="fs18">Standard Properties and Events</b><br>
+                <b class="fs18">Related Pages</b><br>
+                <b class="fs18">Browser Support</b><br>
+            </div>
+            <h4>HTML Audio/Video<a href="https://www.w3schools.com/tags/ref_av_dom.asp" target="_empty">&#128511;</a></h4>
+            <div id="tu_01_01_07_09">
+              <b class="fs20">HTML Audio/Video DOM Reference</b><br>       
+                <b class="fs18">HTML Audio and Video DOM Reference</b><br>
+                <b class="fs18">HTML Audio/Video Methods</b><br>
+                <b class="fs18">HTML Audio/Video Properties</b><br>
+                <b class="fs18">HTML Audio/Video Events</b><br>
+            </div>
+            <h4>HTML Character Sets<a href="https://www.w3schools.com/tags/ref_charactersets.asp" target="_empty">&#128511;</a></h4>
+            <div id="tu_01_01_07_10">
+              <b class="fs20">HTML Character Sets</b><br>       
+                <b class="fs18">Common HTML Character Sets</b><br>
+            </div>
+            <h4>HTML Doctypes<a href="https://www.w3schools.com/tags/ref_html_dtd.asp" target="_empty">&#128511;</a></h4>
+            <div id="tu_01_01_07_11">
+              <b class="fs20">HTML &lt;!DOCTYPE&gt;</b><br>       
+                <b class="fs18">The HTML Document Type</b><br>                    
+                <b class="fs18">Valid HTML Elements in Different DOCTYPES</b><br>
+            </div>
+            <h4>HTML URL Encode<a href="https://www.w3schools.com/tags/ref_urlencode.asp" target="_empty">&#128511;</a></h4>
+            <div id="tu_01_01_07_12">
+              <b class="fs20">HTML URL Encoding Reference</b><br>       
+                <b class="fs18">URL - Uniform Resource Locator</b><br>    
+                <b class="fs18">URL Encoding (Percent Encoding)</b><br>
+                <b class="fs18">Try It Yourself</b><br>
+                <b class="fs18">URL Encoding Functions</b><br>
+                <b class="fs18">ASCII Encoding Reference</b><br>
+                <b class="fs18">URL Encoding Reference</b><br>
+            </div>
+            <h4>HTML Language Codes<a href="https://www.w3schools.com/tags/ref_language_codes.asp" target="_empty">&#128511;</a></h4>
+            <div id="tu_01_01_07_13">
+              <b class="fs20">HTML Language Code Reference</b><br>       
+                <b class="fs18">ISO Language Codes</b><br>    
+                <b class="fs18">ISO 639-1 Language Codes</b><br>
+            </div>
+            <h4>HTML Country Codes<a href="https://www.w3schools.com/tags/ref_country_codes.asp" target="_empty">&#128511;</a></h4>
+            <div id="tu_01_01_07_14">
+              <b class="fs20">HTML ISO Country Codes Reference</b><br>       
+                <b class="fs18">ISO Country Codes</b><br>    
+                <b class="fs18">ISO Country Codes</b><br>
+            </div>
+            <h4>HTTP Messages<a href="https://www.w3schools.com/tags/ref_httpmessages.asp" target="_empty">&#128511;</a></h4>
+            <div id="tu_01_01_07_15">
+              <b class="fs20">HTTP Status Messages</b><br>       
+                <b class="fs18">HTML Error Messages</b><br>
+                <b class="fs18">1xx: Information</b><br>
+                <b class="fs18">2xx: Successful</b><br>
+                <b class="fs18">3xx: Redirection</b><br>
+                <b class="fs18">4xx: Client Error</b><br>
+                <b class="fs18">5xx: Server Error</b><br>
+            </div>
+            <h4>HTTP Methods<a href="https://www.w3schools.com/tags/ref_httpmethods.asp" target="_empty">&#128511;</a></h4>
+            <div id="tu_01_01_07_16">
+              <b class="fs20">HTTP Request Methods</b><br>       
+                <b class="fs18">What is HTTP?</b><br>    
+                <b class="fs18">HTTP Methods</b><br>
+                <b class="fs18">The GET Method</b><br>
+                <b class="fs18">The POST Method</b><br>
+                <b class="fs18">Compare GET vs. POST</b><br>
+                <b class="fs18">The PUT Method</b><br>
+                <b class="fs18">The HEAD Method</b><br>
+                <b class="fs18">The DELETE Method</b><br>
+                <b class="fs18">The PATCH Method</b><br>
+                <b class="fs18">The OPTIONS Method</b><br>
+                <b class="fs18">The CONNECT Method</b><br>
+                <b class="fs18">The TRACE Method</b><br>
+            </div>
+            <h4>PX to EM Converter<a href="https://www.w3schools.com/tags/ref_pxtoemconversion.asp" target="_empty">&#128511;</a></h4>
+            <div id="tu_01_01_07_17">
+              <b class="fs20">Pixels to Ems Conversion</b><br>       
+                <b class="fs18">Pixel to Em Converter</b><br>
+                <b class="fs18">Body Font Size</b><br>
+            </div>
+            <h4>Keyboard Shortcuts<a href="https://www.w3schools.com/tags/ref_keyboardshortcuts.asp" target="_empty">&#128511;</a></h4>
+            <div id="tu_01_01_07_18">
+              <b class="fs20">Keyboard Shortcuts</b><br>       
+                <b class="fs18">Keyboard Shortcuts For Windows and Mac</b><br>
+                <b class="fs18">Basic Shortcuts</b><br>
+                <b class="fs18">Text Editing</b><br>
+                <b class="fs18">Web Browsers</b><br>
+                <b class="fs18">Screenshots</b><br>
+            </div>
+          </div>  
+          <hr>
+          <h3>HTML Tags<a href="https://www.w3schools.com/tags/tag_comment.asp" target="_empty">&#128507;</a></h3>
+          <div id="tu_01_01_08"> 
+            <h4>&lt;!--&gt;<a href="https://www.w3schools.com/tags/tag_comment.asp" target="_empty">&#128511;</a></h4>
+            <div id="tu_01_01_08_01">
+              <b class="fs20">HTML &lt;!--...--&gt; Tag</b><br>       
+                <b class="fs18">Definition and Usage</b><br>
+                <b class="fs18">Browser Support</b><br>
+                <b class="fs18">Tips and Notes</b><br>
+                <b class="fs18">Standard Attributes</b><br>
+                <b class="fs18">Event Attributes</b><br>
+            </div>
+            <h4>&lt;!DOCTYPE&gt;<a href="https://www.w3schools.com/tags/tag_doctype.asp" target="_empty">&#128511;</a></h4>
+            <div id="tu_01_01_08_02">
+              <b class="fs20">HTML &lt;!DOCTYPE&gt; Declaration</b><br>       
+                <b class="fs18">Definition and Usage</b><br>    
+                <b class="fs18">Browser Support</b><br>
+                <b class="fs18">Older HTML Documents</b><br>
+                <b class="fs18">HTML Elements and Doctypes</b><br>
+                <b class="fs18">Tips and Notes</b><br>
+            </div>
+            <h4>&lt;a&gt;<a href="https://www.w3schools.com/tags/tag_a.asp" target="_empty">&#128511;</a></h4>
+            <div id="tu_01_01_08_03">
+              <b class="fs20">HTML &lt;a&gt; Tag</b><br>       
+                <b class="fs18">Definition and Usage</b><br>
+                <b class="fs18">Tips and Notes</b><br>
+                <b class="fs18">Browser Support</b><br>
+                <b class="fs18">Attributes</b><br>
+                <b class="fs18">Global Attributes</b><br>
+                <b class="fs18">Event Attributes</b><br>
+                <b class="fs18">More Examples</b><br>
+                <b class="fs18">Related Pages</b><br>
+                <b class="fs18">Default CSS Settings</b><br>
+            </div>
+            <h4>&lt;abbr&gt;<a href="https://www.w3schools.com/tags/tag_abbr.asp" target="_empty">&#128511;</a></h4>
+            <div id="tu_01_01_08_04">
+              <b class="fs20">HTML &lt;abbr&gt; Tag</b><br>       
+                <b class="fs18">Definition and Usage</b><br>
+                <b class="fs18">Browser Support</b><br>
+                <b class="fs18">Global Attributes</b><br>
+                <b class="fs18">More Examples</b><br>
+                <b class="fs18">Related Pages</b><br>
+                <b class="fs18">Default CSS Settings</b><br>
+            </div>
+            <h4>&lt;acronym&gt;<a href="https://www.w3schools.com/tags/tag_acronym.asp" target="_empty">&#128511;</a></h4>
+            <div id="tu_01_01_08_05">
+              <b class="fs20">HTML &lt;acronym&gt; Tag</b><br>       
+              <b class="fs18 c_red">Not Supported in HTML5.</b><br>
+                <b class="fs18">What to Use Instead?</b><br>
+            </div>
+            <h4>&lt;address&gt;<a href="https://www.w3schools.com/tags/tag_address.asp" target="_empty">&#128511;</a></h4>
+            <div id="tu_01_01_08_06">
+              <b class="fs20">HTML &lt;address&gt; Tag</b><br>       
+                <b class="fs18">Definition and Usage</b><br>
+                <b class="fs18">Browser Support</b><br>
+                <b class="fs18">Global Attributes</b><br>
+                <b class="fs18">Event Attributes</b><br>
+                <b class="fs18">Related Pages</b><br>
+                <b class="fs18">Default CSS Settings</b><br>
+            </div>
+            <h4>&lt;applet&gt;<a href="https://www.w3schools.com/tags/tag_applet.asp" target="_empty">&#128511;</a></h4>
+            <div id="tu_01_01_08_07">
+              <b class="fs20">HTML &lt;applet&gt; Tag</b><br>       
+              <b class="fs18 c_red">Not Supported in HTML5.</b><br>
+                <b class="fs18">Plug-ins</b><br>
+                <b class="fs18">What to Use Instead?</b><br>
+            </div>
+            <h4>&lt;area&gt;<a href="https://www.w3schools.com/tags/tag_area.asp" target="_empty">&#128511;</a></h4>
+            <div id="tu_01_01_08_08">
+              <b class="fs20">HTML &lt;area&gt; Tag</b><br>       
+                <b class="fs18">Definition and Usage</b><br>               
+                <b class="fs18">Browser Support</b><br>
+                <b class="fs18">Attributes</b><br>
+                <b class="fs18">Global Attributes</b><br>
+                <b class="fs18">Event Attributes</b><br>
+                <b class="fs18">More Examples</b><br>
+                <b class="fs18">Related Pages</b><br>
+                <b class="fs18">Default CSS Settings</b><br>
+            </div>
+            <h4>&lt;article&gt;<a href="https://www.w3schools.com/tags/tag_article.asp" target="_empty">&#128511;</a></h4>
+            <div id="tu_01_01_08_09">
+              <b class="fs20">HTML &lt;article&gt; Tag</b><br>       
+                <b class="fs18">Definition and Usage</b><br>
+                <b class="fs18">Browser Support</b><br>
+                <b class="fs18">Global Attributes</b><br>
+                <b class="fs18">Event Attributes</b><br>
+                <b class="fs18">Related Pages</b><br>
+                <b class="fs18">Default CSS Settings</b><br>
+            </div>
+            <h4>&lt;aside&gt;<a href="https://www.w3schools.com/tags/tag_aside.asp" target="_empty">&#128511;</a></h4>
+            <div id="tu_01_01_08_10">
+              <b class="fs20">HTML &lt;aside&gt; Tag</b><br>       
+                <b class="fs18">Definition and Usage</b><br>
+                <b class="fs18">Browser Support</b><br>
+                <b class="fs18">Global Attributes</b><br>
+                <b class="fs18">Event Attributes</b><br>
+                <b class="fs18">More Examples</b><br>
+                <b class="fs18">Related Pages</b><br>
+                <b class="fs18">Default CSS Settings</b><br>
+            </div>
+            <h4>&lt;audio&gt;<a href="https://www.w3schools.com/tags/tag_audio.asp" target="_empty">&#128511;</a></h4>
+            <div id="tu_01_01_08_11">
+              <b class="fs20">HTML &lt;audio&gt; Tag</b><br>       
+                <b class="fs18">Definition and Usage</b><br>
+                <b class="fs18">Tips and Notes</b><br>
+                <b class="fs18">Browser Support</b><br>
+                <b class="fs18">Attributes</b><br>
+                <b class="fs18">Global Attributes</b><br>
+                <b class="fs18">Event Attributes</b><br>
+                <b class="fs18">Related Pages</b><br>
+                <b class="fs18">Default CSS Settings</b><br>
+            </div>
+            <h4>&lt;b&gt;<a href="https://www.w3schools.com/tags/tag_b.asp" target="_empty">&#128511;</a></h4>
+            <div id="tu_01_01_08_12">
+              <b class="fs20">HTML &lt;b&gt; Tag</b><br>       
+                <b class="fs18">Definition and Usage</b><br>    
+                <b class="fs18">Tips and Notes</b><br>
+                <b class="fs18">Browser Support</b><br>
+                <b class="fs18">Global Attributes</b><br>
+                <b class="fs18">Event Attributes</b><br>
+                <b class="fs18">More Examples</b><br>
+                <b class="fs18">Related Pages</b><br>
+                <b class="fs18">Default CSS Settings</b><br>
+            </div>
+            <h4>&lt;base&gt;<a href="https://www.w3schools.com/tags/tag_base.asp" target="_empty">&#128511;</a></h4>
+            <div id="tu_01_01_08_13">
+              <b class="fs20">HTML &lt;base&gt; Tag</b><br>       
+                <b class="fs18">Definition and Usage</b><br>
+                <b class="fs18">Browser Support</b><br>
+                <b class="fs18">Attributes</b><br>
+                <b class="fs18">Global Attributes and Events</b><br>
+                <b class="fs18">Event Attributes</b><br>
+                <b class="fs18">Related Pages</b><br>
+                <b class="fs18">Default CSS Settings</b><br>
+            </div>
+            <h4>&lt;basefont&gt;<a href="" target="_empty">&#128511;</a></h4>
+            <div id="tu_01_01_08_14">
+              <b class="fs20">HTML &lt;basefont&gt; Tag</b><br>       
+                <b class="fs18 c_red">Not Supported in HTML5.</b><br>
+                <b class="fs18">What to Use Instead?</b><br>
+            </div>
+            <h4>&lt;bdi&gt;<a href="https://www.w3schools.com/tags/tag_bdi.asp" target="_empty">&#128511;</a></h4>
+            <div id="tu_01_01_08_15">
+              <b class="fs20">HTML &lt;bdi&gt; Tag</b><br>       
+                <b class="fs18">Definition and Usage</b><br>
+                <b class="fs18">Browser Support</b><br>
+                <b class="fs18">Global Attributes</b><br>
+                <b class="fs18">Event Attributes</b><br>
+            </div>
+            <h4>&lt;bdo&gt;<a href="https://www.w3schools.com/tags/tag_bdo.asp" target="_empty">&#128511;</a></h4>
+            <div id="tu_01_01_08_16">
+              <b class="fs20">HTML &lt;bdo&gt; Tag</b><br>       
+                <b class="fs18">Definition and Usage</b><br>
+                <b class="fs18">Browser Support</b><br>
+                <b class="fs18">Attributes</b><br>
+                <b class="fs18">Global Attributes</b><br>
+                <b class="fs18">Event Attributes</b><br>
+                <b class="fs18">Related Pages</b><br>
+                <b class="fs18">Default CSS Settings</b><br>
+            </div>
+            <h4>&lt;big&gt;<a href="https://www.w3schools.com/tags/tag_big.asp" target="_empty">&#128511;</a></h4>
+            <div id="tu_01_01_08_17">
+              <b class="fs20">HTML &lt;big&gt; Tag</b><br>       
+                <b class="fs18 c_red">Not Supported in HTML5.</b><br>
+                <b class="fs18">What to Use Instead?</b><br>
+            </div>
+            <h4>&lt;blockquote&gt;<a href="https://www.w3schools.com/tags/tag_blockquote.asp" target="_empty">&#128511;</a></h4>
+            <div id="tu_01_01_08_18">
+              <b class="fs20">HTML &lt;blockquote&gt; Tag</b><br>       
+                <b class="fs18">Definition and Usage</b><br>    
+                <b class="fs18">Tips and Notes</b><br>
+                <b class="fs18">Browser Support</b><br>
+                <b class="fs18">Attributes</b><br>
+                <b class="fs18">Global Attributes</b><br>
+                <b class="fs18">Event Attributes</b><br>
+                <b class="fs18">More Examples</b><br>
+                <b class="fs18">Related Pages</b><br>
+                <b class="fs18">Default CSS Settings</b><br>
+            </div>
+            <h4>&lt;body&gt;<a href="https://www.w3schools.com/tags/tag_body.asp" target="_empty">&#128511;</a></h4>
+            <div id="tu_01_01_08_19">
+              <b class="fs20">HTML &lt;body&gt; Tag</b><br>       
+                <b class="fs18">Definition and Usage</b><br>
+                <b class="fs18">Browser Support</b><br>
+                <b class="fs18">Global Attributes</b><br>
+                <b class="fs18">Event Attributes</b><br>
+                <b class="fs18">More Examples</b><br>
+                <b class="fs18">Related Pages</b><br>
+                <b class="fs18">Default CSS Settings</b><br>
+            </div>
+            <h4>&lt;br&gt;<a href="https://www.w3schools.com/tags/tag_br.asp" target="_empty">&#128511;</a></h4>
+            <div id="tu_01_01_08_20">
+              <b class="fs20">HTML &lt;br&gt; Tag</b><br>       
+                <b class="fs18">Definition and Usage</b><br>
+                <b class="fs18">Tips and Notes</b><br>
+                <b class="fs18">Browser Support</b><br>
+                <b class="fs18">Global Attributes</b><br>
+                <b class="fs18">Event Attributes</b><br>
+                <b class="fs18">More Examples</b><br>
+                <b class="fs18">Related Pages</b><br>
+                <b class="fs18">Default CSS Settings</b><br>
+            </div>
+            <h4>&lt;button&gt;<a href="https://www.w3schools.com/tags/tag_button.asp" target="_empty">&#128511;</a></h4>
+            <div id="tu_01_01_08_21">
+              <b class="fs20">HTML &lt;button&gt; Tag</b><br>       
+                <b class="fs18">Definition and Usage</b><br>
+                <b class="fs18">Browser Support</b><br>
+                <b class="fs18">Attributes</b><br>
+                <b class="fs18">Global Attributes</b><br>
+                <b class="fs18">Event Attributes</b><br>
+                <b class="fs18">More Examples</b><br>
+                <b class="fs18">Related Pages</b><br>
+                <b class="fs18">Default CSS Settings</b><br>
+            </div>
+            <h4>&lt;canvas&gt;<a href="https://www.w3schools.com/tags/tag_canvas.asp" target="_empty">&#128511;</a></h4>
+            <div id="tu_01_01_08_22">
+              <b class="fs20">HTML &lt;canvas&gt; Tag</b><br>       
+                <b class="fs18">Definition and Usage</b><br>
+                <b class="fs18">Tips and Notes</b><br>
+                <b class="fs18">Browser Support</b><br>
+                <b class="fs18">Attributes</b><br>
+                <b class="fs18">Global Attributes</b><br>
+                <b class="fs18">Event Attributes</b><br>
+                <b class="fs18">More Examples</b><br>
+                <b class="fs18">Default CSS Settings</b><br>
+            </div>
+            <h4>&lt;caption&gt;<a href="https://www.w3schools.com/tags/tag_caption.asp" target="_empty">&#128511;</a></h4>
+            <div id="tu_01_01_08_23">
+              <b class="fs20">HTML &lt;caption&gt; Tag</b><br>       
+                <b class="fs18">Definition and Usage</b><br>
+                <b class="fs18">Browser Support</b><br>
+                <b class="fs18">Global Attributes</b><br>
+                <b class="fs18">Event Attributes</b><br>
+                <b class="fs18">More Examples</b><br>
+                <b class="fs18">Related Pages</b><br>
+                <b class="fs18">Default CSS Settings</b><br>
+            </div>
+            <h4>&lt;center&gt;<a href="https://www.w3schools.com/tags/tag_center.asp" target="_empty">&#128511;</a></h4>
+            <div id="tu_01_01_08_24">
+              <b class="fs20">HTML &lt;center&gt; Tag</b><br>       
+                <b class="fs18 c_red">Not Supported in HTML5.</b><br>    
+                <b class="fs18">What to Use Instead?</b><br>
+            </div>
+            <h4>&lt;cite&gt;<a href="https://www.w3schools.com/tags/tag_cite.asp" target="_empty">&#128511;</a></h4>
+            <div id="tu_01_01_08_25">
+              <b class="fs20">HTML &lt;cite&gt; Tag</b><br>       
+                <b class="fs18">Definition and Usage</b><br>                
+                <b class="fs18">Browser Support</b><br>
+                <b class="fs18">Global Attributes</b><br>
+                <b class="fs18">Event Attributes</b><br>
+                <b class="fs18">Related Pages</b><br>
+                <b class="fs18">Default CSS Settings</b><br>
+            </div>
+            <h4>&lt;code&gt;<a href="https://www.w3schools.com/tags/tag_code.asp" target="_empty">&#128511;</a></h4>
+            <div id="tu_01_01_08_26">
+              <b class="fs20">HTML &lt;code&gt; Tag</b><br>       
+                <b class="fs18">Definition and Usage</b><br>
+                <b class="fs18">Browser Support</b><br>
+                <b class="fs18">Global Attributes</b><br>
+                <b class="fs18">Event Attributes</b><br>
+                <b class="fs18">More Examples</b><br>
+                <b class="fs18">Related Pages</b><br>
+                <b class="fs18">Default CSS Settings</b><br>
+            </div>
+            <h4>&lt;col&gt;<a href="https://www.w3schools.com/tags/tag_col.asp" target="_empty">&#128511;</a></h4>
+            <div id="tu_01_01_08_27">
+              <b class="fs20">HTML &lt;col&gt; Tag</b><br>       
+                <b class="fs18">Definition and Usage</b><br>
+                <b class="fs18">Browser Support</b><br>
+                <b class="fs18">Attributes</b><br>
+                <b class="fs18">Global Attributes</b><br>
+                <b class="fs18">Event Attributes</b><br>
+                <b class="fs18">Related Pages</b><br>
+                <b class="fs18">Default CSS Settings</b><br>
+            </div>
+            <h4>&lt;colgroup&gt;<a href="https://www.w3schools.com/tags/tag_colgroup.asp" target="_empty">&#128511;</a></h4>
+            <div id="tu_01_01_08_28">
+              <b class="fs20">HTML &lt;colgroup&gt; Tag</b><br>       
+                <b class="fs18">Definition and Usage</b><br>
+                <b class="fs18">Browser Support</b><br>
+                <b class="fs18">Attributes</b><br>
+                <b class="fs18">Global Attributes</b><br>
+                <b class="fs18">Event Attributes</b><br>
+                <b class="fs18">Related Pages</b><br>
+                <b class="fs18">Default CSS Settings</b><br>
+            </div>
+            <h4>&lt;data&gt;<a href="https://www.w3schools.com/tags/tag_data.asp" target="_empty">&#128511;</a></h4>
+            <div id="tu_01_01_08_29">
+              <b class="fs20">HTML &lt;data&gt; Tag</b><br>       
+                <b class="fs18">Definition and Usage</b><br>    
+                <b class="fs18">Browser Support</b><br>
+                <b class="fs18">Attributes</b><br>
+                <b class="fs18">Global Attributes</b><br>
+            </div>
+            <h4>&lt;datalist&gt;<a href="https://www.w3schools.com/tags/tag_datalist.asp" target="_empty">&#128511;</a></h4>
+            <div id="tu_01_01_08_30">
+              <b class="fs20">HTML &lt;datalist&gt; Tag</b><br>
+                <b class="fs18">Definition and Usage</b><br>
+                <b class="fs18">Browser Support</b><br>
+                <b class="fs18">Global Attributes</b><br>
+                <b class="fs18">Event Attributes</b><br>
+                <b class="fs18">Related Pages</b><br>
+                <b class="fs18">Default CSS Settings</b><br>
+            </div>
+            <h4>&lt;dd&gt;<a href="https://www.w3schools.com/tags/tag_dd.asp" target="_empty">&#128511;</a></h4>
+            <div id="tu_01_01_08_31">
+              <b class="fs20">HTML &lt;dd&gt; Tag</b><br>       
+                <b class="fs18">Definition and Usage</b><br>
+                <b class="fs18">Browser Support</b><br>
+                <b class="fs18">Global Attributes</b><br>
+                <b class="fs18">Event Attributes</b><br>
+                <b class="fs18">Related Pages</b><br>
+                <b class="fs18">Default CSS Settings</b><br>
+            </div>
+            <h4>&lt;del&gt;<a href="https://www.w3schools.com/tags/tag_del.asp" target="_empty">&#128511;</a></h4>
+            <div id="tu_01_01_08_32">
+              <b class="fs20">HTML &lt;del&gt; Tag</b><br>       
+                <b class="fs18">Definition and Usage</b><br>
+                <b class="fs18">Tips and Notes</b><br>
+                <b class="fs18">Browser Support</b><br>
+                <b class="fs18">Attributes</b><br>
+                <b class="fs18">Global Attributes</b><br>
+                <b class="fs18">Event Attributes</b><br>
+                <b class="fs18">More Examples</b><br>
+                <b class="fs18">Related Pages</b><br>
+                <b class="fs18">Default CSS Settings</b><br>
+            </div>
+            <h4>&lt;details&gt;<a href="https://www.w3schools.com/tags/tag_details.asp" target="_empty">&#128511;</a></h4>
+            <div id="tu_01_01_08_33">
+              <b class="fs20">HTML &lt;details&gt; Tag</b><br>       
+                <b class="fs18">Definition and Usage</b><br>                
+                <b class="fs18">Browser Support</b><br>
+                <b class="fs18">Global Attributes</b><br>
+                <b class="fs18">Event Attributes</b><br>
+                <b class="fs18">More Examples</b><br>
+                <b class="fs18">Related Pages</b><br>
+                <b class="fs18">Default CSS Settings</b><br>
+            </div>
+            <h4>&lt;dfn&gt;<a href="https://www.w3schools.com/tags/tag_dfn.asp" target="_empty">&#128511;</a></h4>
+            <div id="tu_01_01_08_34">
+              <b class="fs20">HTML &lt;dfn&gt; Tag</b><br>       
+                <b class="fs18">Definition and Usage</b><br>
+                <b class="fs18">Browser Support</b><br>
+                <b class="fs18">Global Attributes</b><br>
+                <b class="fs18">Event Attributes</b><br>
+                <b class="fs18">Related Pages</b><br>
+                <b class="fs18">Default CSS Settings</b><br>
+            </div>
+            <h4>&lt;dialog&gt;<a href="https://www.w3schools.com/tags/tag_dialog.asp" target="_empty">&#128511;</a></h4>
+            <div id="tu_01_01_08_35">
+              <b class="fs20">HTML &lt;dialog&gt; Tag</b><br>       
+                <b class="fs18">Definition and Usage</b><br>                
+                <b class="fs18">Browser Support</b><br>
+                <b class="fs18">Attributes</b><br>
+                <b class="fs18">Global Attributes</b><br>
+                <b class="fs18">Event Attributes</b><br>
+                <b class="fs18">Related Pages</b><br>
+            </div>
+            <h4>&lt;dir&gt;<a href="https://www.w3schools.com/tags/tag_dir.asp" target="_empty">&#128511;</a></h4>
+            <div id="tu_01_01_08_36">
+              <b class="fs20">HTML &lt;dir&gt; Tag</b><br>       
+                <b class="fs18 c_red">Not Supported in HTML5.</b><br>
+                <b class="fs18">What to Use Instead?</b><br>
+            </div>
+            <h4>&lt;div&gt;<a href="https://www.w3schools.com/tags/tag_div.asp" target="_empty">&#128511;</a></h4>
+            <div id="tu_01_01_08_37">
+              <b class="fs20">HTML &lt;div&gt; Tag</b><br>       
+                <b class="fs18">Definition and Usage</b><br>
+                <b class="fs18">Browser Support</b><br>
+                <b class="fs18">Global Attributes</b><br>
+                <b class="fs18">Event Attributes</b><br>
+                <b class="fs18">Related Pages</b><br>
+                <b class="fs18">Default CSS Settings</b><br>
+            </div>
+            <h4>&lt;dl&gt;<a href=https://www.w3schools.com/tags/tag_dl.asp" target="_empty">&#128511;</a></h4>
+            <div id="tu_01_01_08_38">
+              <b class="fs20">HTML &lt;dl&gt; Tag</b><br>       
+                <b class="fs18">Definition and Usage</b><br>
+                <b class="fs18">Browser Support</b><br>
+                <b class="fs18">Global Attributes</b><br>
+                <b class="fs18">Event Attributes</b><br>
+                <b class="fs18">Related Pages</b><br>
+                <b class="fs18">Default CSS Settings</b><br>
+            </div>
+            <h4>&lt;dt&gt;<a href="https://www.w3schools.com/tags/tag_dt.asp" target="_empty">&#128511;</a></h4>
+            <div id="tu_01_01_08_39">
+              <b class="fs20">HTML &lt;dt&gt; Tag</b><br>       
+                <b class="fs18">Definition and Usage</b><br>
+                <b class="fs18">Browser Support</b><br>
+                <b class="fs18">Global Attributes</b><br>
+                <b class="fs18">Event Attributes</b><br>
+                <b class="fs18">Related Pages</b><br>
+                <b class="fs18">Default CSS Settings</b><br>
+            </div>
+            <h4>&lt;em&gt;<a href="https://www.w3schools.com/tags/tag_em.asp" target="_empty">&#128511;</a></h4>
+            <div id="tu_01_01_08_40">
+              <b class="fs20">HTML &lt;em&gt; Tag</b><br>       
+                <b class="fs18">Definition and Usage</b><br>
+                <b class="fs18">Browser Support</b><br>
+                <b class="fs18">Global Attributes</b><br>
+                <b class="fs18">Event Attributes</b><br>
+                <b class="fs18">Related Pages</b><br>
+                <b class="fs18">Default CSS Settings</b><br>
+            </div>
+            <h4>&lt;embed&gt;<a href="https://www.w3schools.com/tags/tag_embed.asp" target="_empty">&#128511;</a></h4>
+            <div id="tu_01_01_08_41">
+              <b class="fs20">HTML &lt;embed&gt; Tag</b><br>       
+                <b class="fs18">Definition and Usage</b><br>
+                <b class="fs18">Warning</b><br>
+                <b class="fs18">Suggestion</b><br>
+                <b class="fs18">Browser Support</b><br>
+                <b class="fs18">Attributes</b><br>
+                <b class="fs18">Global Attributes</b><br>
+                <b class="fs18">Event Attributes</b><br>
+                <b class="fs18">Related Pages</b><br>
+                <b class="fs18">Default CSS Settings</b><br>
+            </div>
+            <h4>&lt;fieldset&gt;<a href="https://www.w3schools.com/tags/tag_fieldset.asp" target="_empty">&#128511;</a></h4>
+            <div id="tu_01_01_08_42">
+              <b class="fs20">HTML &lt;fieldset&gt; Tag</b><br>       
+                <b class="fs18">Definition and Usage</b><br>
+                <b class="fs18">Tips and Notes</b><br>
+                <b class="fs18">Browser Support</b><br>
+                <b class="fs18">Attributes</b><br>
+                <b class="fs18">Global Attributes</b><br>
+                <b class="fs18">Event Attributes</b><br>
+                <b class="fs18">More Examples</b><br>
+                <b class="fs18">Related Pages</b><br>
+                <b class="fs18">Default CSS Settings</b><br>
+            </div>
+            <h4>&lt;figcaption&gt;<a href="https://www.w3schools.com/tags/tag_figcaption.asp" target="_empty">&#128511;</a></h4>
+            <div id="tu_01_01_08_43">
+              <b class="fs20">HTML &lt;figcaption&gt; Tag</b><br>       
+                <b class="fs18">Definition and Usage</b><br>    
+                <b class="fs18">Browser Support</b><br>
+                <b class="fs18">Global Attributes</b><br>
+                <b class="fs18">Event Attributes</b><br>
+                <b class="fs18">More Examples</b><br>
+                <b class="fs18">Related Pages</b><br>
+                <b class="fs18">Default CSS Settings</b><br>
+            </div>
+            <h4>&lt;figure&gt;<a href="https://www.w3schools.com/tags/tag_figure.asp" target="_empty">&#128511;</a></h4>
+            <div id="tu_01_01_08_44">
+              <b class="fs20">HTML &lt;figure&gt; Tag</b><br>       
+                <b class="fs18">Definition and Usage</b><br>               
+                <b class="fs18">Browser Support</b><br>
+                <b class="fs18">Global Attributes</b><br>
+                <b class="fs18">Event Attributes</b><br>
+                <b class="fs18">More Examples</b><br>
+                <b class="fs18">Related Pages</b><br>
+                <b class="fs18">Default CSS Settings</b><br>
+            </div>
+            <h4>&lt;font&gt;<a href="https://www.w3schools.com/tags/tag_font.asp" target="_empty">&#128511;</a></h4>
+            <div id="tu_01_01_08_45">
+              <b class="fs20">HTML &lt;font&gt; Tag</b><br>       
+                <b class="fs18 c_red">Not Supported in HTML5</b><br>
+                <b class="fs18">What to Use Instead?</b><br>
+            </div>
+            <h4>&lt;footer&gt;<a href="https://www.w3schools.com/tags/tag_footer.asp" target="_empty">&#128511;</a></h4>
+            <div id="tu_01_01_08_46">
+              <b class="fs20">HTML &lt;footer&gt; Tag</b><br>       
+                <b class="fs18">Definition and Usage</b><br>
+                <b class="fs18">Tips and Notes</b><br>
+                <b class="fs18">Browser Support</b><br>
+                <b class="fs18">Global Attributes</b><br>
+                <b class="fs18">Event Attributes</b><br>
+                <b class="fs18">More Examples</b><br>
+                <b class="fs18">Related Pages</b><br>
+                <b class="fs18">Default CSS Settings</b><br>
+            </div>
+            <h4>&lt;form&gt;<a href="https://www.w3schools.com/tags/tag_form.asp" target="_empty">&#128511;</a></h4>
+            <div id="tu_01_01_08_47">
+              <b class="fs20">HTML &lt;form&gt; Tag</b><br>       
+                <b class="fs18">Definition and Usage</b><br>
+                <b class="fs18">Browser Support</b><br>
+                <b class="fs18">Attributes</b><br>
+                <b class="fs18">Global Attributes</b><br>
+                <b class="fs18">Event Attributes</b><br>
+                <b class="fs18">More Examples</b><br>
+                <b class="fs18">Related Pages</b><br>
+                <b class="fs18">Default CSS Settings</b><br>
+            </div>
+            <h4>&lt;frame&gt;<a href="https://www.w3schools.com/tags/tag_frame.asp" target="_empty">&#128511;</a></h4>
+            <div id="tu_01_01_08_48">
+              <b class="fs20">HTML &lt;frame&gt; Tag</b><br>       
+                <b class="fs18 c_red">Not Supported in HTML5.</b><br>                
+                <b class="fs18">What to Use Instead?</b><br>
+            </div>
+            <h4>&lt;frameset&gt;<a href="https://www.w3schools.com/tags/tag_frameset.asp" target="_empty">&#128511;</a></h4>
+            <div id="tu_01_01_08_49">
+              <b class="fs20">HTML &lt;frameset&gt; Tag</b><br>       
+                <b class="fs18">What to Use Instead?</b><br>
+            </div>
+            <h4>&lt;h1&gt; - &lt;h6&gt;<a href="https://www.w3schools.com/tags/tag_hn.asp" target="_empty">&#128511;</a></h4>
+            <div id="tu_01_01_08_50">
+              <b class="fs20">HTML &lt;h1&gt; to &lt;h6&gt; Tags</b><br>       
+                <b class="fs18">Definition and Usage</b><br>
+                <b class="fs18">Browser Support</b><br>
+                <b class="fs18">Global Attributes</b><br>
+                <b class="fs18">Event Attributes</b><br>
+                <b class="fs18">More Examples</b><br>
+                <b class="fs18">Related Pages</b><br>
+                <b class="fs18">Default CSS Settings</b><br>
+            </div>
+            <h4>&lt;head&gt;<a href="https://www.w3schools.com/tags/tag_head.asp" target="_empty">&#128511;</a></h4>
+            <div id="tu_01_01_08_51">
+              <b class="fs20">HTML &lt;head&gt; Tag</b><br>       
+                <b class="fs18">Definition and Usage</b><br>               
+                <b class="fs18">Browser Support</b><br>
+                <b class="fs18">Global Attributes</b><br>
+                <b class="fs18">More Examples</b><br>
+                <b class="fs18">Related Pages</b><br>
+                <b class="fs18">Default CSS Settings</b><br>
+            </div>
+            <h4>&lt;header&gt;<a href="https://www.w3schools.com/tags/tag_header.asp" target="_empty">&#128511;</a></h4>
+            <div id="tu_01_01_08_52">
+              <b class="fs20">HTML &lt;header&gt; Tag</b><br>       
+                <b class="fs18">Definition and Usage</b><br>
+                <b class="fs18">Browser Support</b><br>
+                <b class="fs18">Global Attributes</b><br>
+                <b class="fs18">Event Attributes</b><br>
+                <b class="fs18">More Examples</b><br>                
+                <b class="fs18">Related Pages</b><br>
+                <b class="fs18">Default CSS Settings</b><br>
+            </div>
+            <h4>&lt;hgroup&gt;<a href="https://www.w3schools.com/tags/tag_hgroup.asp" target="_empty">&#128511;</a></h4>
+            <div id="tu_01_01_08_53">
+              <b class="fs20">HTML &lt;hgroup&gt; Tag</b><br>       
+                <b class="fs18">Definition and Usage</b><br>
+                <b class="fs18">Browser Support</b><br>
+                <b class="fs18">Global Attributes</b><br>
+                <b class="fs18">Event Attributes</b><br>
+                <b class="fs18">Related Pages</b><br>
+                <b class="fs18">Default CSS Settings</b><br>
+            </div>
+            <h4>&lt;hr&gt;<a href="https://www.w3schools.com/tags/tag_hr.asp" target="_empty">&#128511;</a></h4>
+            <div id="tu_01_01_08_54">
+              <b class="fs20">HTML &lt;hr&gt; Tag</b><br>       
+                <b class="fs18">Definition and Usage</b><br>
+                <b class="fs18">Browser Support</b><br>
+                <b class="fs18">Global Attributes</b><br>
+                <b class="fs18">Event Attributes</b><br>
+                <b class="fs18">More Examples</b><br>
+                <b class="fs18">Related Pages</b><br>
+                <b class="fs18">Default CSS Settings</b><br>
+            </div>
+            <h4>&lt;html&gt;<a href="https://www.w3schools.com/tags/tag_html.asp" target="_empty">&#128511;</a></h4>
+            <div id="tu_01_01_08_55">
+              <b class="fs20">HTML &lt;html&gt; Tag</b><br>       
+                <b class="fs18">Definition and Usage</b><br>
+                <b class="fs18">Browser Support</b><br>
+                <b class="fs18">Attributes</b><br>
+                <b class="fs18">Global Attributes</b><br>
+                <b class="fs18">Related Pages</b><br>
+                <b class="fs18">Default CSS Settings</b><br>
+            </div>
+            <h4>&lt;i&gt;<a href="https://www.w3schools.com/tags/tag_i.asp" target="_empty">&#128511;</a></h4>
+            <div id="tu_01_01_08_56">
+              <b class="fs20">HTML &lt;i&gt; Tag</b><br>       
+                <b class="fs18">Definition and Usage</b><br>
+                <b class="fs18">Browser Support</b><br>
+                <b class="fs18">Global Attributes</b><br>
+                <b class="fs18">Event Attributes</b><br>
+                <b class="fs18">Related Pages</b><br>
+                <b class="fs18">Default CSS Settings</b><br> 
+            </div>
+            <h4>&lt;iframe&gt;<a href="https://www.w3schools.com/tags/tag_iframe.asp" target="_empty">&#128511;</a></h4>
+            <div id="tu_01_01_08_57">
+              <b class="fs20">HTML &lt;iframe&gt; Tag</b><br>       
+                <b class="fs18">Definition and Usage</b><br>
+                <b class="fs18">Browser Support</b><br>
+                <b class="fs18">Attributes</b><br>
+                <b class="fs18">Global Attributes</b><br>
+                <b class="fs18">Event Attributes</b><br>
+                <b class="fs18">More Examples</b><br>
+                <b class="fs18">Related Pages</b><br>
+                <b class="fs18">Default CSS Settings</b><br>
+            </div>
+            <h4>&lt;img&gt;<a href="https://www.w3schools.com/tags/tag_img.asp" target="_empty">&#128511;</a></h4>
+            <div id="tu_01_01_08_58">
+              <b class="fs20">HTML &lt;img&gt; Tag</b><br>       
+                <b class="fs18">Definition and Usage</b><br>
+                <b class="fs18">Browser Support</b><br>
+                <b class="fs18">Attributes</b><br>
+                <b class="fs18">Global Attributes</b><br>
+                <b class="fs18">Event Attributes</b><br>
+                <b class="fs18">Related Pages</b><br>
+                <b class="fs18">Default CSS Settings</b><br>
+            </div>
+            <h4>&lt;input&gt;<a href="https://www.w3schools.com/tags/tag_input.asp" target="_empty">&#128511;</a></h4>
+            <div id="tu_01_01_08_59">
+              <b class="fs20">HTML &lt;input&gt; Tag</b><br>       
+                <b class="fs18">Definition and Usage</b><br>
+                <b class="fs18">Tips and Notes</b><br>
+                <b class="fs18">Browser Support</b><br>
+                <b class="fs18">Attributes</b><br>
+                <b class="fs18">Global Attributes</b><br>
+                <b class="fs18">Event Attributes</b><br>
+                <b class="fs18">Related Pages</b><br>
+                <b class="fs18">Default CSS Settings</b><br>
+            </div>
+            <h4>&lt;ins&gt;<a href="https://www.w3schools.com/tags/tag_ins.asp" target="_empty">&#128511;</a></h4>
+            <div id="tu_01_01_08_60">
+              <b class="fs20">HTML &lt;ins&gt; Tag</b><br>       
+                <b class="fs18">Definition and Usage</b><br>    
+                <b class="fs18">Browser Support</b><br>
+                <b class="fs18">Attributes</b><br>
+                <b class="fs18">Global Attributes</b><br>
+                <b class="fs18">Event Attributes</b><br>
+                <b class="fs18">More Examples</b><br>
+                <b class="fs18">Related Pages</b><br>
+                <b class="fs18">Default CSS Settings</b><br>
+            </div>
+            <h4>&lt;kbd&gt;<a href="https://www.w3schools.com/tags/tag_kbd.asp" target="_empty">&#128511;</a></h4>
+            <div id="tu_01_01_08_61">
+              <b class="fs20">HTML &lt;kbd&gt; Tag</b><br>       
+                <b class="fs18">Definition and Usage</b><br>
+                <b class="fs18">Browser Support</b><br>
+                <b class="fs18">Global Attributes</b><br>
+                <b class="fs18">Event Attributes</b><br>
+                <b class="fs18">More Examples</b><br>
+                <b class="fs18">Related Pages</b><br>
+                <b class="fs18">Default CSS Settings</b><br>
+            </div>
+            <h4>&lt;label&gt;<a href="https://www.w3schools.com/tags/tag_label.asp" target="_empty">&#128511;</a></h4>
+            <div id="tu_01_01_08_62">
+              <b class="fs20">HTML &lt;label&gt; Tag</b><br>       
+                <b class="fs18">Definition and Usage</b><br>
+                <b class="fs18">Tips and Notes</b><br>
+                <b class="fs18">Browser Support</b><br>
+                <b class="fs18">Attributes</b><br>
+                <b class="fs18">Global Attributes</b><br>
+                <b class="fs18">Event Attributes</b><br>
+                <b class="fs18">Related Pages</b><br>
+                <b class="fs18">Default CSS Settings</b><br>
+            </div>
+            <h4>&lt;legend&gt;<a href="https://www.w3schools.com/tags/tag_legend.asp" target="_empty">&#128511;</a></h4>
+            <div id="tu_01_01_08_63">
+              <b class="fs20">HTML &lt;legend&gt; Tag</b><br>       
+                <b class="fs18">Definition and Usage</b><br>
+                <b class="fs18">Browser Support</b><br>
+                <b class="fs18">Global Attributes</b><br>
+                <b class="fs18">Event Attributes</b><br>
+                <b class="fs18">More Examples</b><br>
+                <b class="fs18">Related Pages</b><br>
+                <b class="fs18">Default CSS Settings</b><br>
+            </div>
+            <h4>&lt;li&gt;<a href="https://www.w3schools.com/tags/tag_li.asp" target="_empty">&#128511;</a></h4>
+            <div id="tu_01_01_08_64">
+              <b class="fs20">HTML &lt;li&gt; Tag</b><br>       
+                <b class="fs18">Definition and Usage</b><br>
+                <b class="fs18">Browser Support</b><br>
+                <b class="fs18">Attributes</b><br>
+                <b class="fs18">Global Attributes</b><br>
+                <b class="fs18">Event Attributes</b><br>
+                <b class="fs18">More Examples</b><br>
+                <b class="fs18">Related Pages</b><br>
+                <b class="fs18">Related Pages</b><br>
+                <b class="fs18">Default CSS Settings</b><br>
+            </div>
+            <h4>&lt;link&gt;<a href="https://www.w3schools.com/tags/tag_link.asp" target="_empty">&#128511;</a></h4>
+            <div id="tu_01_01_08_65">
+              <b class="fs20">HTML &lt;link&gt; Tag</b><br>       
+                <b class="fs18">Definition and Usage</b><br>
+                <b class="fs18">Attributes</b><br>
+                <b class="fs18">Global Attributes</b><br>
+                <b class="fs18">Event Attributes</b><br>
+                <b class="fs18">Related Pages</b><br>
+                <b class="fs18">Default CSS Settings</b><br>
+            </div>
+            <h4>&lt;main&gt;<a href="https://www.w3schools.com/tags/tag_main.asp" target="_empty">&#128511;</a></h4>
+            <div id="tu_01_01_08_66">
+              <b class="fs20">HTML &lt;main&gt; Tag</b><br>       
+                <b class="fs18">Definition and Usage</b><br>
+                <b class="fs18">Browser Support</b><br>
+                <b class="fs18">Global Attributes</b><br>
+                <b class="fs18">Event Attributes</b><br>
+                <b class="fs18">More Examples</b><br>
+            </div>
+            <h4>&lt;map&gt;<a href="https://www.w3schools.com/tags/tag_map.asp" target="_empty">&#128511;</a></h4>
+            <div id="tu_01_01_08_67">
+              <b class="fs20">HTML &lt;map&gt; Tag</b><br>       
+                <b class="fs18">Definition and Usage</b><br>                
+                <b class="fs18">Browser Support</b><br>
+                <b class="fs18">Attributes</b><br>
+                <b class="fs18">Global Attributes</b><br>
+                <b class="fs18">Event Attributes</b><br>
+                <b class="fs18">More Examples</b><br>
+                <b class="fs18">Related Pages</b><br>
+                <b class="fs18">Default CSS Settings</b><br>
+            </div>
+            <h4>&lt;mark&gt;<a href="https://www.w3schools.com/tags/tag_mark.asp" target="_empty">&#128511;</a></h4>
+            <div id="tu_01_01_08_68">
+              <b class="fs20">HTML &lt;mark&gt; Tag</b><br>       
+                <b class="fs18">Definition and Usage</b><br>
+                <b class="fs18">Browser Support</b><br>
+                <b class="fs18">Global Attributes</b><br>
+                <b class="fs18">Event Attributes</b><br>
+                <b class="fs18">Related Pages</b><br>
+                <b class="fs18">Default CSS Settings</b><br>
+            </div>
+            <h4>&lt;menu&gt;<a href="https://www.w3schools.com/tags/tag_menu.asp" target="_empty">&#128511;</a></h4>
+            <div id="tu_01_01_08_69">
+              <b class="fs20">HTML &lt;menu&gt; Tag</b><br>       
+                <b class="fs18">Definition and Usage</b><br>
+                <b class="fs18">Browser Support</b><br>
+                <b class="fs18">Global Attributes</b><br>
+                <b class="fs18">Event Attributes</b><br>
+                <b class="fs18">Related Pages</b><br>
+                <b class="fs18">Default CSS Settings</b><br>
+            </div>
+            <h4>&lt;meta&gt;<a href="https://www.w3schools.com/tags/tag_meta.asp" target="_empty">&#128511;</a></h4>
+            <div id="tu_01_01_08_70">
+              <b class="fs20">HTML &lt;meta&gt; Tag</b><br> 
+                <b class="fs18">Definition and Usage</b><br>
+                <b class="fs18">Browser Support</b><br>
+                <b class="fs18">Attributes</b><br>
+                <b class="fs18">Global Attributes</b><br>
+                <b class="fs18">More Examples</b><br>
+                <b class="fs18">Setting the Viewport</b><br>
+                <b class="fs18">Related Pages</b><br>
+                <b class="fs18">Default CSS Settings</b><br>
+              </div>
+            <h4>&lt;meter&gt;<a href="https://www.w3schools.com/tags/tag_meter.asp" target="_empty">&#128511;</a></h4>
+            <div id="tu_01_01_08_71">
+              <b class="fs20">HTML &lt;meter&gt; Tag</b><br> 
+                <b class="fs18">Definition and Usage</b><br>
+                <b class="fs18">Browser Support</b><br>
+                <b class="fs18">Attributes</b><br>
+                <b class="fs18">Global Attributes</b><br>
+                <b class="fs18">Event Attributes</b><br>
+                <b class="fs18">Related Pages</b><br>
+                <b class="fs18">Default CSS Settings</b><br>
+            </div>
+            <h4>&lt;nav&gt;<a href="https://www.w3schools.com/tags/tag_nav.asp" target="_empty">&#128511;</a></h4>
+            <div id="tu_01_01_08_72">
+              <b class="fs20">HTML &lt;nav&gt; Tag</b><br> 
+                <b class="fs18">Definition and Usage</b><br>
+                <b class="fs18">Browser Support</b><br>
+                <b class="fs18">Global Attributes</b><br>
+                <b class="fs18">Event Attributes</b><br>
+                <b class="fs18">Related Pages</b><br>
+                <b class="fs18">Default CSS Settings</b><br>
+            </div>
+            <h4>&lt;noframes&gt;<a href="https://www.w3schools.com/tags/tag_noframes.asp" target="_empty">&#128511;</a></h4>
+            <div id="tu_01_01_08_73">
+              <b class="fs20">HTML &lt;noframes&gt; Tag</b><br> 
+                <b class="fs18 c_red">Not Supported in HTML5.</b><br>  
+                <b class="fs18">What to Use Instead?</b><br> 
+            </div>
+            <h4>&lt;noscript&gt;<a href="https://www.w3schools.com/tags/tag_noscript.asp" target="_empty">&#128511;</a></h4>
+            <div id="tu_01_01_08_74">
+              <b class="fs20">HTML &lt;noscript&gt; Tag</b><br> 
+                <b class="fs18">Definition and Usage</b><br> 
+                <b class="fs18">Browser Support</b><br>
+                <b class="fs18">Global Attributes</b><br> 
+                <b class="fs18">Related Pages</b><br>
+                <b class="fs18">Default CSS Settings</b><br>
+            </div>
+            <h4>&lt;object&gt;<a href="https://www.w3schools.com/tags/tag_object.asp" target="_empty">&#128511;</a></h4>
+            <div id="tu_01_01_08_75">
+              <b class="fs20">HTML &lt;object&gt; Tag</b><br>
+              <b class="fs18">Definition and Usage</b><br> 
+              <b class="fs18">Browser Support</b><br>
+              <b class="fs18">Plug-ins</b><br>
+              <b class="fs18">Attributes</b><br>
+              <b class="fs18">Global Attributes</b><br>
+              <b class="fs18">Event Attributes</b><br>
+              <b class="fs18">Related Pages</b><br>
+              <b class="fs18">Default CSS Settings</b><br>
+            </div>
+            <h4>&lt;ol&gt;<a href="https://www.w3schools.com/tags/tag_ol.asp" target="_empty">&#128511;</a></h4>
+            <div id="tu_01_01_08_76">
+              <b class="fs20">HTML &lt;ol&gt; Tag</b><br>
+              <b class="fs18">Definition and Usage</b><br> 
+              <b class="fs18">Browser Support</b><br>
+              <b class="fs18">Attributes</b><br>
+              <b class="fs18">Global Attributes</b><br>
+              <b class="fs18">Event Attributes</b><br>
+              <b class="fs18">More Examples</b><br>
+              <b class="fs18">Related Pages</b><br>
+              <b class="fs18">Default CSS Settings</b><br>
+            </div>
+            <h4>&lt;optgroup&gt;<a href="https://www.w3schools.com/tags/tag_optgroup.asp" target="_empty">&#128511;</a></h4>
+            <div id="tu_01_01_08_77">
+              <b class="fs20">HTML &lt;optgroup&gt; Tag</b><br>
+              <b class="fs18">Definition and Usage</b><br> 
+              <b class="fs18">Browser Support</b><br>
+              <b class="fs18">Attributes</b><br>
+              <b class="fs18">Global Attributes</b><br>
+              <b class="fs18">Event Attributes</b><br>
+              <b class="fs18">Related Pages</b><br>
+              <b class="fs18">Default CSS Settings</b><br>
+            </div>
+            <h4>&lt;option&gt;<a href="https://www.w3schools.com/tags/tag_option.asp" target="_empty">&#128511;</a></h4>
+            <div id="tu_01_01_08_78">
+              <b class="fs20">HTML &lt;option&gt; Tag</b><br> 
+              <b class="fs18">Definition and Usage</b><br>
+              <b class="fs18">Browser Support</b><br>
+              <b class="fs18">Attributes</b><br>
+              <b class="fs18">Global Attributes</b><br>
+              <b class="fs18">Event Attributes</b><br>
+              <b class="fs18">More Examples</b><br>
+              <b class="fs18">Related Pages</b><br>
+                <b class="fs18">Default CSS Settings</b><br>
+            </div>
+            <h4>&lt;output&gt;<a href="https://www.w3schools.com/tags/tag_output.asp" target="_empty">&#128511;</a></h4>
+            <div id="tu_01_01_08_79">
+              <b class="fs20">HTML &lt;output&gt; Tag</b><br>
+              <b class="fs18">Definition and Usage</b><br>
+              <b class="fs18">Browser Support</b><br>
+              <b class="fs18">Attributes</b><br>
+              <b class="fs18">Global Attributes</b><br>
+              <b class="fs18">Event Attributes</b><br>              
+              <b class="fs18">Related Pages</b><br>
+              <b class="fs18">Default CSS Settings</b><br>
+            </div>
+            <h4>&lt;p&gt;<a href="https://www.w3schools.com/tags/tag_p.asp" target="_empty">&#128511;</a></h4>
+            <div id="tu_01_01_08_80">
+              <b class="fs20">HTML &lt;p&gt; Tag</b><br> 
+              <b class="fs18">Definition and Usage</b><br>
+              <b class="fs18">Browser Support</b><br>
+              <b class="fs18">Global Attributes</b><br>
+              <b class="fs18">Event Attributes</b><br>
+              <b class="fs18">More Examples</b><br>
+              <b class="fs18">Related Pages</b><br>
+              <b class="fs18">Default CSS Settings</b><br>
+            </div>
+            <h4>&lt;param&gt;<a href="https://www.w3schools.com/tags/tag_param.asp" target="_empty">&#128511;</a></h4>
+            <div id="tu_01_01_08_81">
+              <b class="fs20">HTML &lt;param&gt; Tag</b><br> 
+                <b class="fs18">Definition and Usage</b><br>
+                <b class="fs18">Browser Support</b><br>
+                <b class="fs18">Attributes</b><br>
+                <b class="fs18">Global Attributes</b><br>
+                <b class="fs18">Event Attributes</b><br>
+                <b class="fs18">Related Pages</b><br>
+                <b class="fs18">Default CSS Settings</b><br>
+            </div>
+            <h4>&lt;picture&gt;<a href="https://www.w3schools.com/tags/tag_picture.asp" target="_empty">&#128511;</a></h4>
+            <div id="tu_01_01_08_82">
+              <b class="fs20">HTML &lt;picture&gt; Tag</b><br> 
+                <b class="fs18">Definition and Usage</b><br>
+                <b class="fs18">Browser Support</b><br>
+                <b class="fs18">Global Attributes</b><br>
+                <b class="fs18">Event Attributes</b><br>
+                <b class="fs18">Related Pages</b><br>
+            </div>
+            <h4>&lt;pre&gt;<a href="https://www.w3schools.com/tags/tag_pre.asp" target="_empty">&#128511;</a></h4>
+            <div id="tu_01_01_08_83">
+              <b class="fs20">HTML &lt;pre&gt; Tag</b><br>
+                <b class="fs18">Definition and Usage</b><br>
+                <b class="fs18">Browser Support</b><br>
+                <b class="fs18">Global Attributes</b><br>
+                <b class="fs18">Event Attributes</b><br>
+                <b class="fs18">More Examples</b><br>
+                <b class="fs18">Related Pages</b><br>
+                <b class="fs18">Default CSS Settings</b><br>
+            </div>
+            <h4>&lt;progress&gt;<a href="https://www.w3schools.com/tags/tag_progress.asp" target="_empty">&#128511;</a></h4>
+            <div id="tu_01_01_08_84">
+              <b class="fs20">HTML &lt;progress&gt; Tag</b><br> 
+                <b class="fs18">Definition and Usage</b><br>
+                <b class="fs18">Tips and Notes</b><br>
+                <b class="fs18">Browser Support</b><br>
+                <b class="fs18">Attributes</b><br>
+                <b class="fs18">Global Attributes</b><br>
+                <b class="fs18">Event Attributes</b><br>                  
+                <b class="fs18">Related Pages</b><br>
+                <b class="fs18">Default CSS Settings</b><br>
+            </div>
+            <h4>&lt;q&gt;<a href="https://www.w3schools.com/tags/tag_q.asp" target="_empty">&#128511;</a></h4>
+            <div id="tu_01_01_08_85">
+              <b class="fs20">HTML &lt;q&gt; Tag</b><br> 
+              <b class="fs18">Definition and Usage</b><br>
+              <b class="fs18">Browser Support</b><br>
+              <b class="fs18">Attributes</b><br>
+              <b class="fs18">Global Attributes</b><br>
+              <b class="fs18">Event Attributes</b><br>
+              <b class="fs18">More Examples</b><br>
+              <b class="fs18">Related Pages</b><br>
+              <b class="fs18">Default CSS Settings</b><br>
+            </div>
+            <h4>&lt;rp&gt;<a href="https://www.w3schools.com/tags/tag_rp.asp" target="_empty">&#128511;</a></h4>
+            <div id="tu_01_01_08_86">
+              <b class="fs20">HTML &lt;rp&gt; Tag</b><br>
+              <ruby>
+                漢 <rp>(</rp><rt>ㄏㄢˋ</rt><rp>)</rp>
+              </ruby><br>              
+              <b class="fs18">Definition and Usage</b><br> 
+              <b class="fs18">Browser Support</b><br>
+              <b class="fs18">Global Attributes</b><br>
+              <b class="fs18">Event Attributes</b><br>
+              <b class="fs18">Default CSS Settings</b><br>              
+            </div>
+            <h4>&lt;rt&gt;<a href="https://www.w3schools.com/tags/tag_rt.asp" target="_empty">&#128511;</a></h4>
+            <div id="tu_01_01_08_87">
+              <b class="fs20">HTML &lt;rt&gt; Tag</b><br>
+              <ruby>私<rt>わたし</rt></ruby>は<br> 
+              <b class="fs18">Browser Support</b><br>
+              <b class="fs18">Global Attributes</b><br>
+              <b class="fs18">Event Attributes</b><br>
+              <b class="fs18">Default CSS Settings</b><br>
+            </div>
+            <h4>&lt;ruby&gt;<a href="https://www.w3schools.com/tags/tag_ruby.asp" target="_empty">&#128511;</a></h4>
+            <div id="tu_01_01_08_88">
+              <b class="fs20">HTML &lt;ruby&gt; Tag</b><br> 
+              <b class="fs18">Definition and Usage</b><br>
+              <b class="fs18">Browser Support</b><br>
+              <b class="fs18">Global Attributes</b><br>
+              <b class="fs18">Event Attributes</b><br>
+            </div>
+            <h4>&lt;s&gt;<a href="https://www.w3schools.com/tags/tag_s.asp" target="_empty">&#128511;</a></h4>
+            <div id="tu_01_01_08_89">
+              <b class="fs20">HTML &lt;s&gt; Tag</b><br>
+              <b class="fs18">Definition and Usage</b><br>
+              <b class="fs18">Browser Support</b><br> 
+              <b class="fs18">Global Attributes</b><br>
+              <b class="fs18">Event Attributes</b><br>
+              <b class="fs18">Related Pages</b><br>
+              <b class="fs18">Default CSS Settings</b><br>
+            </div>
+            <h4>&lt;samp&gt;<a href="https://www.w3schools.com/tags/tag_samp.asp" target="_empty">&#128511;</a></h4>
+            <div id="tu_01_01_08_90">
+              <b class="fs20">HTML &lt;samp&gt; Tag</b><br> 
+              <b class="fs18">Definition and Usage</b><br>
+              <b class="fs18">Browser Support</b><br>
+              <b class="fs18">Global Attributes</b><br>
+              <b class="fs18">Event Attributes</b><br>
+              <b class="fs18">Related Pages</b><br>
+              <b class="fs18">Default CSS Settings</b><br>
+            </div>
+            <h4>&lt;script&gt;<a href="https://www.w3schools.com/tags/tag_script.asp" target="_empty">&#128511;</a></h4>
+            <div id="tu_01_01_08_91">
+              <b class="fs20">HTML &lt;script&gt; Tag</b><br> 
+              <p id="demo"></p>             
+<script>
+document.getElementById("demo").innerHTML = "Hello JavaScript!";
+</script> 
+              <b class="fs18">Definition and Usage</b><br>
+              <b class="fs18">Tips and Notes</b><br>
+              <b class="fs18">Browser Support</b><br>
+              <b class="fs18">Attributes</b><br>
+              <b class="fs18">Differences Between HTML and XHTML</b><br>
+              <b class="fs18">Global Attributes</b><br>
+              <b class="fs18">Related Pages</b><br>
+              <b class="fs18">Default CSS Settings</b><br>
+            </div>
+            <h4>&lt;search&gt;<a href="https://www.w3schools.com/tags/tag_search.asp" target="_empty">&#128511;</a></h4>
+            <div id="tu_01_01_08_92">
+              <b class="fs20">HTML &lt;search&gt; Tag</b><br>
+              <b class="fs18">Definition and Usage</b><br> 
+              <b class="fs18">Browser Support</b><br>
+              <b class="fs18">Global Attributes</b><br>
+              <b class="fs18">Event Attributes</b><br>
+              <b class="fs18">Related Pages</b><br>
+              <b class="fs18">Default CSS Settings</b><br>
+            </div>
+            <h4>&lt;section&gt;<a href="https://www.w3schools.com/tags/tag_section.asp" target="_empty">&#128511;</a></h4>
+            <div id="tu_01_01_08_93">
+              <b class="fs20">HTML &lt;section&gt; Tag</b><br> 
+              <b class="fs18">Definition and Usage</b><br>
+              <b class="fs18">Global Attributes</b><br>
+              <b class="fs18">Event Attributes</b><br>
+              <b class="fs18">Related Pages</b><br>
+              <b class="fs18">Default CSS Settings</b><br>
+            </div>
+            <h4>&lt;select&gt;<a href="https://www.w3schools.com/tags/tag_select.asp" target="_empty">&#128511;</a></h4>
+            <div id="tu_01_01_08_94">
+              <b class="fs20">HTML &lt;select&gt; Tag</b><br> 
+              <b class="fs18">Definition and Usage</b><br>
+              <b class="fs18">Browser Support</b><br>
+              <b class="fs18">Attributes</b><br>
+              <b class="fs18">Global Attributes</b><br>
+              <b class="fs18">Event Attributes</b><br>
+              <b class="fs18">More Examples</b><br>
+              <b class="fs18">Related Pages</b><br>
+              <b class="fs18">Default CSS Settings</b><br>
+            </div>
+            <h4>&lt;small&gt;<a href="https://www.w3schools.com/tags/tag_small.asp" target="_empty">&#128511;</a></h4>
+            <div id="tu_01_01_08_95">
+              <b class="fs20">HTML &lt;small&gt; Tag</b><br>
+              <b class="fs18">Definition and Usage</b><br>
+              <b class="fs18">Browser Support</b><br>
+              <b class="fs18">Global Attributes</b><br>
+              <b class="fs18">Event Attributes</b><br>
+              <b class="fs18">More Examples</b><br>
+              <b class="fs18">Related Pages</b><br>
+              <b class="fs18">Default CSS Settings</b><br>
+            </div>
+            <h4>&lt;source&gt;<a href="https://www.w3schools.com/tags/tag_source.asp" target="_empty">&#128511;</a></h4>
+            <div id="tu_01_01_08_96">
+              <b class="fs20">HTML &lt;source&gt; Tag</b><br> 
+              <b class="fs18">Definition and Usage</b><br>
+              <b class="fs18">Browser Support</b><br>
+              <b class="fs18">Attributes</b><br>
+              <b class="fs18">Global Attributes</b><br>
+              <b class="fs18">Event Attributes</b><br>
+              <b class="fs18">More Examples</b><br>
+              <b class="fs18">Related Pages</b><br>
+              <b class="fs18">Default CSS Settings</b><br>
+            </div>
+            <h4>&lt;span&gt;<a href="https://www.w3schools.com/tags/tag_span.asp" target="_empty">&#128511;</a></h4>
+            <div id="tu_01_01_08_97">
+              <b class="fs20">HTML &lt;span&gt; Tag</b><br> 
+              <b class="fs18">Definition and Usage</b><br>
+              <b class="fs18">Browser Support</b><br>
+              <b class="fs18">Global Attributes</b><br>
+              <b class="fs18">Event Attributes</b><br>
+              <b class="fs18">Related Pages</b><br>
+              <b class="fs18">Default CSS Settings</b><br>
+            </div>
+            <h4>&lt;strike&gt;<a href="https://www.w3schools.com/tags/tag_strike.asp" target="_empty">&#128511;</a></h4>
+            <div id="tu_01_01_08_98">
+              <b class="fs20">HTML &lt;strike&gt; Tag</b><br> 
+              <b class="fs18 c_red">Not Supported in HTML5.</b><br>
+              <b class="fs18">What to Use Instead?</b><br>
+            </div>
+            <h4>&lt;strong&gt;<a href="https://www.w3schools.com/tags/tag_strong.asp" target="_empty">&#128511;</a></h4>
+            <div id="tu_01_01_08_99">
+              <b class="fs20">HTML &lt;strong&gt; Tag</b><br> 
+              <b class="fs18">Definition and Usage</b><br>
+              <b class="fs18">Browser Support</b><br>
+              <b class="fs18">Global Attributes</b><br>
+              <b class="fs18">Event Attributes</b><br>
+              <b class="fs18">Related Pages</b><br>
+              <b class="fs18">Default CSS Settings</b><br>
+              <b class="fs18"></b><br>
+            </div>
+            <h4>&lt;style&gt;<a href="https://www.w3schools.com/tags/tag_style.asp" target="_empty">&#128511;</a></h4>
+            <div id="tu_01_01_08_100">
+              <b class="fs20">HTML &lt;style&gt; Tag</b><br>
+              <b class="fs18">Definition and Usage</b><br>
+              <b class="fs18">Tips and Notes</b><br> 
+              <b class="fs18">Browser Support</b><br>
+              <b class="fs18">Attributes</b><br>
+              <b class="fs18">Global Attributes</b><br>
+              <b class="fs18">Event Attributes</b><br>
+              <b class="fs18">More Examples</b><br>
+              <b class="fs18">Related Pages</b><br>
+              <b class="fs18">Default CSS Settings</b><br>
+            </div>
+            <h4>&lt;sub&gt;<a href="https://www.w3schools.com/tags/tag_sub.asp" target="_empty">&#128511;</a></h4>
+            <div id="tu_01_01_08_101">
+              <b class="fs20">HTML &lt;sub&gt; Tag</b><br>
+              <b class="fs18">Definition and Usage</b><br> 
+              <b class="fs18">Browser Support</b><br>
+              <b class="fs18">Global Attributes</b><br>
+              <b class="fs18">Event Attributes</b><br>
+              <b class="fs18">Related Pages</b><br>
+              <b class="fs18">Default CSS Settings</b><br>
+            </div>
+            <h4>&lt;summary&gt;<a href="https://www.w3schools.com/tags/tag_summary.asp" target="_empty">&#128511;</a></h4>
+            <div id="tu_01_01_08_102">
+              <b class="fs20">HTML &lt;summary&gt; Tag</b><br>
+              <b class="fs18">Definition and Usage</b><br> 
+              <b class="fs18">Browser Support</b><br>
+              <b class="fs18">Global Attributes</b><br>
+              <b class="fs18">Event Attributes</b><br>
+              <b class="fs18">More Examples</b><br>
+              <b class="fs18">Related Pages</b><br>
+              <b class="fs18">Default CSS Settings</b><br>
+            </div>
+            <h4>&lt;sup&gt;<a href="https://www.w3schools.com/tags/tag_sup.asp" target="_empty">&#128511;</a></h4>
+            <div id="tu_01_01_08_103">
+              <b class="fs20">HTML &lt;sup&gt; Tag</b><br> 
+              <b class="fs18">Definition and Usage</b><br>
+              <b class="fs18">Browser Support</b><br>
+              <b class="fs18">Global Attributes</b><br>
+              <b class="fs18">Event Attributes</b><br>
+              <b class="fs18">Related Pages</b><br>
+              <b class="fs18">Default CSS Settings</b><br>
+            </div>
+            <h4>&lt;svg&gt;<a href="https://www.w3schools.com/tags/tag_svg.asp" target="_empty">&#128511;</a></h4>
+            <div id="tu_01_01_08_104">
+              <b class="fs20">HTML &lt;svg&gt; Tag</b><br> 
+              <b class="fs18">Definition and Usage</b><br>
+              <b class="fs18">Browser Support</b><br>
+              <b class="fs18">More Examples</b><br>
+              <b class="fs18">Related Pages</b><br>
+            </div>
+            <h4>&lt;table&gt;<a href="https://www.w3schools.com/tags/tag_table.asp" target="_empty">&#128511;</a></h4>
+            <div id="tu_01_01_08_105">
+              <b class="fs20">HTML &lt;table&gt; Tag</b><br> 
+              <b class="fs18">Definition and Usage</b><br>
+              <b class="fs18">Browser Support</b><br>
+              <b class="fs18">Global Attributes</b><br>
+              <b class="fs18">Event Attributes</b><br>
+              <b class="fs18">More Examples</b><br>
+              <b class="fs18">Related Pages</b><br>
+              <b class="fs18">Default CSS Settings</b><br>
+            </div>
+            <h4>&lt;tbody&gt;<a href="https://www.w3schools.com/tags/tag_tbody.asp" target="_empty">&#128511;</a></h4>
+            <div id="tu_01_01_08_106">
+              <b class="fs20">HTML &lt;tbody&gt; Tag</b><br> 
+              <b class="fs18">Definition and Usage</b><br>
+              <b class="fs18">Browser Support</b><br>
+              <b class="fs18">Global Attributes</b><br>
+              <b class="fs18">Event Attributes</b><br>
+              <b class="fs18">More Examples</b><br>
+              <b class="fs18">Default CSS Settings</b><br>
+            </div>
+            <h4>&lt;td&gt;<a href="https://www.w3schools.com/tags/tag_td.asp" target="_empty">&#128511;</a></h4>
+            <div id="tu_01_01_08_107">
+              <b class="fs20">HTML &lt;td&gt; Tag</b><br> 
+              <b class="fs18">Definition and Usage</b><br>
+              <b class="fs18">Browser Support</b><br>
+              <b class="fs18">Attributes</b><br>
+              <b class="fs18">Global Attributes</b><br>
+              <b class="fs18">Event Attributes</b><br>
+              <b class="fs18">More Examples</b><br>
+              <b class="fs18">Related Pages</b><br>
+              <b class="fs18">Default CSS Settings</b><br>
+            </div>
+            <h4>&lt;template&gt;<a href="https://www.w3schools.com/tags/tag_template.asp" target="_empty">&#128511;</a></h4>
+            <div id="tu_01_01_08_108">
+              <b class="fs20">HTML &lt;template&gt; Tag</b><br> 
+              <b class="fs18">Definition and Usage</b><br>
+              <b class="fs18">Browser Support</b><br>
+              <b class="fs18">Global Attributes</b><br>
+              <b class="fs18">More Examples</b><br>
+            </div>
+            <h4>&lt;textarea&gt;<a href="https://www.w3schools.com/tags/tag_textarea.asp" target="_empty">&#128511;</a></h4>
+            <div id="tu_01_01_08_109">
+              <b class="fs20">HTML &lt;textarea&gt; Tag</b><br> 
+              <b class="fs18">Definition and Usage</b><br>
+              <b class="fs18">Browser Support</b><br>
+              <b class="fs18">Global Attributes</b><br>
+              <b class="fs18">Event Attributes</b><br>
+              <b class="fs18">More Examples</b><br>
+              <b class="fs18">Related Pages</b><br>
+              <b class="fs18">Default CSS Settings</b><br>
+            </div>
+            <h4>&lt;tfoot&gt;<a href="https://www.w3schools.com/tags/tag_tfoot.asp" target="_empty">&#128511;</a></h4>
+            <div id="tu_01_01_08_110">
+              <b class="fs20">HTML &lt;tfoot&gt; Tag</b><br>
+              <b class="fs18">Definition and Usage</b><br> 
+              <b class="fs18">Browser Support</b><br>
+              <b class="fs18">Global Attributes</b><br>
+              <b class="fs18">Event Attributes</b><br>
+              <b class="fs18">More Examples</b><br>
+              <b class="fs18">Default CSS Settings</b><br>
+            </div>
+            <h4>&lt;th&gt;<a href="https://www.w3schools.com/tags/tag_th.asp" target="_empty">&#128511;</a></h4>
+            <div id="tu_01_01_08_111">
+              <b class="fs20">HTML &lt;th&gt; Tag</b><br> 
+              <b class="fs18">Definition and Usage</b><br>
+              <b class="fs18">Browser Support</b><br>
+              <b class="fs18">Attributes</b><br>
+              <b class="fs18">Global Attributes</b><br>
+              <b class="fs18">Event Attributes</b><br>
+              <b class="fs18">More Examples</b><br>
+              <b class="fs18">Related Pages</b><br>
+              <b class="fs18">Default CSS Settings</b><br>
+            </div>
+            <h4>&lt;thead&gt;<a href="https://www.w3schools.com/tags/tag_thead.asp" target="_empty">&#128511;</a></h4>
+            <div id="tu_01_01_08_112">
+              <b class="fs20">HTML &lt;thead&gt; Tag</b><br> 
+              <b class="fs18">Definition and Usage</b><br>
+              <b class="fs18">Browser Support</b><br>
+              <b class="fs18">Global Attributes</b><br>
+              <b class="fs18">Event Attributes</b><br>
+              <b class="fs18">More Examples</b><br>
+              <b class="fs18">Default CSS Settings</b><br>
+            </div>
+            <h4>&lt;time&gt;<a href="https://www.w3schools.com/tags/tag_time.asp" target="_empty">&#128511;</a></h4>
+            <div id="tu_01_01_08_113">
+              <b class="fs20">HTML &lt;time&gt; Tag</b><br> 
+              <b class="fs18">Definition and Usage</b><br>
+              <b class="fs18">Browser Support</b><br>
+              <b class="fs18">Attributes</b><br>
+              <b class="fs18">Global Attributes</b><br>
+              <b class="fs18">Event Attributes</b><br>
+              <b class="fs18">Related Pages</b><br>
+              <b class="fs18">Default CSS Settings</b><br>
+            </div>
+            <h4>&lt;title&gt;<a href="https://www.w3schools.com/tags/tag_title.asp" target="_empty">&#128511;</a></h4>
+            <div id="tu_01_01_08_114">
+              <b class="fs20">HTML &lt;title&gt; Tag</b><br> 
+              <b class="fs18">Definition and Usage</b><br>
+              <b class="fs18">Browser Support</b><br>
+              <b class="fs18">Global Attributes</b><br>
+              <b class="fs18">Related Pages</b><br>
+              <b class="fs18">Default CSS Settings</b><br>
+            </div>
+            <h4>&lt;tr&gt;<a href="https://www.w3schools.com/tags/tag_tr.asp" target="_empty">&#128511;</a></h4>
+            <div id="tu_01_01_08_115">
+              <b class="fs20">HTML &lt;tr&gt; Tag </b><br>
+              <b class="fs18">Definition and Usage</b><br>
+              <b class="fs18">Browser Support</b><br>
+              <b class="fs18">Global Attributes</b><br>
+              <b class="fs18">Event Attributes</b><br>
+              <b class="fs18">More Examples</b><br>
+              <b class="fs18">Related Pages</b><br>
+              <b class="fs18">Default CSS Settings</b><br>
+            </div>
+            <h4>&lt;track&gt;<a href="https://www.w3schools.com/tags/tag_track.asp" target="_empty">&#128511;</a></h4>
+            <div id="tu_01_01_08_116">
+              <b class="fs20">HTML &lt;track&gt; Tag</b><br> 
+              <b class="fs18">Definition and Usage</b><br>
+              <b class="fs18">Browser Support</b><br>
+              <b class="fs18">Optional Attributes</b><br>
+              <b class="fs18">Global Attributes</b><br>
+              <b class="fs18">Event Attributes</b><br>
+              <b class="fs18">Related Pages</b><br>
+              <b class="fs18">Default CSS Settings</b><br>
+            </div>
+            <h4>&lt;tt&gt;<a href="https://www.w3schools.com/tags/tag_tt.asp" target="_empty">&#128511;</a></h4>
+            <div id="tu_01_01_08_117">
+              <b class="fs20">HTML &lt;tt&gt; Tag</b><br> 
+              <b class="fs18 c_red">Not Supported in HTML5.</b><br>  
+              <b class="fs18">What to Use Instead?</b><br>
+            </div>
+            <h4>&lt;u&gt;<a href="https://www.w3schools.com/tags/tag_u.asp" target="_empty">&#128511;</a></h4>
+            <div id="tu_01_01_08_118">
+              <b class="fs20">HTML &lt;u&gt; Tag</b><br>
+              <b class="fs18">Definition and Usage</b><br> 
+              <b class="fs18">Browser Support</b><br>
+              <b class="fs18">Global Attributes</b><br>
+              <b class="fs18">Event Attributes</b><br>
+              <b class="fs18">More Examples</b><br>
+              <b class="fs18">Related Pages</b><br>
+              <b class="fs18">Default CSS Settings</b><br>
+            </div>
+            <h4>&lt;ul&gt;<a href="https://www.w3schools.com/tags/tag_ul.asp" target="_empty">&#128511;</a></h4>
+            <div id="tu_01_01_08_119">
+              <b class="fs20">HTML &lt;ul&gt; Tag</b><br> 
+              <b class="fs18">Definition and Usage</b><br>
+              <b class="fs18">Browser Support</b><br>
+              <b class="fs18">Global Attributes</b><br>
+              <b class="fs18">Event Attributes</b><br>
+              <b class="fs18">More Examples</b><br>
+              <b class="fs18">Related Pages</b><br>
+              <b class="fs18">Default CSS Settings</b><br>
+            </div>
+            <h4>&lt;var&gt;<a href="https://www.w3schools.com/tags/tag_var.asp" target="_empty">&#128511;</a></h4>
+            <div id="tu_01_01_08_120">
+              <b class="fs20">HTML &lt;var&gt; Tag</b><br> 
+              <b class="fs18">Browser Support</b><br>
+              <b class="fs18">Global Attributes</b><br>
+              <b class="fs18">Event Attributes</b><br>
+              <b class="fs18">Related Pages</b><br>
+              <b class="fs18">Default CSS Settings</b><br>
+            </div>
+            <h4>&lt;video&gt;<a href="https://www.w3schools.com/tags/tag_video.asp" target="_empty">&#128511;</a></h4>
+            <div id="tu_01_01_08_121">
+              <b class="fs20">HTML &lt;video&gt; Tag</b><br> 
+              <b class="fs18">Definition and Usage</b><br>
+              <b class="fs18">Tips and Notes</b><br>
+              <b class="fs18">Browser Support</b><br>
+              <b class="fs18">Optional Attributes</b><br>
+              <b class="fs18">Global Attributes</b><br>
+              <b class="fs18">Event Attributes</b><br>
+              <b class="fs18">Related Pages</b><br>
+              <b class="fs18">Default CSS Settings</b><br>
+            </div>
+            <h4>&lt;wbr&gt;<a href="https://www.w3schools.com/tags/tag_wbr.asp" target="_empty">&#128511;</a></h4>
+            <div id="tu_01_01_08_122">
+              <b class="fs20">HTML &lt;wbr&gt; Tag</b><br>
+              <b class="fs18">Definition and Usage</b><br> 
+              <b class="fs18">Browser Support</b><br>
+              <b class="fs18">Global Attributes</b><br>
+              <b class="fs18">Event Attributes</b><br>
+                <!--      
+            <aside id="janas_here">         
+                  <div id="rtxt" style="display:none">
+                    <pre>      
+                    </pre>
+                  </div>		 
+                  <div id="here">
+                    <b class="fs21">Janas 202406017</b>
+                    <b class="fs25"><a href="#hdr">&#8679;</a></b>
+                    <b class="fs25"><a href="tools.html" target="_blank">Tools</a></b>
+                    <input type="text" id="f1" name="f1" style="width:40%">
+                      <button onclick="conv()">To HTML</button>
+                  </div>
+            </aside> 
+                -->
+
+            </div>
+            <h4><a href="" target="_empty">&#128511;</a></h4>
+            <div id="tu_01_01_08_999">
+              <b class="fs20"></b><br> 
+                <!--      
+                HTML &lt; &gt; Tag  
+                <b class="fs18 c_red">Not Supported in HTML5.</b><br>  
+                <b class="fs18">What to Use Instead?</b><br>
+                <b class="fs18">Definition and Usage</b><br>
+                <b class="fs18">Browser Support</b><br>
+                <b class="fs18">Tips and Notes</b><br>
+                <b class="fs18">Differences Between HTML and XHTML</b><br>
+                <b class="fs18">Optional Attributes</b><br>
+                <b class="fs18">Attributes</b><br>
+                <b class="fs18">Global Attributes</b><br>
+                <b class="fs18">Event Attributes</b><br>
+                <b class="fs18">More Examples</b><br>
+                <b class="fs18">Related Pages</b><br>
+                <b class="fs18">Default CSS Settings</b><br>
+                -->
+                <b class="fs18"></b><br>
+                  <b class="fs16"></b><br>
+              <h5><a href="" target="_empty">&#128512;</a></h5>
+              <div id="tu_01_01_08_99_01">
+                <b class="fs20"></b><br>                  
+                  <b class="fs18"></b><br>
+                  <b class="fs18"></b><br>
+                  <b class="fs18"></b><br>
+                  <b class="fs18"></b><br>
+              </div>
+            </div>  
+          </div>
+          <hr>
+          <h3><a href="" target="_empty">&#128507;</a></h3>
+          <div id="tu_01_01_99"> 
+            <h4><a href="" target="_empty">&#128511;</a></h4>
+            <div id="tu_01_01_99_99">  
+              <b class="fs20"></b><br>       
+                <b class="fs18"></b><br>
+                <b class="fs18"></b><br>
+                <b class="fs18"></b><br>
+                  <b class="fs16"></b><br>
+                <b class="fs18"></b><br>
+                <b class="fs18"></b><br>
+                  <b class="fs16"></b><br>
+                  <b class="fs16"></b><br>
+                  <b class="fs16"></b><br>      
+                <table>
+                  <thead><tr><th></th><th></th><th></th></tr></thead>
+                  <tbody><tr><td></td><td></td><td></td></tr></tbody>
+                  <tfoot><tr><td></td><td></td><td></td></tr></tfoot>
+                </table> 
+              <h5><a href="" target="_empty">&#128512;</a></h5>
+              <div id="tu_01_01_99_00_00">
+                <b class="fs20"></b><br>       
+                  <b class="fs18"></b><br>
+                  <b class="fs18"></b><br>
+                  <b class="fs18"></b><br>
+                  <b class="fs18"></b><br>
+                  <b class="fs18"></b><br>
+                  <b class="fs18"></b><br>
+                  <b class="fs18"></b><br>
+                  <b class="fs18"></b><br>
+              </div>           
+            </div>
+            <h4><a href="" target="_empty">&#128511;</a></h4>
+            <div id="tu_01_01_99_02">
+              <h5><a href="" target="_empty">&#128512;</a></h5>
+              <div id="tu_01_01_99_02_01">
+                <b class="fs20"></b><br>       
+                  <b class="fs18"></b><br>
+                  <b class="fs18"></b><br>
+                  <b class="fs18"></b><br>
+                  <b class="fs18"></b><br>
+                  <b class="fs18"></b><br>
+                  <b class="fs18"></b><br>
+                  <b class="fs18"></b><br>
+                  <b class="fs18"></b><br>
+              </div>  
+            </div>
+
+          </div>
+        
+        </div>
+
+      </div>
+      <h1>Data Analytics</h2>
+      <div id="tu_02">
+
+      </div>
+      <h1>JavaScript</h2>
+      <div id="tu_03">
+
+      </div>  
+      <h1>Web Building</h2>
+      <div id="tu_04">
+
+      </div>
+      <h1>Backend</h2>
+      <div id="tu_05">
+
+      </div>
+    </div>
+  
+    <b class="fs32">Exercises</b>
+    <div id="we">
+    <h1></h2>
+    <div id="wb_01">
+      <h3><a href="" target="_empty">&#128507;</a></h3>
+      <div id="wb_01_01">
+        <h4><a href="" target="_empty">&#128511;</a></h4>
+        <div id="wb_01_01_01">
+          <b class="fs20"></b><br> 
+            <b class="fs18"></b><br>
+            <b class="fs18"></b><br>  
+        </div>  
+      </div>
+    </div>
+    </div>
+  
+    <b class="fs32">Certificates</b>
+     <div id="wc">
+      <div id="wc_01">
+        <div id="wc_01_01">
+          <h4><a href="" target="_empty">&#128511;</a></h4>
+          <div id="wc_01_01_01">
+            <b class="fs20"></b><br> 
+              <b class="fs18"></b><br>
+              <b class="fs18"></b><br>  
+          </div>    
+        </div>
+      </div>
+    </div>
+    
+  </main>
+
+
+
+</div>  
+<div class="to-top">
+  <a href="#janas_here" class="go_janas"></a><a href="#" class="go_top"></a>
+</div>
+</body>
+</html>

@@ -1,0 +1,553 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Learn new skills from W3Schools.com</title>
+  <style>  
+    body {
+      display: grid; 
+      /* grid-template-columns: auto auto; */ 
+      grid-template-columns: auto 0px;
+      font-family: Arial, Helvetica, sans-serif;
+    }  
+    
+    * {
+      box-sizing: border-box;
+    }
+
+    /* Style the header */
+    #hdr {
+      background-color: #667;
+      padding: 30px;
+      text-align: center;
+      font-size: 35px;
+      color: white;
+    }
+    table {
+      font-family: arial, sans-serif;
+      border-collapse: collapse;
+      width: 100%;
+    }
+
+    td, th {
+      border: 1px solid #dddddd;
+      text-align: left;
+      padding: 8px;
+    }
+
+    tr:nth-child(even) {
+      background-color: #dddddd;
+    }
+    
+    .tb1, .tb1 th, .tb1 td  {
+        border:1px solid black;  
+    }
+    
+    nav ul {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+      background-color: #443333;
+    }
+    nav li {
+      float: left;
+    }
+    nav li a {
+      display: block;
+      color: white;
+      text-align: center;
+      padding: 16px;
+      text-decoration: none;
+    }
+    nav li a:hover {
+      background-color: #111144;
+      color: #44aa22;
+    }
+    .fs28 {font-size:28px; color:#ce6633;}
+    .fs27 {font-size:27px; }    
+    .fs26 {font-size:26px; color:#ce6622;}
+    .fs25 {font-size:25px; }    
+    .fs24 {font-size:24px; color:#cc3b16;}
+    .fs23 {font-size:23px; }
+    .fs22 {font-size:22px; color:#449966;}
+    .fs21 {font-size:21px; }
+    .fs20 {font-size:20px; color:#229966;}
+    .fs19 {font-size:19px; }
+    .fs18 {font-size:18px; color:#44bbff;}
+    .fs17 {font-size:17px; }
+    .fs16 {font-size:16px; color:#55aaee;}
+    .fs15 {font-size:15px; }
+    
+	  /* janas_here */
+	  #janas_here{
+	    box-shadow: 2px 4px 8px 0 rgba(0, 0, 0, 0.3), 0 6px 20px 0 rgba(0, 0, 0, 0.19); 
+      width: 50%;
+	  }	  
+	  #janas_here #rtxt{	    
+	    padding:3px 6px;
+	    background-color:#660044;
+	    color:#FFFFFF;
+	  }
+	  #janas_here #here{
+      padding:3px 6px;	  
+	    background-color:#66ffdd;	
+	  }
+	
+	  /* janas_here2 */		  
+	  #janas_here2 {
+      width: 350px;
+      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);  
+    }
+    #janas_here2 .header {
+      background-color: #4CAF50;
+      color: white;
+      padding: 10px;
+      font-size: 30px;
+    }
+    #janas_here2 .container {
+      padding: 10px;
+      text-align: center;
+    }	      
+    
+    .container-top {
+      --offset: 100px;
+      --fade: 80px;
+  
+      display: flex;
+      align-items: flex-end;
+      width: 80px;
+      justify-self: end;
+      justify-content: flex-end;
+      -webkit-mask:linear-gradient(#0000 calc(100vh + var(--offset)),#000 calc(100vh + var(--offset) + var(--fade)));
+
+    }
+
+    .top {
+      /*https://www.freecodecamp.org/news/css-only-back-to-top-button/*/
+      position: sticky;
+      bottom: 20px;      
+      margin-right:10px; 
+  
+      /* visual styling */
+      width:50%;
+      aspect-ratio:1;
+      background:#ff8b24;
+      border-radius:10px;
+    }
+    .top:before {
+      content:"";
+      position:absolute;
+      inset:30%;
+      transform:translateY(20%) rotate(-45deg);
+      border-top:5px solid #fff;
+      border-right:5px solid #fff;
+    }
+
+    .go_janas {
+      /*https://www.freecodecamp.org/news/css-only-back-to-top-button/*/
+      position: sticky;
+      bottom: 20px;      
+      margin-right:10px; 
+  
+      /* visual styling */
+      width:50%;
+      aspect-ratio:1;
+      background:#ff8b24;
+      border-radius:10px;
+    }
+    .go_janas:before {
+      content:"";
+      position:absolute;
+      inset:25%;
+      transform:translateY(0%) rotate(0deg);
+      border:5px solid #fff;
+      
+    }
+  </style>
+  <script>
+    function show_wa() {
+      let x = document.getElementById("nav_t");
+      if (x.style.display === "none") {
+        x.style.display = "block";
+      } else {
+        x.style.display = "none";
+      }
+    }
+  </script>
+</head>
+<body>
+<div>  
+  <header id="hdr" style="text-align:center;">
+    <b class="fs22">Learn new skills from <a href="https://www.w3schools.com/" target="_empty">W3Schools.com</a></b><br>    
+    <button onclick="show_wa()">Tutorials</button>
+    <button onclick="show_wa_01()">Exercises</button>
+    <button onclick="show_wa_01()">Certificates</button>
+    <button onclick="show_wa_01()">Acronym</button>
+  </header>  
+    
+  <nav id="nav_t" style="display:block">
+    <ul>
+      <li><a href="#wt_01">HTML and CSS</a></li>
+      <li><a href="#"></a></li>
+      <li><a href="#"></a></li>
+      <li><a href="#"></a></li>
+      <li style="float:right"><a href="#janas_here">janas_here</a></li>
+    </ul>
+  </nav>
+  <nav id="nav_e" style="display:none">
+    <ul>
+      <li><a href="#we_01">Exercises</a></li>
+      <li><a href="#"></a></li>
+      <li><a href="#"></a></li>
+      <li><a href="#"></a></li>
+      <li style="float:right"><a href="#janas_here">janas_here</a></li>
+    </ul>
+  </nav>
+  <nav id="nav_c" style="display:none">
+    <ul>
+      <li><a href="#wc_01">Certificates</a></li>
+      <li><a href="#"></a></li>
+      <li><a href="#"></a></li>
+      <li><a href="#"></a></li>
+      <li style="float:right"><a href="#janas_here">janas_here</a></li>
+    </ul>
+  </nav>
+  <nav id="nav_a" style="display:none">
+    <ul>
+      <li><a href="#wa_01">Acronym</a></li>
+      <li><a href="#"></a></li>
+      <li><a href="#"></a></li>
+      <li><a href="#"></a></li>
+      <li style="float:right"><a href="#janas_here">janas_here</a></li>
+    </ul>
+  </nav>
+  <main>
+    <h1>kingdom_0</h1>
+    <div id="wt">
+      <h2>phylum_0</h2>
+      <div id="wt_01">
+        <h3>class_0<a href="https://www.w3schools.com/html/default.asp" target="_empty">&#128507;</a></h3>
+        <div id="wt_01_01">
+          <h4>order_0<a href="https://www.w3schools.com/html/default.asp" target="_empty">&#128508;</a></h4>
+          <div id="wt_01_01_01">            
+            <h5>family_0<a href="https://www.w3schools.com/html/html_links.asp" target="_empty">&#128509;</a></h5>
+            <div id="wt_01_01_15_01">
+              <h6>genus_0<a href="https://www.w3schools.com/html/html_links.asp" target="_empty">&#128509;</a></h5>
+              <div id="wt_01_01_15_01">
+                <b class="fs20">HTML Links</b><br>            
+                  <b class="fs18">HTML Links - Hyperlinks</b><br>  
+              </div>                  
+            </div>      
+          </div>    
+          <h4>HTML Links<a href="https://www.w3schools.com/html/html_links.asp" target="_empty">&#128508;</a></h4>
+          <div id="wt_01_01_15">
+            
+          
+          </div>
+          <h4>HTML Images<a href="https://www.w3schools.com/html/html_images.asp" target="_empty">&#128508;</a></h4>
+        <div id="wt_01_01_16">
+          <h5>Images<a href="https://www.w3schools.com/html/html_images.asp" target="_empty">&#128509;</a></h5>
+          <div id="wt_01_01_16_01">
+            <b class="fs20">HTML Images</b><br> 
+              <b class="fs18">HTML Images Syntax</b><br>
+              <b class="fs18">The src Attribute</b><br>
+              <b class="fs18">The alt Attribute</b><br>
+              <b class="fs18">Image Size - Width and Height</b><br>
+              <b class="fs18">Width and Height, or Style?</b><br>
+              <b class="fs18">Images in Another Folder</b><br>
+              <b class="fs18">Images on Another Server/Website</b><br>
+              <b class="fs18">Animated Images</b><br>
+              <b class="fs18">Image as a Link</b><br>
+              <b class="fs18">Image Floating</b><br>
+              <b class="fs18">Common Image Formats</b><br>
+              <b class="fs18">Chapter Summary</b><br>
+              <b class="fs18">HTML Exercises</b><br>
+              <b class="fs18">HTML Image Tags</b><br>              
+          </div>   
+          <h5>Image Map<a href="https://www.w3schools.com/html/html_images_imagemap.asp" target="_empty">&#128509;</a></h5>
+          <div id="wt_01_01_16_02">
+            <b class="fs20">HTML Image Maps</b><br> 
+              <b class="fs18">Image Maps</b><br>              
+                <b class="fs16">Shape</b><br>             
+             <b class="fs18">HTML Image Tags</b><br>
+          </div>          
+          <h5>The picture Element<a href="https://www.w3schools.com/html/html_images_picture.asp" target="_empty">&#128509;</a></h5>
+          <div id="wt_01_01_16_04">
+            <b class="fs20">HTML &lt;picture&gt; Element</b><br> 
+              <b class="fs18">The HTML &lt;picture&gt; Element</b><br>
+              <b class="fs18">When to use the Picture Element</b><br>
+                <b class="fs16">1. Bandwidth</b><br>
+                <b class="fs16">2. Format Support</b><br>
+              <b class="fs18">HTML Image Tags</b><br>              
+          </div>
+        </div>
+        <h4>HTML Favicon<a href="https://www.w3schools.com/html/html_favicon.asp" target="_empty">&#128508;</a></h4>
+        <div id="wt_01_01_17">          
+          <b class="fs20">HTML Favicon</b><br>       
+            <b class="fs18">How To Add a Favicon in HTML</b><br>
+              <a href="https://www.favicon.cc/" target="_blank">favicon.cc</a><br>
+            <b class="fs18">Favicon File Format Support</b><br>
+            <b class="fs18">Chapter Summary</b><br>
+            <b class="fs18">HTML Exercises</b><br>
+            <b class="fs18">HTML Link Tag</b><br>
+        </div>
+          <h4>HTML Page Title<a href="https://www.w3schools.com/html/html_page_title.asp" target="_empty">&#128508;</a></h4>
+        <div id="wt_01_01_18">
+          <b class="fs20">HTML Page Title</b><br>                 
+            <b class="fs18">HTML Title Tag</b><br>
+        </div>
+          <h4>HTML Tables<a href="https://www.w3schools.com/html/html_tables.asp" target="_empty">&#128508;</a></h4>
+        <div id="wt_01_01_19">
+          <h5>HTML Tables<a href="https://www.w3schools.com/html/html_tables.asp" target="_empty">&#128509;</a></h5>
+          <div id="wt_01_01_19_01">
+            <b class="fs20">HTML Tables</b><br>       
+              <b class="fs18">Define an HTML Table</b><br>
+              <b class="fs18">Table Cells</b><br>
+              <b class="fs18">Table Rows</b><br>
+              <b class="fs18">Table Headers</b><br>
+              <b class="fs18">HTML Exercises</b><br>
+              <b class="fs18">HTML Table Tags</b><br>              
+          </div>          
+          
+          
+        </div>
+          <h4>HTML Lists<a href="https://www.w3schools.com/html/html_lists.asp" target="_empty">&#128508;</a></h4>
+        <div id="wt_01_01_20">
+          <h5>Lists<a href="https://www.w3schools.com/html/html_lists.asp" target="_empty">&#128509;</a></h5>
+          <div id="wt_01_01_20_01">
+            <b class="fs20">HTML Lists</b><br>       
+              <b class="fs18">Unordered HTML List</b><br>
+              <b class="fs18">Ordered HTML List</b><br>
+              <b class="fs18">HTML Description Lists</b><br>
+              <b class="fs18">HTML Exercises</b><br>
+              <b class="fs18">HTML List Tags</b><br>              
+          </div>
+          <h5>Unordered Lists<a href="https://www.w3schools.com/html/html_lists_unordered.asp" target="_empty">&#128509;</a></h5>
+          <div id="wt_01_01_20_02">
+            <b class="fs20">HTML Unordered Lists</b><br>       
+              <b class="fs18">Unordered HTML List</b><br>
+              <b class="fs18">Unordered HTML List - Choose List Item Marker</b><br>
+              <b class="fs18">Nested HTML Lists</b><br>
+              <b class="fs18">Horizontal List with CSS</b><br>
+              <b class="fs18">Chapter Summary</b><br>
+              <b class="fs18">HTML Exercises</b><br>
+              <b class="fs18">HTML List Tags</b><br>              
+          </div> 
+          <h5>Ordered Lists<a href="https://www.w3schools.com/html/html_lists_ordered.asp" target="_empty">&#128509;</a></h5>
+          <div id="wt_01_01_20_03">
+            <b class="fs20">HTML Ordered Lists</b><br>       
+              <b class="fs18">Ordered HTML Lists</b><br>
+              <b class="fs18">Ordered HTML List - The Type Attribute</b><br>
+              <b class="fs18">Control List Counting</b><br>
+              <b class="fs18">Nested HTML Lists</b><br>
+              <b class="fs18">Chapter Summary</b><br>
+              <b class="fs18">HTML Exercises</b><br>
+              <b class="fs18">HTML List Tags</b><br>              
+          </div> 
+          <h5>Other Lists<a href="https://www.w3schools.com/html/html_lists_other.asp" target="_empty">&#128509;</a></h5>
+          <div id="wt_01_01_20_04">
+            <b class="fs20">HTML Other Lists</b><br>       
+              <b class="fs18">HTML Description Lists</b><br>
+              <b class="fs18">Chapter Summary</b><br>
+              <b class="fs18">HTML Exercises</b><br>
+              <b class="fs18">HTML List Tags</b><br>              
+          </div> 
+        </div>
+          <h4>HTML Block & Inline<a href="https://www.w3schools.com/html/html_blocks.asp" target="_empty">&#128508;</a></h4>
+        <div id="wt_01_01_21">
+          <b class="fs20">HTML Block and Inline Elements</b><br>       
+            <b class="fs18">Block-level Elements</b><br>  
+            <b class="fs18">Inline Elements</b><br>
+            <b class="fs18">The &lt;div&gt; Element</b><br>
+            <b class="fs18">The &lt;span&gt; Element</b><br>
+            <b class="fs18">Chapter Summary</b><br>
+            <b class="fs18">HTML Exercises</b><br>
+            <b class="fs18">HTML Tags</b><br>
+        </div>
+          <h4>HTML Div<a href="https://www.w3schools.com/html/html_div.asp" target="_empty">&#128508;</a></h4>
+        <div id="wt_01_01_22">
+          <b class="fs20">HTML Div Element</b><br>       
+            <b class="fs18">The &lt;div&gt; Element</b><br>    
+            <b class="fs18">&lt;div&gt; as a container</b><br>
+            <b class="fs18">Center align a &lt;div&gt; element</b><br>
+            <b class="fs18">Multiple &lt;div&gt; elements</b><br>
+            <b class="fs18">Aligning &lt;div&gt; elements side by side</b><br>
+            <b class="fs18">Float</b><br>
+            <b class="fs18">Inline-block</b><br>
+            <b class="fs18">Flex</b><br>
+            <b class="fs18">Grid</b><br>
+            <b class="fs18">HTML Tags</b><br>
+        </div>
+          <h4>HTML classes<a href="https://www.w3schools.com/html/html_classes.asp" target="_empty">&#128508;</a></h4>
+        <div id="wt_01_01_23">
+          <b class="fs20">HTML class Attribute</b><br>           
+            <b class="fs18">Using The class Attribute</b><br>
+            <b class="fs18">The Syntax For Class</b><br>
+            <b class="fs18">Multiple Classes</b><br>
+            <b class="fs18">Different Elements Can Share Same Class</b><br>
+            <b class="fs18">Use of The class Attribute in JavaScript</b><br>
+            <b class="fs18">Chapter Summary</b><br>
+            <b class="fs18">HTML Exercises</b><br>            
+        </div>
+          <h4>HTML Id<a href="https://www.w3schools.com/html/html_id.asp" target="_empty">&#128508;</a></h4>
+        <div id="wt_01_01_24">
+          <b class="fs20">HTML id Attribute</b><br>       
+            <b class="fs18">Using The id Attribute</b><br>
+            <b class="fs18">Difference Between Class and ID</b><br>
+            <b class="fs18">HTML Bookmarks with ID and Links</b><br>
+            <b class="fs18">Example</b><br>
+            <b class="fs18">Using The id Attribute in JavaScript</b><br>
+            <b class="fs18">Chapter Summary</b><br>
+            <b class="fs18">HTML Exercises</b><br>
+        </div>
+          <h4>HTML Iframes<a href="https://www.w3schools.com/html/html_iframe.asp" target="_empty">&#128508;</a></h4>
+        <div id="wt_01_01_25">
+          <b class="fs20">HTML Iframes</b><br>       
+            <b class="fs18">HTML Iframe Syntax</b><br>
+            <b class="fs18">Iframe - Set Height and Width</b><br>    
+            <b class="fs18">Iframe - Remove the Border</b><br>
+            <b class="fs18">Iframe - Target for a Link</b><br>
+            <b class="fs18">Chapter Summary</b><br>
+            <b class="fs18">HTML Exercises</b><br>
+            <b class="fs18">HTML iframe Tag</b><br>
+        </div>
+          <h4>HTML JavaScript<a href="https://www.w3schools.com/html/html_scripts.asp" target="_empty">&#128508;</a></h4>
+        <div id="wt_01_01_26">
+          <b class="fs20">HTML JavaScript</b><br>       
+            <b class="fs18">The HTML &lt;script&gt; Tag</b><br>
+            <b class="fs18">A Taste of JavaScript</b><br>
+            <b class="fs18">The HTML &lt;noscript&gt; Tag</b><br>
+            <b class="fs18">HTML Exercises</b><br>    
+            <b class="fs18">HTML Script Tags</b><br>
+          </div>
+          <h4>HTML File Paths<a href="https://www.w3schools.com/html/html_filepaths.asp" target="_empty">&#128508;</a></h4>
+          <div id="wt_01_01_27">
+            <b class="fs20">HTML File Paths</b><br>       
+              <b class="fs18">File Path Examples</b><br>
+              <b class="fs18">HTML File Paths</b><br>
+              <b class="fs18">Absolute File Paths</b><br>
+              <b class="fs18">Relative File Paths</b><br>
+              <b class="fs18">Best Practice</b><br>              
+          </div>
+          <h4>HTML Head<a href="https://www.w3schools.com/html/html_head.asp" target="_empty">&#128508;</a></h4>
+          <div id="wt_01_01_28">
+            <b class="fs20">HTML - The Head Element</b><br>       
+              <b class="fs18">The HTML &lt;head&gt; Element</b><br>
+              <b class="fs18">The HTML &lt;head&gt; Element</b><br>
+              <b class="fs18">The HTML &lt;title&gt; Element</b><br>
+              <b class="fs18">The HTML &lt;style&gt; Element</b><br>
+              <b class="fs18">The HTML &lt;link&gt; Element</b><br>
+              <b class="fs18">The HTML &lt;meta&gt; Element</b><br>
+              <b class="fs18">Examples</b><br>    
+              <b class="fs18">Setting The Viewport</b><br>
+              <b class="fs18">The HTML &lt;script&gt; Element</b><br>
+              <b class="fs18">The HTML &lt;base&gt; Element</b><br>
+              <b class="fs18">Chapter Summary</b><br>
+              <b class="fs18">HTML head Elements</b><br>                
+          </div>
+          <h4>HTML Layout<a href="https://www.w3schools.com/html/html_layout.asp" target="_empty">&#128508;</a></h4>
+          <div id="wt_01_01_29">
+            <b class="fs20">HTML Layout Elements and Techniques</b><br>       
+              <b class="fs18">HTML Layout Elements</b><br>
+              <b class="fs18">HTML Layout Techniques</b><br>
+              <b class="fs18">CSS Frameworks</b><br>
+              <b class="fs18">CSS Float Layout</b><br>
+              <b class="fs18">CSS Flexbox Layout</b><br> 
+              <b class="fs18">CSS Grid Layout</b><br>
+          </div>
+          
+          <h4><a href="" target="_empty">&#128508;</a></h4>
+          <div id="wt_01_01_33">
+            <b class="fs20"></b><br>       
+              <b class="fs18"></b><br>
+              
+
+ <div id="janas_here">         
+	     <div id="rtxt">
+	       <pre></pre>
+		 </div>		 
+		 <div id="here">
+           <b class="fs21">Janas 20240118</b>
+           <b class="fs25"><a href="#hdr">&#8679;</a></b>
+           <b class="fs25"><a href="tools.html" target="_blank">Tools</a></b>
+		 </div>
+</div>			 
+            
+        </div> 
+         
+      </div>
+      
+      <h3><a href="" target="_empty"></a></h3>
+      <div id="wt_01_99"> 
+        <h4><a href="" target="_empty">&#128508;</a></h4>
+        <div id="wt_01_99_00">
+          <b class="fs20"></b><br>             
+            <b class="fs18"></b><br>
+                <b class="fs16"></b><br>
+            <b class="fs18"></b><br>
+               <b class="fs16"></b><br>
+                <  
+        </div>
+        <h4><a href="" target="_empty">&#128508;</a></h4>
+        <div id="wt_01_99_02">
+          <h5><a href="" target="_empty">&#128509;</a></h5>
+          <div id="wt_01_99_02_01">
+            <b class="fs20"></b><br>       
+              <b class="fs18"></b><br>
+          </div>  
+        </div>        
+      </div>
+    
+    </div>
+
+  </div>
+  
+  <h1>Exercises</h1>
+  <div id="we">
+    <h2></h2>
+    <div id="wb_01">
+      <h3><a href="" target="_empty">&#128507;</a></h3>
+      <div id="wb_01_01">
+        <h4><a href="" target="_empty">&#128508;</a></h4>
+        <div id="wb_01_01_01">
+          <b class="fs20"></b><br> 
+            <b class="fs18"></b><br>
+            <b class="fs18"></b><br>  
+        </div>  
+      </div>
+    </div>
+  </div>
+  
+    <h1>Certificates</h1>
+     <div id="wc">
+      <div id="wc_01">
+        <div id="wc_01_01">
+          <h4><a href="" target="_empty">&#128508;</a></h4>
+          <div id="wc_01_01_01">
+            <b class="fs20"></b><br> 
+              <b class="fs18"></b><br>
+              <b class="fs18"></b><br>  
+          </div>    
+        </div>
+      </div>
+    </div>
+    Acronym<br>
+    <table id="ac">
+      <tr><th></th><th></th><th></th></tr>
+      <tr><td>SEO</td><td>search engine optimization</td><td></td></tr>
+      <tr><td></td><td></td><td></td></tr>
+    </table>
+  </main>
+  <table>
+    <thead><tr><th></th><th></th><th></th></tr></thead>
+    <tbody><tr><td></td><td></td><td></td></tr></tbody>
+    <tfoot><tr><td></td><td></td><td></td></tr></tfoot>
+  </table>
+</div>  
+<div class="container-top">
+  <a href="#janas_here" class="go_janas"></a><a href="#" class="top"></a>
+</div>
+</body>
+</html>

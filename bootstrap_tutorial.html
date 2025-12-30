@@ -1,0 +1,1409 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <title>Learn new skills from W3Schools.com</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="refresh" content="300">  
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>  
+  <link href="w3school2.css" rel="stylesheet">  
+  <style> 
+
+    table {
+      font-family: arial, sans-serif;
+      border-collapse: collapse;
+      width: 100%;
+    }
+
+    td, th {
+      border: 1px solid #dddddd;
+      text-align: left;
+      padding: 8px;
+    }
+
+    tr:nth-child(even) {
+      background-color: #dddddd;
+    }
+    
+    .tb1, .tb1 th, .tb1 td  {
+      border:1px solid black;  
+    }
+    
+    nav {
+	    margin:0;
+	    background-color: #66e;
+    }
+    
+    nav ul {
+      margin: 0;
+      padding: 0;
+      list-style-type: none;           
+      position: relative;
+    }
+    nav ul li {
+      display:inline-block;
+      background-color: #66e;
+    }
+
+    nav a {
+	    display:block;
+	    padding:0 10px;	
+	    color:#FF0;
+	    font-size:16px;
+	    line-height: 60px;
+	    text-decoration:none;
+    }
+
+    nav a:hover { 
+	    background-color: #550055; 
+    }
+
+    /* Hide Dropdowns by Default */
+    nav ul ul {
+	    display: none;
+	    position: absolute; 
+	    top: 60px; /* the height of the main nav */
+    }
+	
+    /* Display Dropdowns on Hover */
+    nav ul li:hover > ul {
+	    display:inherit;
+    }
+	
+    /* Fisrt Tier Dropdown */
+    nav ul ul li {
+	    width:180px;
+	    float:none;
+	    display:list-item;
+	    position: relative;
+    }
+
+    /* Second, Third and more Tiers	*/
+    nav ul ul ul li {
+	    position: relative;
+	    top:-60px; 
+	    left:180px;
+    }
+	
+    /* Change this in order to change the Dropdown symbol */
+    li > a:after { content:  ' +'; }
+    li > a:only-child:after { content: ''; }
+
+    .fs34 {font-size:34px; color:#1199dd;}
+    .fs31 {font-size:31px; } 
+    .fs32 {font-size:32px; color:#EE9999;}
+    .fs31 {font-size:31px; } 
+    .fs30 {font-size:30px; color:#BB9966;}
+    .fs29 {font-size:29px; }    
+    .fs28 {font-size:28px; color:#DD6633;}
+    .fs27 {font-size:27px; }    
+    .fs26 {font-size:26px; color:#ce6622;}
+    .fs25 {font-size:25px; }    
+    .fs24 {font-size:24px; color:#EE3b16;}
+    .fs23 {font-size:23px; }
+    .fs22 {font-size:22px; color:#449966;}
+    .fs21 {font-size:21px; }
+    .fs20 {font-size:20px; color:#229966;}
+    .fs19 {font-size:19px; }
+    .fs18 {font-size:18px; color:#66cc00;}
+    .fs17 {font-size:17px; }
+    .fs16 {font-size:16px; color:#55aaee;}
+    .fs15 {font-size:15px; }
+    .c_red{color:red;}
+
+
+	  /* janas_here */
+	  #janas_here{
+	    box-shadow: 2px 4px 8px 0 rgba(0, 0, 0, 0.3), 1px 6px 20px 0 rgba(0, 0, 0, 0.19); 
+      width: 50%;
+      margin:10px 2px;      
+	  }	  
+	  #janas_here #rtxt{	    
+	    padding:2px 5px;
+	    background-color:#6600aa;
+	    color:#FFFFFF;
+	  }
+	  #janas_here #here{
+      padding:3px 6px;	  
+	    background-color:#66ffdd;	
+	  }
+	
+	  /* janas_here2 */		  
+	  #janas_here2 {
+      width: 350px;
+      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);  
+    }
+    #janas_here2 .header {
+      background-color: #4CAF50;
+      color: white;
+      padding: 10px;
+      font-size: 30px;
+    }
+    #janas_here2 .container {
+      padding: 10px;
+      text-align: center;
+    }	
+
+    .to-top {
+      --offset: 100px;
+      --fade: 80px;  
+      display: flex;
+      align-items: flex-end;
+      width: 80px;
+      justify-self: end;
+      justify-content: flex-end;
+      -webkit-mask:linear-gradient(#0000 calc(100vh + var(--offset)),#000 calc(100vh + var(--offset) + var(--fade)));
+
+    }
+
+    .go_top {
+      /*https://www.freecodecamp.org/news/css-only-back-to-top-button/*/
+      position: sticky;
+      bottom: 20px;      
+      margin-right:10px;   
+      /* visual styling */
+      width:50%;
+      aspect-ratio:1;
+      background:#ff8b24;
+      border-radius:10px;
+    }
+    .go_top:before {
+      content:"";
+      position:absolute;
+      inset:30%;
+      transform:translateY(20%) rotate(-45deg);
+      border-top:5px solid #fff;
+      border-right:5px solid #fff;
+    }
+
+    .go_janas {      
+      position: sticky;
+      bottom: 20px;      
+      margin-right:10px; 
+      width:50%;
+      aspect-ratio:1;
+      background:#ff8b24;
+      border-radius:10px;
+    }
+    .go_janas:before {
+      content:"";
+      position:absolute;
+      inset:25%;
+      transform:translateY(0%) rotate(0deg);
+      border:5px solid #fff;
+      
+    }
+    #f1 {
+      width:40%;
+    }
+  </style>
+  <script>
+    function show_tu() {
+      let x = document.getElementById("nav_tu");
+      if (x.style.display === "none") {
+        x.style.display = "block";
+      } else {
+        x.style.display = "none";
+      }
+    }
+    function conv(){
+      let ss = document.getElementById("f1").value;
+      var am = /&/gi;
+      ss= ss.replace(am, '&amp;');
+      var le = /</gi;
+      ss= ss.replace(le, '&lt;');
+      var re = />/gi;
+      ss= ss.replace(re, '&gt;');
+      
+      //alert(ss);
+      document.getElementById("f1").value = ss;
+    }
+  </script>
+</head>
+
+<body>
+  <div>  
+    <header id="hdr">
+      <b class="fs25">Learn new skills from <a href="https://www.w3schools.com/" target="_empty">W3Schools.com</a></b><br>    
+      <button onclick="show_tu()">Tutorials</button>
+      <button onclick="show_wa_01()">Exercises</button>
+      <button onclick="show_wa_01()">Certificates</button>
+      <button onclick="show_wa_01()">Acronym</button>
+    </header> 
+    
+    <nav id="nav_tu" >
+      <ul>
+        <li><a href="#tu_01">HTML and CSS</a>        
+          <ul>
+            <li><a href="html_tutorial.html#tu_01_01">Learn HTML</a>   
+                
+            </li>
+            <li><a href="#tu_01_02">Learn CSS</a>
+              <ul>
+                <li><a href="#tu_01_02_01">Tutorial</a>                
+                  <ul>
+                    <li><a href="#tu_01_02_01_01">HOME</a></li>
+                    <li><a href="#tu_01_02_01_02">Introduction</a></li>
+                    <li><a href="#tu_01_02_01_03">Syntax</a></li>
+                    <li><a href="#tu_01_02_01_04">Selectors</a></li>
+                    <li><a href="#tu_01_02_01_05">How To</a></li>
+                    <li><a href="#tu_01_02_01_06">Comments</a></li>
+                    <li><a href="#tu_01_02_01_07">Colors</a>
+                      <ul>
+                        <li><a href="#tu_01_02_01_07_01">Colors</a></li>
+                        <li><a href="#tu_01_02_01_07_02">RGB</a></li>
+                        <li><a href="#tu_01_02_01_07_03">Colors</a></li>
+                        <li><a href="#tu_01_02_01_07_04">Colors</a></li>
+                      </ul>
+                    </li>
+                    <li><a href="#tu_01_02_01_08">Backgrounds</a></li>
+                    <li><a href="#tu_01_02_01_09">Borders</a></li>
+                    <li><a href="#tu_01_02_01_10">Margins</a></li>
+                    <li><a href="#tu_01_02_01_11">Padding</a></li>
+                    <li><a href="#tu_01_02_01_12">Height/Width</a></li>
+                    <li><a href="#tu_01_02_01_13">Box Model</a></li>
+                    <li><a href="#tu_01_02_01_14">Outline</a></li>
+                    <li><a href="#tu_01_02_01_15">Test</a></li>
+                    <li><a href="#tu_01_02_01_16">Fonts</a></li>
+                    <li><a href="#tu_01_02_01_17">Icons</a></li>
+                    <li><a href="#tu_01_02_01_18">Links</a></li>
+                    <li><a href="#tu_01_02_01_19">Lists</a></li>
+                    <li><a href="#tu_01_02_01_20">Tables</a></li>
+                    <li><a href="#tu_01_02_01_21">Display</a></li>
+                    <li><a href="#tu_01_02_01_22">Max-Width</a></li>
+                    <li><a href="#tu_01_02_01_23">Position</a></li>
+                    <li><a href="#tu_01_02_01_24">Z-index</a></li>
+                    <li><a href="#tu_01_02_01_25">Overflow</a></li>
+                    <li><a href="#tu_01_02_01_26">Float</a></li>
+                    <li><a href="#tu_01_02_01_27">inline-block</a></li>
+                    <li><a href="#tu_01_02_01_28">Align</a></li>
+                    <li><a href="#tu_01_02_01_29">Combinators</a></li>
+                    <li><a href="#tu_01_02_01_30">Pseudo-classes</a></li>
+                    <li><a href="#tu_01_02_01_31">Pseudo-elements</a></li>
+                    <li><a href="#tu_01_02_01_32">Opacity</a></li>
+                    <li><a href="#tu_01_02_01_33">Navigation Bar</a></li>
+                    <li><a href="#tu_01_02_01_34">Dropdowns</a></li>
+                    <li><a href="#tu_01_02_01_35">Image Gallery</a></li>
+                    <li><a href="#tu_01_02_01_36">Image Sprites</a></li>
+                    <li><a href="#tu_01_02_01_37">Attr Selectors</a></li>
+                    <li><a href="#tu_01_02_01_38">Forms</a></li>
+                    <li><a href="#tu_01_02_01_39">Counters</a></li>
+                    <li><a href="#tu_01_02_01_40">WebSite Layout</a></li>
+                    <li><a href="#tu_01_02_01_41">Units</a></li>
+                    <li><a href="#tu_01_02_01_42"></a>Specificity</li>
+                    <li><a href="#tu_01_02_01_43"></a>!Important</li>
+                    <li><a href="#tu_01_02_01_44"></a>Math Functio</li>
+                  </ul>
+                </li>
+                <li><a href="#tu_01_02_02">Advanced</a> 
+                  <ul>
+                    <li><a href="#tu_01_02_02_01">Rounded Corners</a></li>
+                    <li><a href="#tu_01_02_02_02">Border Images</a></li>
+                    <li><a href="#tu_01_02_02_03">Backgrounds</a></li>
+                    <li><a href="#tu_01_02_02_04">Colors</a></li>
+                    <li><a href="#tu_01_02_02_05">Color Keywords</a></li>
+                    <li><a href="#tu_01_02_02_06">Gradients</a></li>
+                    <li><a href="#tu_01_02_02_07">Shadows</a></li>
+                    <li><a href="#tu_01_02_02_08">Test Effects</a></li>
+                    <li><a href="#tu_01_02_02_09">Web Fonts</a></li>
+                    <li><a href="#tu_01_02_02_10">2D Transforms</a></li>
+                    <li><a href="#tu_01_02_02_11">3D Transforms</a></li>
+                    <li><a href="#tu_01_02_02_12">Transitions</a></li>
+                    <li><a href="#tu_01_02_02_13">Animations</a></li>
+                    <li><a href="#tu_01_02_02_14">Tooltips</a></li>
+                    <li><a href="#tu_01_02_02_15">Style Images</a></li>
+                    <li><a href="#tu_01_02_02_16">Image Reflection</a></li>
+                    <li><a href="#tu_01_02_02_17">object-fit</a></li>
+                    <li><a href="#tu_01_02_02_18">object-position</a></li>
+                    <li><a href="#tu_01_02_02_19">Masking</a></li>
+                    <li><a href="#tu_01_02_02_20">Buttons</a></li>
+                    <li><a href="#tu_01_02_02_21">Pagination</a></li>
+                    <li><a href="#tu_01_02_02_22">Multiple Columns</a></li>
+                    <li><a href="#tu_01_02_02_23">User Interface</a></li>
+                    <li><a href="#tu_01_02_02_24">Variables</a>
+                      <ul>
+                        <li><a href="#tu_01_02_02_24_01">The var() Function</a></li>
+                        <li><a href="#tu_01_02_02_24_02">Overriding Variables</a></li>
+                        <li><a href="#tu_01_02_02_24_03">Variables and JavaScript</a></li>
+                        <li><a href="#tu_01_02_02_24_04">Variables in Media</a></li>
+                        <li><a href="#tu_01_02_02_24_05">Queries</a></li>
+                      </ul>
+                    </li>
+                    <li><a href="#tu_01_02_02_25">@property</a></li>
+                    <li><a href="#tu_01_02_02_26">Box Sizing</a></li>
+                    <li><a href="#tu_01_02_02_27">Media Queries</a></li>
+                    <li><a href="#tu_01_02_02_28">MQ Examples</a></li>
+                    <li><a href="#tu_01_02_02_29">Flexbox</a>
+                      <ul>
+                        <li><a href="##tu_01_02_02_29_01">CSS Flexbox</a></li>
+                        <li><a href="##tu_01_02_02_29_02">CSS Flex Container</a></li>
+                        <li><a href="##tu_01_02_02_29_03">CSS Flex Items</a></li>
+                        <li><a href="##tu_01_02_02_29_04">CSS Flex Responsive</a></li>
+                      </ul> 
+                    </li>
+                  </ul>     
+                </li>  
+                <li><a href="#tu_01_02_03">Response</a> 
+                  <ul>
+                    <li><a href="#tu_01_02_03_01">Intro</a></li>
+                    <li><a href="#tu_01_02_03_02">Viewport</a></li>
+                    <li><a href="#tu_01_02_03_03">Grid View</a></li>
+                    <li><a href="#tu_01_02_03_04">Media Queries</a></li>
+                    <li><a href="#tu_01_02_03_05">Images</a></li>
+                    <li><a href="#tu_01_02_03_06">Videos</a></li>
+                    <li><a href="#tu_01_02_03_07">Frameworks</a></li>
+                    <li><a href="#tu_01_02_03_08">Templates</a></li>                    
+                  </ul> 
+                </li> 
+                <li><a href="#tu_01_02_04">Grid</a> 
+                  <ul>
+                    <li><a href="#tu_01_02_04_01">Intro</a></li>
+                    <li><a href="#tu_01_02_04_02">Container</a></li>
+                    <li><a href="#tu_01_02_04_03">Item</a></li>
+                  </ul>  
+                </li> 
+                <li><a href="#tu_01_02_05">SASS</a> 
+                  
+                </li>  
+              </ul>    
+            </li>
+            <li><a href="#tu_01_03">Learn Bootstrap</a>
+              <ul>
+                <li><a href="#tu_01_03_01">Bootstrap3</a></li>
+                <li><a href="#tu_01_03_02">Bootstrap4</a></li>
+                <li><a href="#tu_01_03_03">Bootstrap5</a></li>                
+              </ul>
+            </li>
+          </ul>        
+        </li>      
+          <li><a href="#tu_02">Data Analytics</a>
+            <ul>
+              <li><a href="#tu_02_01">Learn AI</a></li>
+              <li><a href="#tu_02_02"></a></li>
+              <li><a href="#tu_02_03"></a></li>
+              <li><a href="#tu_02_04"></a></li>
+              <li><a href="#tu_02_05"></a></li>
+              <li><a href="#tu_02_06"></a></li>
+              <li><a href="#tu_02_07"></a></li>
+              <li><a href="#tu_02_08"></a></li>
+              <li><a href="#tu_02_09"></a></li>
+              <li><a href="#tu_02_10"></a></li>
+              <li><a href="#tu_02_11"></a></li>
+              <li><a href="#tu_02_12"></a></li>
+              <li><a href="#tu_02_13"></a></li>
+              <li><a href="#tu_02_14"></a></li>
+              <li><a href="#tu_02_15"></a></li>
+            </ul>      
+          </li>
+          <li><a href="#tu_03">JavaScript</a>
+            <ul>
+              <li><a href="#tu_03_01">Learn Javascript</a></li>
+              <li><a href="#tu_03_02">Learn React</a></li>
+              <li><a href="#tu_03_03">Learn jQuery</a></li>
+              <li><a href="#tu_03_04">Learn Vue</a></li>
+              <li><a href="#tu_03_05">Learn AngularJS</a></li>
+              <li><a href="#tu_03_06">Learn JSON</a></li>
+              <li><a href="#tu_03_07">Learn AJAX</a></li>
+              <li><a href="#tu_03_08">Learn AppML</a></li>
+              <li><a href="#tu_03_09">Learn W#.JS</a></li>
+            </ul>      
+          </li>
+          <li><a href="#tu_04">Web Building</a>
+            <ul>
+              <li><a href="#"></a></li>
+              <li><a href="#"></a></li>
+              <li><a href="#"></a></li>
+            </ul>      
+          </li>
+          <li><a href="#tu_05">Backend</a>
+            <ul>
+              <li><a href="#"></a></li>
+              <li><a href="#"></a></li>
+              <li><a href="#"></a></li>
+            </ul>      
+          </li>
+          <li><a href="#"></a>
+            <!-- First Tier Drop Down -->
+            <ul>
+              <li><a href="#"></a></li>
+              <li><a href="#"></a></li>
+              <li><a href="#"></a>
+                  <!-- Second Tier Drop Down -->
+                <ul>
+                  <li><a href="#"></a></li>
+                  <li><a href="#"></a></li>
+                  <li><a href="#"></a>
+                    <!-- Third Tier Drop Down -->
+                    <ul>
+                      <li><a href="#"></a></li>
+                      <li><a href="#"></a></li>
+                      <li><a href="#"></a>
+                                      <!-- Fourth Tier Drop Down -->
+                                      <ul>
+                          <li><a href="#"></a></li>
+                          <li><a href="#"></a></li>
+                          <li><a href="#"></a>
+                                          <!-- Fifth Tier Drop Down -->
+                            <ul>
+                              <li><a href="#"></a></li>
+                              <li><a href="#"></a></li>
+                              <li><a href="#"></a></li>
+                            </ul>
+                                        </li>
+                        </ul>
+                      </li>
+                    </ul>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+          <li><a href="#"></a></li>
+          <li><a href="#"></a></li>
+          <li><a href="#"></a></li>
+        <li><a href="#janas_here">Janas</a></li>	    
+      </ul>
+    </nav>
+    <nav id="nav_e" style="display:none">
+        <ul>
+          <li><a href="#we_01">Exercises</a></li>
+          <li><a href="#"></a></li>
+          <li><a href="#"></a></li>
+          <li><a href="#"></a></li>
+          <li style="float:right"><a href="#janas_here">janas_here</a></li>
+        </ul>
+    </nav>
+    <nav id="nav_c" style="display:none">
+        <ul>
+          <li><a href="#wc_01">Certificates</a></li>
+          <li><a href="#"></a></li>
+          <li><a href="#"></a></li>
+          <li><a href="#"></a></li>
+          <li style="float:right"><a href="#janas_here">janas_here</a></li>
+        </ul>
+    </nav>
+    <nav id="nav_a" style="display:none">
+        <ul>
+          <li><a href="#wa_01">Acronym</a></li>
+          <li><a href="#"></a></li>
+          <li><a href="#"></a></li>
+          <li><a href="#"></a></li>
+          <li style="float:right"><a href="#janas_here">janas_here</a></li>
+        </ul>
+    </nav>
+
+    <main>
+      <b class="fs32">Tutorials</b>
+      <div id="tu">
+        <b class="fs30">HTML and CSS</b><br>
+        <div id="tu_01">
+          <h1>Learn CSS<a href="https://www.w3schools.com/css/default.asp" target="_empty">&#128506;</a></h1>
+          <div id="tu_01_02">
+            <b class="fs28">CSS Tutorial</b><br>
+            <div id="tu_01_02_01">
+              <h2>CSS HOME<a href="https://www.w3schools.com/css/default.asp" target="_empty">&#128507;</a></h2>
+              <div id="tu_01_02_01_01">
+                <b class="fs20">CSS Tutorial</b><br>
+                <b class="fs18">Examples in Each Chapter</b><br>
+                <b class="fs18">CSS Examples</b><br>
+                <b class="fs18">Use the Menu</b><br>
+                <b class="fs18">CSS Templates</b><br>      
+              </div>
+              <h2>CSS Introduction<a href="https://www.w3schools.com/css/css_intro.asp" target="_empty">&#128507;</a></h2>
+              <div id="tu_01_02_01_02">
+                <b class="fs20">CSS Introduction</b><br>
+                <b class="fs18">What is CSS?</b><br>
+                <b class="fs18">CSS Demo - One HTML Page - Multiple Styles!</b><br>
+                <b class="fs18">Why Use CSS?</b><br>    
+                <b class="fs18">CSS Solved a Big Problem</b><br>
+                <b class="fs18">CSS Saves a Lot of Work!</b><br>
+              </div>
+              <h2>CSS Syntax<a href="https://www.w3schools.com/css/css_syntax.asp" target="_empty">&#128507;</a></h2>
+              <div id="tu_01_02_01_03">
+                <b class="fs20">CSS Syntax</b><br>
+                <b class="fs18">CSS Syntax</b><br>
+                  <b class="fs16">Example Explained</b><br>
+              </div>
+              <h2>CSS Selectors<a href="https://www.w3schools.com/css/css_selectors.asp" target="_empty">&#128507;</a></h2>
+              <div id="tu_01_02_01_04">
+                <b class="fs20">CSS Selectors</b><br>
+                <b class="fs18">CSS Selectors</b><br>    
+                <b class="fs18">The CSS element Selector</b><br>
+                <b class="fs18">The CSS id Selector</b><br>
+                <b class="fs18">The CSS class Selector</b><br>
+                <b class="fs18">The CSS Universal Selector</b><br>
+                <b class="fs18">The CSS Grouping Selector</b><br>
+                <b class="fs18">Test Yourself With Exercises</b><br>
+                <b class="fs18">All CSS Simple Selectors</b><br>
+                <b class="fs18">Video: CSS Simple Selectors</b><br>
+              </div>
+              <h2>CSS How To<a href="https://www.w3schools.com/css/css_howto.asp" target="_empty">&#128507;</a></h2>
+              <div id="tu_01_02_01_05">
+                <b class="fs20">How To Add CSS</b><br>
+                <b class="fs18">Three Ways to Insert CSS</b><br>
+                <b class="fs18">External CSS</b><br>
+                <b class="fs18">Internal CSS</b><br>
+                <b class="fs18">Inline CSS</b><br>
+                <b class="fs18">Multiple Style Sheets</b><br>
+                <b class="fs18">Cascading Order</b><br>
+                <b class="fs18">Test Yourself With Exercises</b><br>
+                <b class="fs18">Video: How to add CSS to HTML</b><br>
+              </div>
+              <h2>CSS Comments<a href="https://www.w3schools.com/css/css_comments.asp" target="_empty">&#128507;</a></h2>
+              <div id="tu_01_02_01_06">
+                <b class="fs20">CSS Comments</b><br>
+                <b class="fs18">CSS Comments</b><br>
+                <b class="fs18">HTML and CSS Comments</b><br>
+                <b class="fs18">Video: CSS Comments</b><br>
+              </div>
+              <h2>CSS Colors<a href="https://www.w3schools.com/css/css_colors.asp" target="_empty">&#128507;</a></h2>
+              <div id="tu_01_02_01_07">
+                <h3>Colors<a href="https://www.w3schools.com/css/css_colors.asp" target="_empty">&#128508;</a></h3>
+                <div id="tu_01_02_01_07_01">
+                  <b class="fs20">CSS Colors</b><br>
+                    <b class="fs18">CSS Color Names</b><br>
+                    <b class="fs18">CSS Background Color</b><br>
+                    <b class="fs18">CSS Text Color</b><br>
+                    <b class="fs18">CSS Border Color</b><br>
+                    <b class="fs18">CSS Color Values</b><br>
+                    <b class="fs18">Video: CSS Colors Introduction</b><br>
+                </div>
+                <h3>RGB<a href="https://www.w3schools.com/css/css_colors_rgb.asp" target="_empty">&#128508;</a></h3>
+                <div id="tu_01_02_01_07_02">
+                  <b class="fs20">CSS RGB Colors</b><br>
+                    <b class="fs18">RGB Value</b><br>
+                    <b class="fs18">RGBA Value</b><br>
+                    <b class="fs18">Video: CSS Colors RGB & RGBA</b><br>
+                </div>    
+                <h3>HEX<a href="https://www.w3schools.com/css/css_colors_hex.asp" target="_empty">&#128508;</a></h3>
+                <div id="tu_01_02_01_07_03">
+                  <b class="fs20">CSS HEX Colors</b><br>
+                    <b class="fs18">HEX Value</b><br>
+                    <b class="fs11">#rrggbb</b><br>
+                    <b class="fs18">3 Digit HEX Value</b><br>
+                    <b class="fs11">#rgb</b><br>
+                    <b class="fs18">Video: CSS Colors Hex</b><br>
+                </div>
+                <h3>HSL<a href="https://www.w3schools.com/css/css_colors_hsl.asp" target="_empty">&#128508;</a></h3>
+                <div id="tu_01_02_01_07_04">
+                  <b class="fs20">CSS HSL Colors</b><br>
+                    <b class="fs18">HSL Value</b><br>
+                      <b class="fs16">Saturation</b><br>
+                      <b class="fs16">Lightness</b><br>
+                      <b class="fs16">Shades of Gray</b><br>
+                    <b class="fs18">HSLA Value</b><br>
+                    <b class="fs18">Video: CSS Colors HSL</b><br>
+                </div>
+              </div>
+              <h2>CSS Backgrounds<a href="https://www.w3schools.com/css/css_background.asp" target="_empty">&#128507;</a></h2>
+              <div id="tu_01_02_01_08">
+                <h3>Background colors<a href="https://www.w3schools.com/css/css_background.asp" target="_empty">&#128508;</a></h3>
+                <div id="tu_01_02_01_08_01">
+                  <b class="fs20">CSS Backgrounds</b><br>
+                    <b class="fs18">Other Elements</b><br>
+                    <b class="fs18">Opacity / Transparency</b><br>
+                    <b class="fs18">Transparency using RGBA</b><br>
+                    <b class="fs18">The CSS Background Color Property</b><br>
+                    <b class="fs18">Video: CSS Background Color</b><br>                    
+                </div>
+                <h3>Background Image<a href="https://www.w3schools.com/css/css_background_image.asp" target="_empty">&#128508;</a></h3>
+                <div id="tu_01_02_01_08_02">
+                  <b class="fs20">CSS Background Image</b><br>
+                    <b class="fs18">The CSS Background Image Property</b><br>
+                    <b class="fs18">Video: CSS Background Images</b><br>                    
+                </div>
+                <h3>Background Repeat<a href="https://www.w3schools.com/css/css_background_repeat.asp" target="_empty">&#128508;</a></h3>
+                <div id="tu_01_02_01_08_03">
+                  <b class="fs20">CSS Background Image Repeat</b><br>
+                    <b class="fs18">CSS background-repeat</b><br>
+                    <b class="fs18">CSS background-repeat: no-repeat</b><br>
+                    <b class="fs18">CSS background-position</b><br>
+                    <b class="fs18">The CSS Background Repeat and Position Properties</b><br>
+                    <b class="fs18">Video: CSS Background Repeat and Position</b><br>
+                </div>
+                <h3>Background Attachment<a href="https://www.w3schools.com/css/css_background_attachment.asp" target="_empty">&#128508;</a></h3>
+                <div id="tu_01_02_01_08_04">
+                  <b class="fs20">CSS Background Attachment</b><br>
+                    <b class="fs18">CSS Background-Attachment</b><br>
+                    <b class="fs18">The CSS Background Attachment Property</b><br>
+                    <b class="fs18">Video: CSS Background Attachment</b><br>                    
+                </div>
+                <h3>Background Shorthand<a href="https://www.w3schools.com/css/css_background_shorthand.asp" target="_empty">&#128508;</a></h3>
+                <div id="tu_01_02_01_08_05">
+                  <b class="fs20">CSS Background Shorthand</b><br>
+                    <b class="fs18">CSS background - Shorthand property</b><br>
+                    <b class="fs18"></b><br>
+                    <b class="fs18"></b><br>
+                    <b class="fs18"></b><br>
+                </div>
+              </div>  
+              <h2>CSS Borders<a href="https://www.w3schools.com/css/css_border.asp" target="_empty">&#128507;</a></h2>
+              <div id="tu_01_02_01_09">
+                <h3>Borders<a href="https://www.w3schools.com/css/css_border.asp" target="_empty">&#128508;</a></h3>
+                <div id="tu_01_02_01_09_01">
+                  <b class="fs20">CSS Borders</b><br>
+                    <b class="fs18">CSS Border Style</b><br>                    
+                </div>
+                <h3>Border Width<a href="https://www.w3schools.com/css/css_border_width.asp" target="_empty">&#128508;</a></h3>
+                <div id="tu_01_02_01_09_02">
+                  <b class="fs20">CSS Border Width</b><br>
+                    <b class="fs18">CSS Border Width</b><br>
+                    <b class="fs18">Specific Side Widths</b><br>                   
+                </div>
+                <h3>Border Color<a href="https://www.w3schools.com/css/css_border_color.asp" target="_empty">&#128508;</a></h3>
+                <div id="tu_01_02_01_09_03">
+                  <b class="fs20">CSS Border Color</b><br>
+                    <b class="fs18">CSS Border Color</b><br>
+                    <b class="fs18">Specific Side Colors</b><br>          
+                    <b class="fs18">HEX Values</b><br>
+                    <b class="fs18">RGB Values</b><br>
+                    <b class="fs18">HSL Values</b><br>                    
+                </div>
+                <h3>Border Sides<a href="https://www.w3schools.com/css/css_border_sides.asp" target="_empty">&#128508;</a></h3>
+                <div id="tu_01_02_01_09_04">
+                  <b class="fs20">CSS Border Sides</b><br>
+                    <b class="fs18">CSS Border - Individual Sides</b><br>                   
+                </div>
+                <h3>Border Shorthand<a href="https://www.w3schools.com/css/css_border_shorthand.asp" target="_empty">&#128508;</a></h3>
+                <div id="tu_01_02_01_09_05">
+                  <b class="fs20">CSS Shorthand Border Property</b><br>
+                    <b class="fs18">CSS Border - Shorthand Property</b><br>
+                </div>
+                <h3>Borders Rounded<a href="https://www.w3schools.com/css/css_border_rounded.asp" target="_empty">&#128508;</a></h3>
+                <div id="tu_01_02_01_09_06">
+                  <b class="fs20">CSS Rounded Borders</b><br>
+                    <b class="fs18">CSS Rounded Borders</b><br>
+                    <b class="fs18">More Examples</b><br>
+                    <b class="fs18">Test Yourself With Exercises</b><br>
+                    <b class="fs18">All CSS Border Properties</b><br>
+                </div>
+              </div>
+              <h2>CSS Margins<a href="https://www.w3schools.com/css/css_margin.asp" target="_empty">&#128507;</a></h2>
+              <div id="tu_01_02_01_10">
+                <h3>Margins<a href="https://www.w3schools.com/css/css_margin.asp" target="_empty">&#128508;</a></h3>
+                <div id="tu_01_02_01_09_01">
+                  <b class="fs20">CSS Margins</b><br>
+                    <b class="fs18">CSS Margins</b><br>
+                    <b class="fs18">Margin - Individual Sides</b><br>
+                    <b class="fs18">Margin - Shorthand Property</b><br>
+                    <b class="fs18">The auto Value</b><br>  
+                    <b class="fs18">The inherit Value</b><br>
+                    <b class="fs18">All CSS Margin Properties</b><br>                          
+                </div>
+                <h3>Margin Collapse<a href="https://www.w3schools.com/css/css_margin_collapse.asp" target="_empty">&#128508;</a></h3>
+                <div id="tu_01_02_01_09_02">
+                  <b class="fs20">CSS Margin Collapse</b><br>
+                    <b class="fs18">Margin Collapse</b><br>
+                    <b class="fs18">Test Yourself With Exercises</b><br>
+                    <b class="fs18">All CSS Margin Properties</b><br>                    
+                </div>
+              </div>
+              <h2>CSS Padding<a href="https://www.w3schools.com/css/css_padding.asp" target="_empty">&#128507;</a></h2>
+              <div id="tu_01_02_01_11">  
+                <b class="fs20">CSS Padding</b><br>
+                <b class="fs18">CSS Padding</b><br>
+                <b class="fs18">Padding - Individual Sides</b><br>
+                <b class="fs18">Padding - Shorthand Property</b><br>
+                <b class="fs18">Padding and Element Width</b><br> 
+                <b class="fs18">More Examples</b><br>
+                <b class="fs18">Test Yourself With Exercises</b><br>
+                <b class="fs18">All CSS Padding Properties</b><br>
+              </div>
+              <h2>CSS Height/Width<a href="https://www.w3schools.com/css/css_dimension.asp" target="_empty">&#128507;</a></h2>
+              <div id="tu_01_02_01_12">  
+                <b class="fs20">CSS Height, Width and Max-width</b><br>
+                  <b class="fs18">CSS Setting height and width</b><br>
+                  <b class="fs18">CSS height and width Values</b><br>
+                  <b class="fs18">CSS height and width Examples</b><br>
+                  <b class="fs18">Setting max-width</b><br>
+                  <b class="fs18">Try it Yourself - Examples</b><br>
+                  <b class="fs18">Test Yourself With Exercises</b><br>
+                  <b class="fs18">All CSS Dimension Properties</b><br>
+              </div>
+              <h2>CSS Box Model<a href="https://www.w3schools.com/css/css_boxmodel.asp" target="_empty">&#128507;</a></h2>
+              <div id="tu_01_02_01_13">                
+                <b class="fs20">CSS Box Model</b><br>
+                  <b class="fs18">The CSS Box Model</b><br>
+                  <b class="fs18">Width and Height of an Element</b><br>
+                  <b class="fs18">Test Yourself With Exercises</b><br>
+              </div>
+              <h2>CSS Outline<a href="https://www.w3schools.com/css/css_outline.asp" target="_empty">&#128507;</a></h2>
+              <div id="tu_01_02_01_14">
+                <h3>Outline<a href="https://www.w3schools.com/css/css_outline.asp" target="_empty">&#128508;</a></h3>
+                <div id="tu_01_02_01_14_01">
+                  <b class="fs20">CSS Outline</b><br>
+                    <b class="fs18">CSS Outline</b><br>
+                    <b class="fs18">CSS Outline Style</b><br>                    
+                </div>
+                <h3>Outline Width<a href="https://www.w3schools.com/css/css_outline_width.asp" target="_empty">&#128508;</a></h3>
+                <div id="tu_01_02_01_14_02">
+                  <b class="fs20">CSS Outline Width</b><br>
+                    <b class="fs18">CSS Outline Width</b><br>                    
+                </div>
+                <h3>Outline Color<a href="https://www.w3schools.com/css/css_outline_color.asp" target="_empty">&#128508;</a></h3>
+                <div id="tu_01_02_01_14_03">
+                  <b class="fs20">CSS Outline Color</b><br>
+                    <b class="fs18">CSS Outline Color</b><br>
+                    <b class="fs18">HEX Values</b><br>
+                    <b class="fs18">RGB Values</b><br>
+                    <b class="fs18">HSL Values</b><br>                    
+                </div>
+                <h3>Outline Shorthand<a href="https://www.w3schools.com/css/css_outline_shorthand.asp" target="_empty">&#128508;</a></h3>
+                <div id="tu_01_02_01_14_04">
+                  <b class="fs20">CSS Outline Shorthand</b><br>
+                    <b class="fs18">CSS Outline - Shorthand property</b><br>                    
+                </div>
+                <h3>Outline Offset<a href="https://www.w3schools.com/css/css_outline_offset.asp" target="_empty">&#128508;</a></h3>
+                <div id="tu_01_02_01_14_05">
+                  <b class="fs20">CSS Outline Offset</b><br>
+                    <b class="fs18">CSS Outline Offset</b><br>
+                    <b class="fs18">Test Yourself With Exercises</b><br>
+                    <b class="fs18">All CSS Outline Properties</b><br>                    
+                </div>
+              </div>
+              <h2>CSS Text<a href="https://www.w3schools.com/css/css_text.asp" target="_empty">&#128507;</a></h2>
+              <div id="tu_01_02_01_15">                
+                <h3>Text Color<a href="https://www.w3schools.com/css/css_text.asp" target="_empty">&#128508;</a></h3>
+                <div id="tu_01_02_01_15_01">
+                  <b class="fs20">CSS Text</b><br>
+                    <b class="fs18">Text Color</b><br>
+                    <b class="fs18">Text Color and Background Color</b><br>
+                    <b class="fs18">The CSS Text Color Property</b><br> 
+                </div>
+                <h3>Text Alignment<a href="https://www.w3schools.com/css/css_text_align.asp" target="_empty">&#128508;</a></h3>
+                <div id="tu_01_02_01_15_02">
+                  <b class="fs20">CSS Text Alignment</b><br>
+                    <b class="fs18">Text Alignment and Text Direction</b><br>
+                    <b class="fs18">Text Alignment</b><br>
+                    <b class="fs18">Text Align Last</b><br>
+                    <b class="fs18">Text Direction</b><br>
+                    <b class="fs18">Vertical Alignment</b><br> 
+                    <b class="fs18">The CSS Text Alignment/Direction Properties</b><br>                    
+                </div>
+                <h3>Text Decoration<a href="https://www.w3schools.com/css/css_text_decoration.asp" target="_empty">&#128508;</a></h3>
+                <div id="tu_01_02_01_15_03">
+                  <b class="fs20">CSS Text Decoration</b><br>
+                    <b class="fs18">Text Decoration</b><br>
+                    <b class="fs18">Add a Decoration Line to Text</b><br>
+                    <b class="fs18">Specify a Color for the Decoration Line</b><br>
+                    <b class="fs18">Specify a Style for the Decoration Line</b><br>
+                    <b class="fs18">Specify the Thickness for the Decoration Line</b><br> 
+                    <b class="fs18">The Shorthand Property</b><br>
+                    <b class="fs18">A Small Tip</b><br>
+                    <b class="fs18">All CSS text-decoration Properties</b><br>
+                </div>
+                <h3>Text Transformation<a href="https://www.w3schools.com/css/css_text_transformation.asp" target="_empty">&#128508;</a></h3>
+                <div id="tu_01_02_01_15_04">
+                  <b class="fs20">CSS Text Transformation</b><br>
+                    <b class="fs18">Text Transformation</b><br>
+                    <b class="fs18">The CSS Text Transformation Property</b><br>                    
+                </div>
+                <h3>Text Spacing<a href="https://www.w3schools.com/css/css_text_spacing.asp" target="_empty">&#128508;</a></h3>
+                <div id="tu_01_02_01_15_05">
+                  <b class="fs20">CSS Text Spacing</b><br>
+                    <b class="fs18">Text Spacing</b><br>
+                    <b class="fs18">Text Indentation</b><br>
+                    <b class="fs18">Letter Spacing</b><br>
+                    <b class="fs18">Line Height</b><br>
+                    <b class="fs18">Word Spacing</b><br> 
+                    <b class="fs18">White Space</b><br>
+                    <b class="fs18">The CSS Text Spacing Properties</b><br>
+                </div>
+                <h3>Text Shadow<a href="" target="_empty">&#128508;</a></h3>
+                <div id="tu_01_02_01_15_06">
+                  <b class="fs20">CSS Text Shadow</b><br>
+                    <b class="fs18">Text Shadow</b><br>
+                    <b class="fs18">More Text Shadow Examples</b><br>
+                    <b class="fs18">Test Yourself With Exercises</b><br>
+                    <b class="fs18">The CSS Text Shadow Property</b><br>
+                </div>
+              </div>
+              <h2>CSS Fonts<a href="https://www.w3schools.com/css/css_font.asp" target="_empty">&#128507;</a></h2>
+              <div id="tu_01_02_01_16">
+                <h3>Font Family<a href="https://www.w3schools.com/css/css_font.asp" target="_empty">&#128508;</a></h3>
+                <div id="tu_01_02_01_16_01">
+                  <b class="fs20">CSS Fonts</b><br>
+                    <b class="fs18">Font Selection is Important</b><br>
+                    <b class="fs18">Generic Font Families</b><br>
+                    <b class="fs18">Difference Between Serif and Sans-serif Fonts</b><br>
+                    <b class="fs18">Some Font Examples</b><br>
+                    <b class="fs18">The CSS font-family Property</b><br> 
+                </div>
+                <h3>Font Web Safe<a href="https://www.w3schools.com/css/css_font_websafe.asp" target="_empty">&#128508;</a></h3>
+                <div id="tu_01_02_01_16_02">
+                  <b class="fs20">CSS Web Safe Fonts</b><br>
+                    <b class="fs18">What are Web Safe Fonts?</b><br>
+                    <b class="fs18">Fallback Fonts</b><br>
+                    <b class="fs18">Best Web Safe Fonts for HTML and CSS</b><br>
+                    <b class="fs18">Arial (sans-serif)</b><br>
+                    <b class="fs18">Verdana (sans-serif)</b><br> 
+                    <b class="fs18">Tahoma (sans-serif)</b><br>
+                    <b class="fs18">Trebuchet MS (sans-serif)</b><br>
+                    <b class="fs18">Times New Roman (serif)</b><br>
+                    <b class="fs18">Georgia (serif)</b><br>
+                    <b class="fs18">Garamond (serif)</b><br>
+                    <b class="fs18">Courier New (monospace)</b><br>
+                    <b class="fs18">Brush Script MT (cursive)</b><br>
+                </div>
+                <h3>Font Fallbacks<a href="https://www.w3schools.com/css/css_font_fallbacks.asp" target="_empty">&#128508;</a></h3>
+                <div id="tu_01_02_01_16_03">
+                  <b class="fs20">CSS Font Fallbacks</b><br>
+                    <b class="fs18">Commonly Used Font Fallbacks</b><br>
+                    <b class="fs18">Serif Fonts</b><br>
+                    <b class="fs18">Sans-Serif Fonts</b><br>
+                    <b class="fs18">Monospace Fonts</b><br>
+                    <b class="fs18">Cursive Fonts</b><br> 
+                    <b class="fs18">Fantasy Fonts</b><br>                    
+                </div>
+                <h3>Font Style<a href="https://www.w3schools.com/css/css_font_style.asp" target="_empty">&#128508;</a></h3>
+                <div id="tu_01_02_01_16_04">
+                  <b class="fs20">CSS Font Style</b><br>
+                    <b class="fs18">Font Style</b><br>
+                    <b class="fs18">Font Weight</b><br>
+                    <b class="fs18">Font Variant</b><br>                    
+                </div>
+                <h3>Font Size<a href="https://www.w3schools.com/css/css_font_size.asp" target="_empty">&#128508;</a></h3>
+                <div id="tu_01_02_01_16_05">
+                  <b class="fs20">CSS Font Size</b><br>
+                    <b class="fs18">Font Size</b><br>
+                    <b class="fs18">Set Font Size With Pixels</b><br>
+                    <b class="fs18">Set Font Size With Em</b><br>
+                    <b class="fs18">Use a Combination of Percent and Em</b><br>
+                    <b class="fs18">Responsive Font Size</b><br>                     
+                </div>
+                <h3>Google Fonts<a href="https://www.w3schools.com/css/css_font_google.asp" target="_empty">&#128508;</a></h3>
+                <div id="tu_01_02_01_16_06">
+                  <b class="fs20">CSS Google Fonts</b><br>
+                    <b class="fs18">Google Fonts</b><br>
+                    <b class="fs18">How To Use Google Fonts</b><br>
+                    <b class="fs18">Use Multiple Google Fonts</b><br>
+                    <b class="fs18">Styling Google Fonts</b><br>
+                    <b class="fs18">Enabling Font Effects</b><br> 
+                </div>
+                <h3>Font Pairings<a href="https://www.w3schools.com/css/css_font_pairings.asp" target="_empty">&#128508;</a></h3>
+                <div id="tu_01_02_01_16_07">
+                  <b class="fs20">CSS Great Font Pairings</b><br>
+                    <b class="fs18">Font Pairing Rules</b><br>
+                      <b class="fs16">1. Complement</b><br>
+                      <b class="fs16">2. Use Font Superfamilies</b><br>
+                      <b class="fs16">3. Contrast is King</b><br>
+                      <b class="fs16">4. Choose Only One Boss</b><br>
+                    <b class="fs18">Georgia and Verdana</b><br>
+                    <b class="fs18">Helvetica and Garamond</b><br>
+                    <b class="fs18">Popular Google Font Pairings</b><br> 
+                    <b class="fs18">Merriweather and Open Sans</b><br> 
+                    <b class="fs18">Ubuntu and Lora</b><br> 
+                    <b class="fs18">Abril Fatface and Poppins</b><br> 
+                    <b class="fs18">Cinzel and Fauna One</b><br> 
+                    <b class="fs18">Fjalla One and Libre Baskerville</b><br> 
+                    <b class="fs18">Space Mono and Muli</b><br> 
+                    <b class="fs18">Spectral and Rubik</b><br> 
+                    <b class="fs18">Oswald and Noto Sans</b><br>                     
+                </div>
+                <h3>Font Property<a href="https://www.w3schools.com/css/css_font_shorthand.asp" target="_empty">&#128508;</a></h3>
+                <div id="tu_01_02_01_16_08">
+                  <b class="fs20">CSS Font Property</b><br>
+                    <b class="fs18">The CSS Font Property</b><br>
+                    <b class="fs18">Test Yourself With Exercises</b><br>
+                </div>
+              </div>
+              <h2>CSS Icons<a href="https://www.w3schools.com/css/css_icons.asp" target="_empty">&#128507;</a></h2>
+              <div id="tu_01_02_01_17">
+                <b class="fs20">CSS Icons</b><br>
+                  <b class="fs18">How To Add Icons</b><br>
+                  <b class="fs18">Font Awesome Icons</b><br>
+                  <b class="fs18">Bootstrap Icons</b><br>
+                  <b class="fs18">Google Icons</b><br> 
+              </div>
+              <h2>CSS Links<a href="https://www.w3schools.com/css/css_link.asp" target="_empty">&#128507;</a></h2>
+              <div id="tu_01_02_01_18">                
+                <b class="fs20">CSS Links</b><br>
+                  <b class="fs18">Styling Links</b><br>
+                  <b class="fs18">Text Decoration</b><br>
+                  <b class="fs18">Background Color</b><br>
+                  <b class="fs18">Link Buttons</b><br>
+                  <b class="fs18">More Examples</b><br>
+                  <b class="fs18">Test Yourself With Exercises</b><br>
+              </div>
+              <h2>CSS Lists<a href="https://www.w3schools.com/css/css_list.asp" target="_empty">&#128507;</a></h2>
+              <div id="tu_01_02_01_19">                
+                <b class="fs20">CSS Lists</b><br>
+                  <b class="fs18">HTML Lists and CSS List Properties</b><br>
+                  <b class="fs18">Different List Item Markers</b><br>    
+                  <b class="fs18">An Image as The List Item Marker</b><br>                  
+                  <b class="fs18">Position The List Item Markers</b><br>
+                  <b class="fs18">Remove Default Settings</b><br>
+                  <b class="fs18">List - Shorthand property</b><br>
+                  <b class="fs18">Styling List With Colors</b><br>
+                  <b class="fs18">More Examples</b><br>
+                  <b class="fs18">Test Yourself With Exercises</b><br>
+                  <b class="fs18">All CSS List Properties</b><br>
+              </div>
+              <h2>CSS Tables<a href="https://www.w3schools.com/css/css_table.asp" target="_empty">&#128507;</a></h2>
+              <div id="tu_01_02_01_20">   
+                <h3>Table Borders<a href="https://www.w3schools.com/css/css_table.asp" target="_empty">&#128508;</a></h3>
+                <div id="tu_01_02_01_20_01">
+                  <b class="fs20">CSS Tables</b><br>
+                    <b class="fs18">Table Borders</b><br>
+                    <b class="fs18">Full-Width Table</b><br>
+                    <b class="fs18">Collapse Table Borders</b><br>                    
+                </div>
+                <h3>Table Size<a href="https://www.w3schools.com/css/css_table_size.asp" target="_empty">&#128508;</a></h3>
+                <div id="tu_01_02_01_20_02">
+                  <b class="fs20">CSS Table Size</b><br>
+                    <b class="fs18">Table Width and Height</b><br>                    
+                </div>
+                <h3>Table Alignment<a href="https://www.w3schools.com/css/css_table_align.asp" target="_empty">&#128508;</a></h3>
+                <div id="tu_01_02_01_20_03">
+                  <b class="fs20">CSS Table Alignment</b><br>
+                    <b class="fs18">Horizontal Alignment</b><br>
+                    <b class="fs18">Vertical Alignment</b><br>                    
+                </div>
+                <h3>Table Style<a href="https://www.w3schools.com/css/css_table_style.asp" target="_empty">&#128508;</a></h3>
+                <div id="tu_01_02_01_20_04">
+                  <b class="fs20">CSS Table Style</b><br>
+                    <b class="fs18">Table Padding</b><br>
+                    <b class="fs18">Horizontal Dividers</b><br>
+                    <b class="fs18">Hoverable Table</b><br>
+                    <b class="fs18">Striped Tables</b><br>
+                    <b class="fs18">Table Color</b><br> 
+                </div>
+                <h3>Table Responsive<a href="https://www.w3schools.com/css/css_table_responsive.asp" target="_empty">&#128508;</a></h3>
+                <div id="tu_01_02_01_20_05">
+                  <b class="fs20">CSS Responsive Table</b><br>
+                    <b class="fs18">Responsive Table</b><br>
+                    <b class="fs18">More Examples</b><br>
+                    <b class="fs18">Test Yourself With Exercises</b><br>
+                    <b class="fs18">CSS Table Properties</b><br>                    
+                </div>
+              </div>
+              <h2>CSS Display<a href="https://www.w3schools.com/css/css_display_visibility.asp" target="_empty">&#128507;</a></h2>
+              <div id="tu_01_02_01_21">                
+                <b class="fs20">CSS Layout - The display Property</b><br>
+                  <b class="fs18">The display Property</b><br>
+                  <b class="fs18">Block-level Elements</b><br>
+                  <b class="fs18">Inline Elements</b><br>
+                  <b class="fs18">The display Property Values</b><br>
+                  <b class="fs18">Display: none;</b><br>
+                  <b class="fs18">Override The Default Display Value</b><br>
+                  <b class="fs18">Hide an Element - display:none or visibility:hidden?</b><br>
+                  <b class="fs18">More Examples</b><br>
+                  <b class="fs18">Test Yourself With Exercises</b><br>
+                  <b class="fs18">CSS Display/Visibility Properties</b><br>
+              </div>
+              <h2>CSS Max-width<a href="https://www.w3schools.com/css/css_max-width.asp" target="_empty">&#128507;</a></h2>
+              <div id="tu_01_02_01_22">                
+                <b class="fs20">CSS Layout - width and max-width</b><br>
+                  <b class="fs18">Using width, max-width and margin: auto;</b><br>
+              </div>
+              <h2>CSS Position<a href="https://www.w3schools.com/css/css_positioning.asp" target="_empty">&#128507;</a></h2>
+              <div id="tu_01_02_01_23">                
+                <b class="fs20">CSS Layout - The position Property</b><br>
+                  <b class="fs18">The position Property</b><br>
+                  <b class="fs18">position: static;</b><br>
+                  <b class="fs18">position: relative;</b><br>
+                  <b class="fs18">position: fixed;</b><br>
+                  <b class="fs18">position: absolute;</b><br>
+                  absolute 通常是會參照到其上層元素<br>
+                  <b class="fs18">position: sticky;</b><br>
+                  <b class="fs18">Positioning Text In an Image</b><br>
+                  <b class="fs18">More Examples</b><br>
+                  <b class="fs18">Test Yourself With Exercises</b><br>
+                  <b class="fs18">All CSS Positioning Properties</b><br>
+              </div>
+              <h2>CSS Z-index<a href="https://www.w3schools.com/css/css_z-index.asp" target="_empty">&#128507;</a></h2>
+              <div id="tu_01_02_01_24">                
+                <b class="fs20">CSS Layout - The z-index Property</b><br>
+                  <b class="fs18">The z-index Property</b><br>
+                  <b class="fs18">Another z-index Example</b><br>
+                  <b class="fs18">Without z-index</b><br>    
+                  <b class="fs18">Test Yourself With Exercises</b><br>
+                  <b class="fs18">CSS Property</b><br>
+              </div>
+              <h2>CSS Overflow<a href="https://www.w3schools.com/css/css_overflow.asp" target="_empty">&#128507;</a></h2>
+              <div id="tu_01_02_01_25">                
+                <b class="fs20">CSS Layout - Overflow</b><br>
+                  <b class="fs18">CSS Overflow</b><br>
+                  <b class="fs18">overflow: visible</b><br>
+                  <b class="fs18">overflow: hidden</b><br>
+                  <b class="fs18">overflow: scroll</b><br>
+                  <b class="fs18">overflow: auto</b><br>    
+                  <b class="fs18">overflow-x and overflow-y</b><br>
+                  <b class="fs18">Test Yourself With Exercises</b><br>
+                  <b class="fs18">All CSS Overflow Properties</b><br>
+              </div>
+              <h2>CSS Float<a href="https://www.w3schools.com/css/css_float.asp" target="_empty">&#128507;</a></h2>
+              <div id="tu_01_02_01_26">
+                <h3>Float<a href="https://www.w3schools.com/css/css_float.asp" target="_empty">&#128508;</a></h3>
+                <div id="tu_01_02_01_26_01">
+                  <b class="fs20">CSS Layout - float and clear</b><br>
+                    <b class="fs18">The float Property</b><br>
+                    <b class="fs18">Example - float: right;</b><br>
+                    <b class="fs18">Example - float: left;</b><br>
+                    <b class="fs18">Example - No float</b><br>
+                    <b class="fs18">Example - Float Next To Each Other</b><br> 
+                </div>
+                <h3>Clear<a href="https://www.w3schools.com/css/css_float_clear.asp" target="_empty">&#128508;</a></h3>
+                <div id="tu_01_02_01_26_02">
+                  <b class="fs20">CSS Layout - clear and clearfix</b><br>
+                    <b class="fs18">The clear Property</b><br>
+                    <b class="fs18">The clearfix Hack</b><br>                    
+                </div>
+                <h3>Float Examples<a href="https://www.w3schools.com/css/css_float_examples.asp" target="_empty">&#128508;</a></h3>
+                <div id="tu_01_02_01_26_03">
+                  <b class="fs20">CSS Layout - Float Examples</b><br>
+                    <b class="fs18">Grid of Boxes / Equal Width Boxes</b><br>
+                      <b class="fs16">What is box-sizing?</b><br>
+                    <b class="fs18">Images Side By Side</b><br>
+                    <b class="fs18">Equal Height Boxes</b><br>
+                    <b class="fs18">Navigation Menu</b><br>
+                    <b class="fs18">Web Layout Example</b><br>
+                    <b class="fs18">More Examples</b><br>                    
+                    <b class="fs18">All CSS Float Properties</b><br> 
+                </div>
+              </div>
+              <h2>CSS inline-block<a href="https://www.w3schools.com/css/css_inline-block.asp" target="_empty">&#128507;</a></h2>
+              <div id="tu_01_02_01_27">                
+                <b class="fs20">CSS Layout - display: inline-block</b><br>
+                  <b class="fs18">The display: inline-block Value</b><br>
+                  <b class="fs18">Using inline-block to Create Navigation Links</b><br>
+              </div>
+              <h2>CSS Align<a href="https://www.w3schools.com/css/css_align.asp" target="_empty">&#128507;</a></h2>
+              <div id="tu_01_02_01_28">                
+                <b class="fs20">CSS Layout - Horizontal & Vertical Align</b><br>
+                  <b class="fs18">Center Align Elements</b><br>
+                  <b class="fs18">Center Align Text</b><br>
+                  <b class="fs18">Center an Image</b><br>
+                  <b class="fs18">Left and Right Align - Using position</b><br>
+                  <b class="fs18">Left and Right Align - Using float</b><br>
+                  <b class="fs18">The clearfix Hack</b><br>
+                  <b class="fs18">Center Vertically - Using padding</b><br>
+                  <b class="fs18">Center Vertically - Using line-height</b><br>
+                  <b class="fs18">Center Vertically - Using position & transform</b><br>
+                  <b class="fs18">Center Vertically - Using Flexbox</b><br>
+                  <b class="fs18">Test Yourself With Exercises</b><br>
+              </div>
+              <h2>CSS Combinators<a href="https://www.w3schools.com/css/css_combinators.asp" target="_empty">&#128507;</a></h2>
+              <div id="tu_01_02_01_29">                
+                <b class="fs20">CSS Combinators</b><br>                 
+                  <b class="fs18">CSS Combinators</b><br>
+                  <ul>
+                    <li>descendant selector (space)</li>
+                    <li>child selector (>)</li>
+                    <li>adjacent sibling selector (+)</li>
+                    <li>general sibling selector (~)</li>
+                  </ul>                 
+                  <b class="fs18">Descendant Selector</b><br> 
+                  <b class="fs18">Child Selector (>)</b><br> 
+                  <b class="fs18">Adjacent Sibling Selector (+)</b><br>
+                  <b class="fs18">General Sibling Selector (~)</b><br>
+                  <b class="fs18">Test Yourself With Exercises</b><br>
+                  <b class="fs18">All CSS Combinator Selectors</b><br>
+              </div>
+              <h2>CSS Pseudo-class<a href="https://www.w3schools.com/css/css_pseudo_classes.asp" target="_empty">&#128507;</a></h2>
+              <div id="tu_01_02_01_30">                
+                <b class="fs20">CSS Pseudo-classes</b><br>
+                  <b class="fs18">What are Pseudo-classes?</b><br>
+                  <b class="fs18">Syntax</b><br>
+                  <b class="fs18">Anchor Pseudo-classes</b><br>
+                  <b class="fs18">Pseudo-classes and HTML Classes</b><br>
+                  <b class="fs18">Hover on &lt;div&gt;</b><br>
+                  <b class="fs18">Simple Tooltip Hover</b><br>
+                  <b class="fs18">CSS - The :first-child Pseudo-class</b><br>
+                  <b class="fs18">Match the first &lt;p&gt; element</b><br>
+                  <b class="fs18">Match the first &lt;i&gt; element in all &lt;p&gt; elements</b><br>
+                  <b class="fs18">Match all &lt;i&gt; elements in all first child &lt;p&gt; elements</b><br>
+                  <b class="fs18">CSS - The :lang Pseudo-class</b><br>
+                  <b class="fs18">More Examples</b><br>
+                  <b class="fs18">Test Yourself With Exercises</b><br>
+                  <b class="fs18">All CSS Pseudo Classes</b><br>
+                  <b class="fs18">All CSS Pseudo Elements</b><br>
+              </div>
+              <h2>CSS Pseudo-elements<a href="https://www.w3schools.com/css/css_pseudo_elements.asp" target="_empty">&#128507;</a></h2>
+              <div id="tu_01_02_01_31">
+                <b class="fs20">CSS Pseudo-elements</b><br>
+                  <b class="fs18">What are Pseudo-Elements?</b><br>
+                  <b class="fs18">Syntax</b><br>
+                  <b class="fs18">The ::first-line Pseudo-element</b><br>
+                  <b class="fs18">The ::first-letter Pseudo-element</b><br>
+                  <b class="fs18">Pseudo-elements and HTML Classes</b><br>
+                  <b class="fs18">Multiple Pseudo-elements</b><br>
+                  <b class="fs18">CSS - The ::before Pseudo-element</b><br>
+                  <b class="fs18">CSS - The ::after Pseudo-element</b><br>
+                  <b class="fs18">CSS - The ::marker Pseudo-element</b><br>
+                  <b class="fs18">CSS - The ::selection Pseudo-element</b><br>
+                  <b class="fs18">Test Yourself With Exercises</b><br>
+                  <b class="fs18">All CSS Pseudo Elements</b><br>
+                  <b class="fs18">All CSS Pseudo Classes</b><br>
+              </div>
+              <h2>CSS Opacity<a href="https://www.w3schools.com/css/css_image_transparency.asp" target="_empty">&#128507;</a></h2>
+              <div id="tu_01_02_01_32">                
+                <b class="fs20">CSS Opacity / Transparency</b><br>
+                  <b class="fs18">Transparent Image</b><br>
+                  <b class="fs18">Transparent Hover Effect</b><br>
+                    <b class="fs16">Example explained</b><br>
+                  <b class="fs18">Transparent Box</b><br>
+                  <b class="fs18">Transparency using RGBA</b><br>
+                  <b class="fs18">Text in Transparent Box</b><br>
+                  <b class="fs18">Example explained</b><br>
+                  <b class="fs18">Test Yourself With Exercises</b><br>
+              </div>
+              <h2>CSS Navigation Bar<a href="https://www.w3schools.com/css/css_navbar.asp" target="_empty">&#128507;</a></h2>
+              <div id="tu_01_02_01_33">                
+                <h3>NavBar<a href="https://www.w3schools.com/css/css_navbar.asp" target="_empty">&#128508;</a></h3>
+                <div id="tu_01_02_01_33_01">
+                  <b class="fs20">CSS Navigation Bar</b><br>
+                    <b class="fs18">Demo: Navigation Bars</b><br>
+                    <b class="fs18">Navigation Bars</b><br>
+                    <b class="fs18">Navigation Bar = List of Links</b><br>                    
+                </div>
+                <h3>Vertical NavBar<a href="https://www.w3schools.com/css/css_navbar_vertical.asp" target="_empty">&#128508;</a></h3>
+                <div id="tu_01_02_01_33_02">
+                  <b class="fs20">CSS Vertical Navigation Bar</b><br>
+                    <b class="fs18">Vertical Navigation Bar</b><br>
+                    <b class="fs18">Vertical Navigation Bar Examples</b><br>
+                      <b class="fs16">Active/Current Navigation Link</b><br>
+                      <b class="fs16">Center Links & Add Borders</b><br>
+                    <b class="fs18">Full-height Fixed Vertical Navbar</b><br>                    
+                </div>
+                <h3>Horizontal NavBar<a href="https://www.w3schools.com/css/css_navbar_horizontal.asp" target="_empty">&#128508;</a></h3>
+                <div id="tu_01_02_01_33_03">
+                  <b class="fs20">CSS Horizontal Navigation Bar</b><br>
+                    <b class="fs18">Horizontal Navigation Bar</b><br>
+                      <b class="fs16">Inline List Items</b><br>
+                      <b class="fs16">Floating List Items</b><br>
+                    <b class="fs18">Horizontal Navigation Bar Examples</b><br>
+                    <b class="fs18">Active/Current Navigation Link</b><br>
+                    <b class="fs18">Right-Align Links</b><br>
+                    <b class="fs18">Border Dividers</b><br> 
+                    <b class="fs18">Fixed Navigation Bar</b><br>
+                    <b class="fs18">Gray Horizontal Navbar</b><br>
+                    <b class="fs18">Sticky Navbar</b><br>
+                    <b class="fs18">More Examples</b><br>
+                </div>
+              </div>
+              <h2>CSS Dropdowns<a href="https://www.w3schools.com/css/css_dropdowns.asp" target="_empty">&#128507;</a></h2>
+              <div id="tu_01_02_01_34">                
+                <b class="fs20">CSS Dropdowns</b><br>
+                  <b class="fs18">Demo: Dropdown Examples</b><br>
+                  <b class="fs18">Basic Dropdown</b><br>
+                  <b class="fs18">Example Explained</b><br>
+                  <b class="fs18">Dropdown Menu</b><br>
+                  <b class="fs18">Right-aligned Dropdown Content</b><br>
+                  <b class="fs18">More Examples</b><br>
+                    <b class="fs16"></b>Dropdown Image</b><br>
+                    <b class="fs16"></b>Dropdown Navbar</b><br>
+              </div>
+              <h2>CSS Image Gallery<a href="https://www.w3schools.com/css/css_image_gallery.asp" target="_empty">&#128507;</a></h2>
+              <div id="tu_01_02_01_35">                
+                <b class="fs20">CSS Image Gallery</b><br>
+                  <b class="fs18">Image Gallery</b><br>
+                  <b class="fs18">More Examples</b><br>
+                    <b class="fs16">Responsive Image Gallery</b><br>
+              </div>
+              <h2>CSS Image Sprites<a href="https://www.w3schools.com/css/css_image_sprites.asp" target="_empty">&#128507;</a></h2>
+              <div id="tu_01_02_01_36">                
+                <b class="fs20">CSS Image Sprites</b><br>
+                  <b class="fs18">Image Sprites</b><br>
+                  <b class="fs18">Image Sprites - Simple Example</b><br>
+                  <b class="fs18">Image Sprites - Create a Navigation List</b><br>
+                  <b class="fs18">Image Sprites - Hover Effect</b><br>
+                    <b class="fs16">Example</b><br>
+              </div>
+              <h2>CSS Attr Selectors<a href="https://www.w3schools.com/css/css_attribute_selectors.asp" target="_empty">&#128507;</a></h2>
+              <div id="tu_01_02_01_37">                
+                <b class="fs20">CSS Attribute Selectors</b><br>
+                  <b class="fs18">Style HTML Elements With Specific Attributes</b><br>
+                  <b class="fs18">CSS [attribute] Selector</b><br>
+                  <b class="fs18">CSS [attribute="value"] Selector</b><br>
+                  <b class="fs18">CSS [attribute~="value"] Selector</b><br>
+                  選取 attr 含有特定單字<br>
+                  <b class="fs18">CSS [attribute|="value"] Selector</b><br>
+                  選取 attr 含有特定單字後接-<br>
+                  <b class="fs18">CSS [attribute^="value"] Selector</b><br>
+                  選取 attr 以特定字元為開始<br>
+                  <b class="fs18">CSS [attribute$="value"] Selector</b><br>
+                  選取 attr 以特定字元為結束<br>
+                  <b class="fs18">CSS [attribute*="value"] Selector</b><br>
+                  選取 attr 含有特定字元<br>
+                  <b class="fs18">Styling Forms</b><br>
+                  <b class="fs18">Test Yourself With Exercises</b><br>
+                  <b class="fs18">All CSS Attribute Selectors</b><br>
+              </div>
+              <h2>CSS Forms<a href="https://www.w3schools.com/css/css_form.asp" target="_empty">&#128507;</a></h2>
+              <div id="tu_01_02_01_38">                
+                <b class="fs20">CSS Forms</b><br>
+                  <b class="fs18">Styling Input Fields</b><br>
+                  <b class="fs18">Padded Inputs</b><br>
+                  <b class="fs18">Bordered Inputs</b><br>
+                  <b class="fs18">Colored Inputs</b><br>
+                  <b class="fs18">Focused Inputs</b><br>
+                  <b class="fs18">Animated Search Input</b><br>
+                  <b class="fs18">Styling Textareas</b><br>
+                  <b class="fs18">Styling Select Menus</b><br>
+                  <b class="fs18">Styling Input Buttons</b><br>
+                  <b class="fs18">Responsive Form</b><br>
+              </div>
+              <h2>CSS Counters<a href="https://www.w3schools.com/css/css_counters.asp" target="_empty">&#128507;</a></h2>
+              <div id="tu_01_02_01_39">                
+                <b class="fs20">CSS Counters</b><br>
+                  <b class="fs18">Automatic Numbering With Counters</b><br>
+                  <b class="fs18">Nesting Counters</b><br>
+                  <b class="fs18">CSS Counter Properties</b><br>
+              </div>
+              <h2>CSS Website Layout<a href="https://www.w3schools.com/css/css_website_layout.asp" target="_empty">&#128507;</a></h2>
+              <div id="tu_01_02_01_40">                
+                <b class="fs20">CSS Website Layout</b><br>
+                  <b class="fs18">Website Layout</b><br>
+                  <b class="fs18">Header</b><br>
+                  <b class="fs18">Navigation Bar</b><br>
+                  <b class="fs18">Content</b><br>
+                  <b class="fs18">Unequal Columns</b><br>
+                  <b class="fs18">Footer</b><br>
+                  <b class="fs18">Responsive Website Layout</b><br>
+              </div>
+              <h2>CSS Units<a href="https://www.w3schools.com/css/css_units.asp" target="_empty">&#128507;</a></h2>
+              <div id="tu_01_02_01_41">                
+                <b class="fs20">CSS Units</b><br>
+                  <b class="fs18">CSS Units</b><br>                 
+                  <b class="fs18">Absolute Lengths</b><br>                 
+                  <b class="fs18">Relative Lengths</b><br>
+                  <b class="fs18">Browser Support</b><br>
+              </div>
+              <h2>CSS Specificity<a href="https://www.w3schools.com/css/css_specificity.asp" target="_empty">&#128507;</a></h2>
+              <div id="tu_01_02_01_42">                
+                <b class="fs20">CSS Specificity</b><br>
+                  <b class="fs18">What is Specificity?</b><br>
+                  <b class="fs18">Specificity Hierarchy</b><br>                  
+                  <b class="fs18">How to Calculate Specificity?</b><br>
+                  <b class="fs18">More Specificity Rules Examples</b><br>
+              </div>
+              <h2>CSS The !important Rule<a href="https://www.w3schools.com/css/css_important.asp" target="_empty">&#128507;</a></h2>
+              <div id="tu_01_02_01_43">                
+                <b class="fs20">CSS The !important Rule</b><br>
+                  <b class="fs18">What is !important?</b><br>
+                    <b class="fs16">Example Explained</b><br>
+                  <b class="fs18">Important About !important</b><br>                 
+                  <b class="fs18">Maybe One or Two Fair Uses of !important</b><br>
+              </div>
+              <h2>CSS Math Functions<a href="https://www.w3schools.com/css/css_math_functions.asp" target="_empty">&#128507;</a></h2>
+              <div id="tu_01_02_01_44">                
+                <b class="fs20">CSS Math Functions</b><br>
+                  <b class="fs18">The calc() Function</b><br>
+                    <b class="fs16">CSS Syntax</b><br>
+                  <b class="fs18">The max() Function</b><br>
+                    <b class="fs16">CSS Syntax</b><br>
+                  <b class="fs18">The min() Function</b><br>
+                    <b class="fs16">CSS Syntax</b><br>
+                  <b class="fs18">All CSS Math Functions</b><br>
+              </div>               
+            </div><!--CSS Tutorial--> 
+
+                        
+              
+
+              <aside id="janas_here">         
+                <div id="rtxt" style="display:none">
+                  <pre>      
+                  </pre>
+                  </div>		 
+                    <div id="here">
+                      <b class="fs21">Janas 20240927</b>
+                      <b class="fs25"><a href="#hdr">&#8679;</a></b>
+                      <b class="fs25"><a href="tools.html" target="_blank">Tools</a></b>                      
+                      <!--input type="text" id="f1" name="f1"-->
+                      <label for="f1"></label>
+                      <textarea id="f1" name="f1"></textarea>
+                      <button onclick="conv()">To HTML</button>
+                  </div>
+              </aside> 
+              
+            <div>
+              <h2><a href="" target="_empty">&#128507;</a></h2>
+              <div id="tu_01_02_04_198">                
+                <b class="fs20"></b><br>
+                  <b class="fs18"></b><br>
+                  <b class="fs18"></b><br>
+                  <b class="fs18"></b><br>
+                  <b class="fs18"></b><br>
+                  <b class="fs18"></b><br>
+                  <b class="fs18"></b><br>
+                  <b class="fs18"></b><br>
+                  <table>
+                    <tr><th></th><th></th></tr>
+                    <tr><td></td><td></td></tr>
+                  </table>
+              </div><!--tu_01_02_04_198-->
+
+              <h2><a href="" target="_empty">&#128507;</a></h2>
+              <div id="tu_01_02_04_199">
+                <h3><a href="" target="_empty">&#128508;</a></h3>
+                <div id="tu_01_02_04_199_99">
+                  <b class="fs20"></b><br>
+                    <b class="fs18"></b><br>
+                    <b class="fs18"></b><br>
+                    <b class="fs18"></b><br>
+                    <b class="fs18"></b><br>
+                    <b class="fs18"></b><br> 
+                    <table>
+                      <tr><th></th><th></th></tr>
+                      <tr><td></td><td></td></tr>
+                    </table>
+                </div><!--tu_01_02_04_199_99-->
+              </div><!--tu_01_02_04_199--> 
+
+            </div><!--CSS Grid tu_01_02_04--> 
+
+            <hr>
+
+            <b class="fs28">CSS SASS</b><br>
+            <div id="tu_01_02_05">  
+              <h2><a href="" target="_empty">&#128507;</a></h2>
+              <div id="tu_01_02_05_198">                
+                <b class="fs20"></b><br>
+                  <b class="fs18"></b><br>
+                  <b class="fs18"></b><br>
+                  <b class="fs18"></b><br>
+                  <b class="fs18"></b><br>
+                  <b class="fs18"></b><br>
+                  <b class="fs18"></b><br>
+                  <b class="fs18"></b><br>
+                  <table>
+                    <tr><th></th><th></th></tr>
+                    <tr><td></td><td></td></tr>
+                  </table>
+              </div><!--tu_01_02_05_198-->
+
+              <h2><a href="" target="_empty">&#128507;</a></h2>
+              <div id="tu_01_02_05_199">
+                <h3><a href="" target="_empty">&#128508;</a></h3>
+                <div id="tu_01_02_05_199_99">
+                  <b class="fs20"></b><br>
+                    <b class="fs18"></b><br>
+                    <b class="fs18"></b><br>
+                    <b class="fs18"></b><br>
+                    <b class="fs18"></b><br>
+                    <b class="fs18"></b><br> 
+                    <table>
+                      <tr><th></th><th></th></tr>
+                      <tr><td></td><td></td></tr>
+                    </table>
+                </div><!--tu_01_02_05_199_99-->
+              </div><!--tu_01_02_05_199--> 
+
+            </div><!--CSS SASS--> 
+          </div><!--tu_01_02-->
+        </div>
+
+
+
+      </div>
+    </main>        
+    
+  </div>  
+  <div class="to-top">
+    <a href="#janas_here" class="go_janas"></a><a href="#" class="go_top"></a>
+  </div>
+</body>
+</html>    
