@@ -2,7 +2,10 @@
 /* CSS Document */
 @import url(https://fonts.googleapis.com/css?family=Open+Sans);
 @import url(https://fonts.googleapis.com/css?family=Bree+Serif);  
-    
+html {
+  scroll-behavior: smooth;
+}    
+
 body {
   display: grid; 
   /* grid-template-columns: auto auto; */ 
@@ -44,9 +47,9 @@ main{
   padding: 8px;
 }
 
-    .tbl01 tr:nth-child(even) {
-      background-color: #dddddd;
-    }
+.tbl01 tr:nth-child(even) {
+  background-color: #dddddd;
+}
     
     .tbl01, .tbl01 th, .tbl01 td{
       border:1px solid #002;
@@ -112,11 +115,13 @@ main{
     li > a:after { content:  ' +'; }
     li > a:only-child:after { content: ''; }
     
-    .fs32 {font-size:32px; color:#EE9999;}
+    .fs34 {font-size:34px; color:#1199dd;}
+    .fs31 {font-size:31px; } 
+    .fs32 {font-size:32px; color:#EEc92c;}
     .fs31 {font-size:31px; } 
     .fs30 {font-size:30px; color:#BB9966;}
     .fs29 {font-size:29px; }    
-    .fs28 {font-size:28px; color:#DD6633;}
+    .fs28 {font-size:28px; color:#DD6693;}
     .fs27 {font-size:27px; }    
     .fs26 {font-size:26px; color:#ce6622;}
     .fs25 {font-size:25px; }    
@@ -130,6 +135,10 @@ main{
     .fs17 {font-size:17px; }
     .fs16 {font-size:16px; color:#55aaee;}
     .fs15 {font-size:15px; }
+    .fs14 {font-size:14px; color:#66dd11;}
+    .fs13 {font-size:13px; }
+
+    .c_red{color:red;}
     
 	  /* janas_here */
 	  #janas_here{

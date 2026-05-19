@@ -9,8 +9,7 @@
   
   <link href="w3school2.css" rel="stylesheet">
   
-  <style>
-    
+  <style> 
 
     body {
       display: grid; 
@@ -137,6 +136,7 @@
     .fs17 {font-size:17px; }
     .fs16 {font-size:16px; color:#55aaee;}
     .fs15 {font-size:15px; }
+	
     .c_red{color:red;}
 
 
@@ -246,279 +246,234 @@
   </script>
 </head>
 <body>
-<div>  
+<div id="content">    
   <header id="hdr">
     <b class="fs25">Learn new skills from <a href="https://www.w3schools.com/" target="_empty">W3Schools.com</a></b><br>    
     <button onclick="show_tu()">Tutorials</button>
-    <button onclick="show_wa_01()">Exercises</button>
-    <button onclick="show_wa_01()">Certificates</button>
-    <button onclick="show_wa_01()">Acronym</button>
+    <button onclick="show_re()">References</button>
+    <button onclick="show_ce()">Certificates</button>
+    <button onclick="show_ex()">Exercise</button>
   </header>  
     
-  <nav id="nav_tu" >
+  <nav id="nav_tu">
     <ul>
-      <li><a href="#tu_01">HTML and CSS</a>        
+      <li><a href="#tu_01">HTML</a>        
         <ul>
-          <li><a href="#tu_01_01">Learn HTML</a>            
+          <li><a href="#tu_01">Learn HTML</a>            
             <ul>
-              <li><a href="#tu_01_01_01">Tutorial</a>                
+              <li><a href="#tu_01_01">Tutorial</a>                
                 <ul>
-                  <li><a href="#tu_01_01_01_01">HOME</a></li>
-                  <li><a href="#tu_01_01_01_02">Introduction</a></li>
+                  <li><a href="#tu_01_01_01">HOME</a></li>
+                  <li><a href="#tu_01_01_02">Introduction</a></li>
                   <li><a href="#"></a></li>
                 </ul>
               </li>
-              <li><a href="#tu_01_01_02">Forms</a>
+              <li><a href="#tu_01_02">Forms</a>
                 <ul >
-                  <li><a href="#tu_01_01_02_01">Forms</a></li>
-                  <li><a href="#tu_01_01_02_02">Form Attributes</a></li>
-                  <li><a href="#tu_01_01_02_03">Form Elements</a></li>
-                  <li><a href="#tu_01_01_02_04">Input Types</a></li>
-                  <li><a href="#tu_01_01_02_05">Input Attributes</a></li>
-                  <li><a href="#tu_01_01_02_06">Input form Attributes</a></li>
+                  <li><a href="#tu_01_02_01">Forms</a></li>
+                  <li><a href="#tu_01_02_02">Form Attributes</a></li>
+                  <li><a href="#tu_01_02_03">Form Elements</a></li>
+                  <li><a href="#tu_01_02_04">Input Types</a></li>
+                  <li><a href="#tu_01_02_05">Input Attributes</a></li>
+                  <li><a href="#tu_01_02_06">Input form Attributes</a></li>
                   <li><a href="#"></a></li>
                 </ul>  
               </li>
-              <li><a href="#tu_01_01_03">Graphics</a>
+              <li><a href="#tu_01_03">Graphics</a>
                 <ul>
-                  <li><a href="#tu_01_01_03_01">Canvas</a></li>
-                  <li><a href="#tu_01_01_03_02">SVG</a></li>                  
+                  <li><a href="#tu_01_03_01">Canvas</a></li>
+                  <li><a href="#tu_01_03_02">SVG</a></li>                  
                 </ul>
               </li>
-              <li><a href="#tu_01_01_04">HTML Media</a>
+              <li><a href="#tu_01_04">HTML Media</a>
                 <ul>
-                  <li><a href="#tu_01_01_04_01">Media</a></li>
-                  <li><a href="#tu_01_01_04_02">Video</a></li>
-                  <li><a href="#tu_01_01_04_03">Audio</a></li>
-                  <li><a href="#tu_01_01_04_04">Plug-ins</a></li>
-                  <li><a href="#tu_01_01_04_05">YouTdube</a></li>
+                  <li><a href="#tu_01_04_01">Media</a></li>
+                  <li><a href="#tu_01_04_02">Video</a></li>
+                  <li><a href="#tu_01_04_03">Audio</a></li>
+                  <li><a href="#tu_01_04_04">Plug-ins</a></li>
+                  <li><a href="#tu_01_04_05">YouTdube</a></li>
                 </ul>                
               </li>  
-              <li><a href="#tu_01_01_05">HTML APIs</a>
+              <li><a href="#tu_01_05">HTML APIs</a>
                 <ul>
-                  <li><a href="#tu_01_01_05_01">Geolocation</a></li>
-                  <li><a href="#tu_01_01_05_02">Drag/Drop</a></li>
-                  <li><a href="#tu_01_01_05_03">Web Storage</a></li>
-                  <li><a href="#tu_01_01_05_04">Web Workers</a></li>
-                  <li><a href="#tu_01_01_05_05">SSE</a></li>
+                  <li><a href="#tu_01_05_01">Geolocation</a></li>
+                  <li><a href="#tu_01_05_02">Drag/Drop</a></li>
+                  <li><a href="#tu_01_05_03">Web Storage</a></li>
+                  <li><a href="#tu_01_05_04">Web Workers</a></li>
+                  <li><a href="#tu_01_05_05">SSE</a></li>
                 </ul>  
               </li> 
-              <li><a href="#tu_01_01_06">HTML Examples</a>
+              <li><a href="#tu_01_06">HTML Examples</a>
                 <ul>
-                  <li><a href="#tu_01_01_06_01">Examples</a></li>
-                  <li><a href="#tu_01_01_06_02">Editor</a></li>
-                  <li><a href="#tu_01_01_06_03">Quiz</a></li>
-                  <li><a href="#tu_01_01_06_04">Exercise</a></li>
-                  <li><a href="#tu_01_01_06_05">Website</a></li>
-                  <li><a href="#tu_01_01_06_06">Bootcamp</a></li>
-                  <li><a href="#tu_01_01_06_07">Certificate</a></li>
-                  <li><a href="#tu_01_01_06_08">Summary</a></li>
-                  <li><a href="#tu_01_01_06_09">Accessibility</a></li>
+                  <li><a href="#tu_01_06_01">Examples</a></li>
+                  <li><a href="#tu_01_06_02">Editor</a></li>
+                  <li><a href="#tu_01_06_03">Quiz</a></li>
+                  <li><a href="#tu_01_06_04">Exercise</a></li>
+                  <li><a href="#tu_01_06_05">Website</a></li>
+                  <li><a href="#tu_01_06_06">Bootcamp</a></li>
+                  <li><a href="#tu_01_06_07">Certificate</a></li>
+                  <li><a href="#tu_01_06_08">Summary</a></li>
+                  <li><a href="#tu_01_06_09">Accessibility</a></li>
                 </ul>  
               </li>
-              <li><a href="#tu_01_01_07">HTML Reference</a>
+              <li><a href="#tu_01_07">HTML Reference</a>
                 <ul>
-                  <li><a href="#tu_01_01_07_01">by Alphabet</a></li>
-                  <li><a href="#tu_01_01_07_02">by Category</a></li>
-                  <li><a href="#tu_01_01_07_03">Browser Support</a></li>
-                  <li><a href="#tu_01_01_07_04">Attributes</a></li>
-                  <li><a href="#tu_01_01_07_05">Global Attribute</a></li>
-                  <li><a href="#tu_01_01_07_06">Events</a></li>
-                  <li><a href="#tu_01_01_07_07">Colors</a></li>
-                  <li><a href="#tu_01_01_07_08">Canvas</a></li>
-                  <li><a href="#tu_01_01_07_09">Audio/Video</a></li>
-                  <li><a href="#tu_01_01_07_10">Character Sets</a></li>
-                  <li><a href="#tu_01_01_07_11">Doctypes</a></li>
-                  <li><a href="#tu_01_01_07_12">URL Encode</a></li>
-                  <li><a href="#tu_01_01_07_13">Language Codes</a></li>
-                  <li><a href="#tu_01_01_07_14">Country Codes</a></li>
-                  <li><a href="#tu_01_01_07_15">Messages</a></li>
-                  <li><a href="#tu_01_01_07_16">Methods</a></li>
-                  <li><a href="#tu_01_01_07_17">PX to EM Converter</a></li>
-                  <li><a href="#tu_01_01_07_18">Keyboard Shortcuts</a></li>
+                  <li><a href="#tu_01_07_01">by Alphabet</a></li>
+                  <li><a href="#tu_01_07_02">by Category</a></li>
+                  <li><a href="#tu_01_07_03">Browser Support</a></li>
+                  <li><a href="#tu_01_07_04">Attributes</a></li>
+                  <li><a href="#tu_01_07_05">Global Attribute</a></li>
+                  <li><a href="#tu_01_07_06">Events</a></li>
+                  <li><a href="#tu_01_07_07">Colors</a></li>
+                  <li><a href="#tu_01_07_08">Canvas</a></li>
+                  <li><a href="#tu_01_07_09">Audio/Video</a></li>
+                  <li><a href="#tu_01_07_10">Character Sets</a></li>
+                  <li><a href="#tu_01_07_11">Doctypes</a></li>
+                  <li><a href="#tu_01_07_12">URL Encode</a></li>
+                  <li><a href="#tu_01_07_13">Language Codes</a></li>
+                  <li><a href="#tu_01_07_14">Country Codes</a></li>
+                  <li><a href="#tu_01_07_15">Messages</a></li>
+                  <li><a href="#tu_01_07_16">Methods</a></li>
+                  <li><a href="#tu_01_07_17">PX to EM Converter</a></li>
+                  <li><a href="#tu_01_07_18">Keyboard Shortcuts</a></li>
                 </ul>  
               </li> 
-              <li><a href="#tu_01_01_08">HTML Tags</a>
+              <li><a href="#tu_01_08">HTML Tags</a>
                 <ul>
-                    <li><a href="#tu_01_01_08_01">&lt;!--&gt;</a></li>
-                    <li><a href="#tu_01_01_08_02">&lt;!DOCTYPE&gt;</a></li>
-                    <li><a href="#tu_01_01_08_03">&lt;a&gt;</a></li>
-                    <li><a href="#tu_01_01_08_04">&lt;abbr&gt;</a></li>
-                    <li><a href="#tu_01_01_08_05">&lt;acronym&gt;</a></li>
-                    <li><a href="#tu_01_01_08_06">&lt;address&gt;</a></li>
-                    <li><a href="#tu_01_01_08_07">&lt;applet&gt;</a></li>
-                    <li><a href="#tu_01_01_08_08">&lt;area&gt;</a></li>
-                    <li><a href="#tu_01_01_08_09">&lt;article&gt;</a></li>
-                    <li><a href="#tu_01_01_08_10">&lt;aside&gt;</a></li>
-                    <li><a href="#tu_01_01_08_11">&lt;audio&gt;</a></li>
-                    <li><a href="#tu_01_01_08_12">&lt;b&gt;</a></li>
-                    <li><a href="#tu_01_01_08_13">&lt;base&gt;</a></li>
-                    <li><a href="#tu_01_01_08_14">&lt;basefont&gt;</a></li>
-                    <li><a href="#tu_01_01_08_15">&lt;bdi&gt;</a></li>
-                    <li><a href="#tu_01_01_08_16">&lt;bdo&gt;</a></li>
-                    <li><a href="#tu_01_01_08_17">&lt;big&gt;</a></li>
-                    <li><a href="#tu_01_01_08_18">&lt;blockquote&gt;</a></li>
-                    <li><a href="#tu_01_01_08_19">&lt;body&gt;</a></li>
-                    <li><a href="#tu_01_01_08_20">&lt;br&gt;</a></li>
-                    <li><a href="#tu_01_01_08_21">&lt;button&gt;</a></li>
-                    <li><a href="#tu_01_01_08_22">&lt;canvas&gt;</a></li>
-                    <li><a href="#tu_01_01_08_23">&lt;caption&gt;</a></li>
-                    <li><a href="#tu_01_01_08_24">&lt;center&gt;</a></li>
-                    <li><a href="#tu_01_01_08_25">&lt;cite&gt;</a></li>
-                    <li><a href="#tu_01_01_08_26">&lt;code&gt;</a></li>
-                    <li><a href="#tu_01_01_08_27">&lt;col&gt;</a></li>
-                    <li><a href="#tu_01_01_08_28">&lt;colgroup&gt;</a></li>
-                    <li><a href="#tu_01_01_08_29">&lt;data&gt;</a></li>
-                    <li><a href="#tu_01_01_08_30">&lt;datalist&gt;</a></li>
-                    <li><a href="#tu_01_01_08_31">&lt;dfn&gt;</a></li>
-                    <li><a href="#tu_01_01_08_32">&lt;dialog&gt;</a></li>
-                    <li><a href="#tu_01_01_08_33">&lt;dir&gt;</a></li>
-                    <li><a href="#tu_01_01_08_34">&lt;div&gt;</a></li>
-                    <li><a href="#tu_01_01_08_35">&lt;dl&gt;</a></li>
-                    <li><a href="#tu_01_01_08_36">&lt;dt&gt;</a></li>
-                    <li><a href="#tu_01_01_08_37">&lt;em&gt;</a></li>
-                    <li><a href="#tu_01_01_08_38">&lt;embed&gt;</a></li>
-                    <li><a href="#tu_01_01_08_39">&lt;fieldset&gt;</a></li>
-                    <li><a href="#tu_01_01_08_40">&lt;figcaption&gt;</a></li>
-                    <li><a href="#tu_01_01_08_41">&lt;figure&gt;</a></li>
-                    <li><a href="#tu_01_01_08_42">&lt;font&gt;</a></li>
-                    <li><a href="#tu_01_01_08_43">&lt;footer&gt;</a></li>
-                    <li><a href="#tu_01_01_08_44">&lt;form&gt;</a></li>
-                    <li><a href="#tu_01_01_08_45">&lt;frame&gt;</a></li>
-                    <li><a href="#tu_01_01_08_46">&lt;frameset&gt;</a></li>
-                    <li><a href="#tu_01_01_08_47">&lt;h1&gt;-&lt;h6&gt;</a></li> 
-                    <li><a href="#tu_01_01_08_48">&lt;head&gt;</a></li>
-                    <li><a href="#tu_01_01_08_49">&lt;header&gt;</a></li>
-                    <li><a href="#tu_01_01_08_50">&lt;hgroup&gt;</a></li>
-                    <li><a href="#tu_01_01_08_51">&lt;hr&gt;</a></li> 
-                    <li><a href="#tu_01_01_08_52">&lt;html&gt;</a></li>
-                    <li><a href="#tu_01_01_08_53">&lt;i&gt;</a></li>
-                    <li><a href="#tu_01_01_08_54">&lt;iframe&gt;</a></li>
-                    <li><a href="#tu_01_01_08_55">&lt;img&gt;</a></li>
-                    <li><a href="#tu_01_01_08_56">&lt;input&gt;</a></li>
-                    <li><a href="#tu_01_01_08_57">&lt;ins&gt;</a></li>
-                    <li><a href="#tu_01_01_08_58">&lt;kbd&gt;</a></li>
-                    <li><a href="#tu_01_01_08_59">&lt;label&gt;</a></li>
-                    <li><a href="#tu_01_01_08_60">&lt;legend&gt;</a></li>
-                    <li><a href="#tu_01_01_08_61">&lt;li&gt;</a></li>
-                    <li><a href="#tu_01_01_08_62">&lt;link&gt;</a></li>
-                    <li><a href="#tu_01_01_08_63">&lt;main&gt;</a></li>
-                    <li><a href="#tu_01_01_08_64">&lt;map&gt;</a></li>
-                    <li><a href="#tu_01_01_08_65">&lt;mark&gt;</a></li>
-                    <li><a href="#tu_01_01_08_66">&lt;menu&gt;</a></li>
-                    <li><a href="#tu_01_01_08_67">&lt;meta&gt;</a></li>
-                    <li><a href="#tu_01_01_08_68">&lt;meter&gt;</a></li>
-                    <li><a href="#tu_01_01_08_69">&lt;nav&gt;</a></li>
-                    <li><a href="#tu_01_01_08_71">&lt;noframes&gt;</a></li>     
-                    <li><a href="#tu_01_01_08_72">&lt;noscript&gt;</a></li>
-                    <li><a href="#tu_01_01_08_73">&lt;object&gt;</a></li>
-                    <li><a href="#tu_01_01_08_74">&lt;ol&gt;</a></li>
-                    <li><a href="#tu_01_01_08_75">&lt;optgroup&gt;</a></li>
-                    <li><a href="#tu_01_01_08_76">&lt;option&gt;</a></li>
-                    <li><a href="#tu_01_01_08_77">&lt;output&gt;</a></li>
-                    <li><a href="#tu_01_01_08_78">&lt;p&gt;</a></li>
-                    <li><a href="#tu_01_01_08_79">&lt;param&gt;</a></li>
-                    <li><a href="#tu_01_01_08_80">&lt;picture&gt;</a></li>
-                    <li><a href="#tu_01_01_08_81">&lt;pre&gt;</a></li>
-                    <li><a href="#tu_01_01_08_82">&lt;progress&gt;</a></li>
-                    <li><a href="#tu_01_01_08_83">&lt;q&gt;</a></li>
-                    <li><a href="#tu_01_01_08_84">&lt;rp&gt;</a></li>
-                    <li><a href="#tu_01_01_08_85">&lt;rt&gt;</a></li>
-                    <li><a href="#tu_01_01_08_86">&lt;ruby&gt;</a></li>
-                    <li><a href="#tu_01_01_08_87">&lt;s&gt;</a></li>
-                    <li><a href="#tu_01_01_08_88">&lt;samp&gt;</a></li>
-                    <li><a href="#tu_01_01_08_89">&lt;script&gt;</a></li>
-                    <li><a href="#tu_01_01_08_90">&lt;search&gt;</a></li>
-                    <li><a href="#tu_01_01_08_91">&lt;section&gt;</a></li>
-                    <li><a href="#tu_01_01_08_92">&lt;select&gt;</a></li>
-                    <li><a href="#tu_01_01_08_93">&lt;small&gt;</a></li>
-                    <li><a href="#tu_01_01_08_94">&lt;source&gt;</a></li>
-                    <li><a href="#tu_01_01_08_95">&lt;span&gt;</a></li>
-                    <li><a href="#tu_01_01_08_96">&lt;strike&gt;</a></li>
-                    <li><a href="#tu_01_01_08_97">&lt;strong&gt;</a></li>
-                    <li><a href="#tu_01_01_08_98">&lt;style&gt;</a></li>
-                    <li><a href="#tu_01_01_08_99">&lt;sub&gt;</a></li>
-                    <li><a href="#tu_01_01_08_100">&lt;summary&gt;</a></li>
-                    <li><a href="#tu_01_01_08_101">&lt;sup&gt;</a></li>
-                    <li><a href="#tu_01_01_08_102">&lt;svg&gt;</a></li>    
-                    <li><a href="#tu_01_01_08_103">&lt;table&gt;</a></li> 
-                    <li><a href="#tu_01_01_08_104">&lt;tbody&gt;</a></li> 
-                    <li><a href="#tu_01_01_08_105">&lt;td&gt;</a></li> 
-                    <li><a href="#tu_01_01_08_106">&lt;template&gt;</a></li> 
-                    <li><a href="#tu_01_01_08_107">&lt;textarea&gt;</a></li> 
-                    <li><a href="#tu_01_01_08_108">&lt;tfoot&gt;</a></li> 
-                    <li><a href="#tu_01_01_08_109">&lt;th&gt;</a></li> 
-                    <li><a href="#tu_01_01_08_110">&lt;thead&gt;</a></li> 
-                    <li><a href="#tu_01_01_08_111">&lt;time&gt;</a></li> 
-                    <li><a href="#tu_01_01_08_112">&lt;title&gt;</a></li> 
-                    <li><a href="#tu_01_01_08_113">&lt;tr&gt;</a></li> 
-                    <li><a href="#tu_01_01_08_114">&lt;track&gt;</a></li> 
-                    <li><a href="#tu_01_01_08_115">&lt;tt&gt;</a></li> 
-                    <li><a href="#tu_01_01_08_116">&lt;u&gt;</a></li> 
-                    <li><a href="#tu_01_01_08_117">&lt;ul&gt;</a></li> 
-                    <li><a href="#tu_01_01_08_118">&lt;var&gt;</a></li> 
-                    <li><a href="#tu_01_01_08_119">&lt;video&gt;</a></li> 
-                    <li><a href="#tu_01_01_08_120">&lt;wbr&gt;</a></li>                              
+                    <li><a href="#tu_01_08_01">&lt;!--&gt;</a></li>
+                    <li><a href="#tu_01_08_02">&lt;!DOCTYPE&gt;</a></li>
+                    <li><a href="#tu_01_08_03">&lt;a&gt;</a></li>
+                    <li><a href="#tu_01_08_04">&lt;abbr&gt;</a></li>
+                    <li><a href="#tu_01_08_05">&lt;acronym&gt;</a></li>
+                    <li><a href="#tu_01_08_06">&lt;address&gt;</a></li>
+                    <li><a href="#tu_01_08_07">&lt;applet&gt;</a></li>
+                    <li><a href="#tu_01_08_08">&lt;area&gt;</a></li>
+                    <li><a href="#tu_01_08_09">&lt;article&gt;</a></li>
+                    <li><a href="#tu_01_08_10">&lt;aside&gt;</a></li>
+                    <li><a href="#tu_01_08_11">&lt;audio&gt;</a></li>
+                    <li><a href="#tu_01_08_12">&lt;b&gt;</a></li>
+                    <li><a href="#tu_01_08_13">&lt;base&gt;</a></li>
+                    <li><a href="#tu_01_08_14">&lt;basefont&gt;</a></li>
+                    <li><a href="#tu_01_08_15">&lt;bdi&gt;</a></li>
+                    <li><a href="#tu_01_08_16">&lt;bdo&gt;</a></li>
+                    <li><a href="#tu_01_08_17">&lt;big&gt;</a></li>
+                    <li><a href="#tu_01_08_18">&lt;blockquote&gt;</a></li>
+                    <li><a href="#tu_01_08_19">&lt;body&gt;</a></li>
+                    <li><a href="#tu_01_08_20">&lt;br&gt;</a></li>
+                    <li><a href="#tu_01_08_21">&lt;button&gt;</a></li>
+                    <li><a href="#tu_01_08_22">&lt;canvas&gt;</a></li>
+                    <li><a href="#tu_01_08_23">&lt;caption&gt;</a></li>
+                    <li><a href="#tu_01_08_24">&lt;center&gt;</a></li>
+                    <li><a href="#tu_01_08_25">&lt;cite&gt;</a></li>
+                    <li><a href="#tu_01_08_26">&lt;code&gt;</a></li>
+                    <li><a href="#tu_01_08_27">&lt;col&gt;</a></li>
+                    <li><a href="#tu_01_08_28">&lt;colgroup&gt;</a></li>
+                    <li><a href="#tu_01_08_29">&lt;data&gt;</a></li>
+                    <li><a href="#tu_01_08_30">&lt;datalist&gt;</a></li>
+                    <li><a href="#tu_01_08_31">&lt;dfn&gt;</a></li>
+                    <li><a href="#tu_01_08_32">&lt;dialog&gt;</a></li>
+                    <li><a href="#tu_01_08_33">&lt;dir&gt;</a></li>
+                    <li><a href="#tu_01_08_34">&lt;div&gt;</a></li>
+                    <li><a href="#tu_01_08_35">&lt;dl&gt;</a></li>
+                    <li><a href="#tu_01_08_36">&lt;dt&gt;</a></li>
+                    <li><a href="#tu_01_08_37">&lt;em&gt;</a></li>
+                    <li><a href="#tu_01_08_38">&lt;embed&gt;</a></li>
+                    <li><a href="#tu_01_08_39">&lt;fieldset&gt;</a></li>
+                    <li><a href="#tu_01_08_40">&lt;figcaption&gt;</a></li>
+                    <li><a href="#tu_01_08_41">&lt;figure&gt;</a></li>
+                    <li><a href="#tu_01_08_42">&lt;font&gt;</a></li>
+                    <li><a href="#tu_01_08_43">&lt;footer&gt;</a></li>
+                    <li><a href="#tu_01_08_44">&lt;form&gt;</a></li>
+                    <li><a href="#tu_01_08_45">&lt;frame&gt;</a></li>
+                    <li><a href="#tu_01_08_46">&lt;frameset&gt;</a></li>
+                    <li><a href="#tu_01_08_47">&lt;h1&gt;-&lt;h6&gt;</a></li> 
+                    <li><a href="#tu_01_08_48">&lt;head&gt;</a></li>
+                    <li><a href="#tu_01_08_49">&lt;header&gt;</a></li>
+                    <li><a href="#tu_01_08_50">&lt;hgroup&gt;</a></li>
+                    <li><a href="#tu_01_08_51">&lt;hr&gt;</a></li> 
+                    <li><a href="#tu_01_08_52">&lt;html&gt;</a></li>
+                    <li><a href="#tu_01_08_53">&lt;i&gt;</a></li>
+                    <li><a href="#tu_01_08_54">&lt;iframe&gt;</a></li>
+                    <li><a href="#tu_01_08_55">&lt;img&gt;</a></li>
+                    <li><a href="#tu_01_08_56">&lt;input&gt;</a></li>
+                    <li><a href="#tu_01_08_57">&lt;ins&gt;</a></li>
+                    <li><a href="#tu_01_08_58">&lt;kbd&gt;</a></li>
+                    <li><a href="#tu_01_08_59">&lt;label&gt;</a></li>
+                    <li><a href="#tu_01_08_60">&lt;legend&gt;</a></li>
+                    <li><a href="#tu_01_08_61">&lt;li&gt;</a></li>
+                    <li><a href="#tu_01_08_62">&lt;link&gt;</a></li>
+                    <li><a href="#tu_01_08_63">&lt;main&gt;</a></li>
+                    <li><a href="#tu_01_08_64">&lt;map&gt;</a></li>
+                    <li><a href="#tu_01_08_65">&lt;mark&gt;</a></li>
+                    <li><a href="#tu_01_08_66">&lt;menu&gt;</a></li>
+                    <li><a href="#tu_01_08_67">&lt;meta&gt;</a></li>
+                    <li><a href="#tu_01_08_68">&lt;meter&gt;</a></li>
+                    <li><a href="#tu_01_08_69">&lt;nav&gt;</a></li>
+                    <li><a href="#tu_01_08_71">&lt;noframes&gt;</a></li>     
+                    <li><a href="#tu_01_08_72">&lt;noscript&gt;</a></li>
+                    <li><a href="#tu_01_08_73">&lt;object&gt;</a></li>
+                    <li><a href="#tu_01_08_74">&lt;ol&gt;</a></li>
+                    <li><a href="#tu_01_08_75">&lt;optgroup&gt;</a></li>
+                    <li><a href="#tu_01_08_76">&lt;option&gt;</a></li>
+                    <li><a href="#tu_01_08_77">&lt;output&gt;</a></li>
+                    <li><a href="#tu_01_08_78">&lt;p&gt;</a></li>
+                    <li><a href="#tu_01_08_79">&lt;param&gt;</a></li>
+                    <li><a href="#tu_01_08_80">&lt;picture&gt;</a></li>
+                    <li><a href="#tu_01_08_81">&lt;pre&gt;</a></li>
+                    <li><a href="#tu_01_08_82">&lt;progress&gt;</a></li>
+                    <li><a href="#tu_01_08_83">&lt;q&gt;</a></li>
+                    <li><a href="#tu_01_08_84">&lt;rp&gt;</a></li>
+                    <li><a href="#tu_01_08_85">&lt;rt&gt;</a></li>
+                    <li><a href="#tu_01_08_86">&lt;ruby&gt;</a></li>
+                    <li><a href="#tu_01_08_87">&lt;s&gt;</a></li>
+                    <li><a href="#tu_01_08_88">&lt;samp&gt;</a></li>
+                    <li><a href="#tu_01_08_89">&lt;script&gt;</a></li>
+                    <li><a href="#tu_01_08_90">&lt;search&gt;</a></li>
+                    <li><a href="#tu_01_08_91">&lt;section&gt;</a></li>
+                    <li><a href="#tu_01_08_92">&lt;select&gt;</a></li>
+                    <li><a href="#tu_01_08_93">&lt;small&gt;</a></li>
+                    <li><a href="#tu_01_08_94">&lt;source&gt;</a></li>
+                    <li><a href="#tu_01_08_95">&lt;span&gt;</a></li>
+                    <li><a href="#tu_01_08_96">&lt;strike&gt;</a></li>
+                    <li><a href="#tu_01_08_97">&lt;strong&gt;</a></li>
+                    <li><a href="#tu_01_08_98">&lt;style&gt;</a></li>
+                    <li><a href="#tu_01_08_99">&lt;sub&gt;</a></li>
+                    <li><a href="#tu_01_08_100">&lt;summary&gt;</a></li>
+                    <li><a href="#tu_01_08_101">&lt;sup&gt;</a></li>
+                    <li><a href="#tu_01_08_102">&lt;svg&gt;</a></li>    
+                    <li><a href="#tu_01_08_103">&lt;table&gt;</a></li> 
+                    <li><a href="#tu_01_08_104">&lt;tbody&gt;</a></li> 
+                    <li><a href="#tu_01_08_105">&lt;td&gt;</a></li> 
+                    <li><a href="#tu_01_08_106">&lt;template&gt;</a></li> 
+                    <li><a href="#tu_01_08_107">&lt;textarea&gt;</a></li> 
+                    <li><a href="#tu_01_08_108">&lt;tfoot&gt;</a></li> 
+                    <li><a href="#tu_01_08_109">&lt;th&gt;</a></li> 
+                    <li><a href="#tu_01_08_110">&lt;thead&gt;</a></li> 
+                    <li><a href="#tu_01_08_111">&lt;time&gt;</a></li> 
+                    <li><a href="#tu_01_08_112">&lt;title&gt;</a></li> 
+                    <li><a href="#tu_01_08_113">&lt;tr&gt;</a></li> 
+                    <li><a href="#tu_01_08_114">&lt;track&gt;</a></li> 
+                    <li><a href="#tu_01_08_115">&lt;tt&gt;</a></li> 
+                    <li><a href="#tu_01_08_116">&lt;u&gt;</a></li> 
+                    <li><a href="#tu_01_08_117">&lt;ul&gt;</a></li> 
+                    <li><a href="#tu_01_08_118">&lt;var&gt;</a></li> 
+                    <li><a href="#tu_01_08_119">&lt;video&gt;</a></li> 
+                    <li><a href="#tu_01_08_120">&lt;wbr&gt;</a></li>                              
                 </ul>    
               </li>  
             </ul>
           </li>
-          <li><a href="css_tutorial.html#tu_01_02">Learn CSS</a></li>
-          <li><a href="bootstrap_tutorial.html#tu_01_03">Learn Bootstrap</a>
+          <li><a href="css_tutorial.html#tu_02">Learn CSS</a></li>
+          <li><a href="rwd_tutorial.html#tu_03">Learn RWD</a></li>
+          <li><a href="bootstrap5_tutorial.html#tu_04">Learn Bootstrap</a>
             <ul>
-              <li><a href="bootstrap_tutorial.html#tu_01_03_01">Bootstrap3</a></li>
-              <li><a href="bootstrap_tutorial.html#tu_01_03_02">Bootstrap4</a></li>
-              <li><a href="bootstrap_tutorial.html#tu_01_03_03">Bootstrap5</a></li>                
+              <li><a href="bootstrap3_tutorial.html#tu_04_01">Bootstrap 3</a></li>
+              <li><a href="bootstrap4_tutorial.html#tu_04_02">Bootstrap 4</a></li>
+              <li><a href="bootstrap5_tutorial.html#tu_04_03">Bootstrap 5</a></li>                
             </ul>
           </li>
           <li><a href="#"></a></li>
         </ul>        
-      </li>      
-      <li><a href="#tu_02">Data Analytics</a>
-        <ul>
-          <li><a href="#tu_02_01">Learn AI</a></li>
-          <li><a href="#tu_02_02"></a></li>
-          <li><a href="#tu_02_03"></a></li>
-          <li><a href="#tu_02_04"></a></li>
-          <li><a href="#tu_02_05"></a></li>
-          <li><a href="#tu_02_06"></a></li>
-          <li><a href="#tu_02_07"></a></li>
-          <li><a href="#tu_02_08"></a></li>
-          <li><a href="#tu_02_09"></a></li>
-          <li><a href="#tu_02_10"></a></li>
-          <li><a href="#tu_02_11"></a></li>
-          <li><a href="#tu_02_12"></a></li>
-          <li><a href="#tu_02_13"></a></li>
-          <li><a href="#tu_02_14"></a></li>
-          <li><a href="#tu_02_15"></a></li>
-        </ul>      
-      </li>
-      <li><a href="#tu_03">JavaScript</a>
-        <ul>
-          <li><a href="#tu_03_01">Learn Javascript</a></li>
-          <li><a href="#tu_03_02">Learn React</a></li>
-          <li><a href="#tu_03_03">Learn jQuery</a></li>
-          <li><a href="#tu_03_04">Learn Vue</a></li>
-          <li><a href="#tu_03_05">Learn AngularJS</a></li>
-          <li><a href="#tu_03_06">Learn JSON</a></li>
-          <li><a href="#tu_03_07">Learn AJAX</a></li>
-          <li><a href="#tu_03_08">Learn AppML</a></li>
-          <li><a href="#tu_03_09">Learn W#.JS</a></li>
-        </ul>      
-      </li>
-      <li><a href="#tu_04">Web Building</a>
-        <ul>
-          <li><a href="#"></a></li>
-          <li><a href="#"></a></li>
-          <li><a href="#"></a></li>
-        </ul>      
-      </li>
-      <li><a href="#tu_05">Backend</a>
-        <ul>
-          <li><a href="#"></a></li>
-          <li><a href="#"></a></li>
-          <li><a href="#"></a></li>
-        </ul>      
       </li>
       <li><a href="#"></a>
         <!-- First Tier Drop Down -->
@@ -595,7 +550,7 @@
   <main>
     <b class="fs32">Tutorials</b>
     <div id="tu">
-      <h1>HTML and CSS</h2>
+      <h1>HTML</h2>
       <div id="tu_01">
         <h2>Learn HTML<a href="https://www.w3schools.com/html/default.asp" target="_empty">&#128506;</a></h2>
         <div id="tu_01_01">        
@@ -3292,7 +3247,7 @@ document.getElementById("demo").innerHTML = "Hello JavaScript!";
 
 
 
-</div>  
+</div><!-- container -->  
 <div class="to-top">
   <a href="#janas_here" class="go_janas"></a><a href="#" class="go_top"></a>
 </div>
